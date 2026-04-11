@@ -1,0 +1,280 @@
+{
+  "Metadata": {
+    "title": "Brief | Bezpieczny reset hasła",
+    "description": "Dwujęzyczny landing page, interaktywny deck slajdów i wersja do wydruku PDF dla prezentacji o bezpieczeństwie resetu hasła."
+  },
+  "HomePage": {
+    "eyebrow": "Interactive deck",
+    "title": "Bezpieczny reset hasła jako pełnoekranowa prezentacja premium.",
+    "lead": "Mały landing prowadzi bezpośrednio do slajdów bez pionowego scrolla. Każdy slajd ma własny URL, osobne sterowanie językiem i motywem oraz wersję do wydruku PDF.",
+    "startPresentation": "Otwórz prezentację",
+    "deckLabel": "Podgląd decku",
+    "slideCount": "{count} slajdów w wersji interaktywnej",
+    "languageSwitcherLabel": "Przełącznik języka",
+    "themeToggle": "Przełącz motyw",
+    "backToLanguage": "Wybór języka"
+  },
+  "Presentation": {
+    "backHome": "Home",
+    "previous": "Poprzedni",
+    "next": "Następny",
+    "languageSwitcherLabel": "Przełącznik języka prezentacji",
+    "themeToggle": "Przełącz motyw",
+    "deckBadgeLabel": "Interactive deck",
+    "deckBadgeTitle": "Password Reset Security",
+    "deckModeLabel": "cyber security lecture mode",
+    "dotNavigationLabel": "Nawigacja po slajdach",
+    "statusLabel": "Aktualny slajd",
+    "hintLabel": "Klawisze: ← → ↑ ↓ PageUp PageDown Home End",
+    "progress": "Slajd {current} z {total}",
+    "printLabel": "PDF / print",
+    "printPageTitle": "Bezpieczny reset hasła | Wersja do druku",
+    "printPageDescription": "Wersja do druku PDF dla prezentacji o bezpieczeństwie resetu hasła.",
+    "backToPresentation": "Wróć do prezentacji",
+    "printNowLabel": "Drukuj do PDF",
+    "slides": {
+      "intro": {
+        "eyebrow": "⚡ Interaktywna prezentacja dla studentów",
+        "title": "Bezpieczny reset hasła",
+        "summary": "Reset hasła nie jest tylko funkcją pomocniczą. To alternatywna ścieżka dostępu do konta, dlatego cały proces musi być zabezpieczony równie mocno jak logowanie. Ta prezentacja pokazuje, jak wygląda atak, co dzieje się za kulisami i jak poprawnie zbudować bezpieczny mechanizm odzyskiwania dostępu.",
+        "sideNote": "Nawigacja działa przez kropki, przyciski i klawiaturę, a każda zmiana przechodzi na osobny URL slajdu. Wersja PDF jest dostępna z poziomu górnego panelu.",
+        "chips": [
+          { "text": "Enumeracja kont" },
+          { "text": "Atak czasowy" },
+          { "text": "Ataki masowe" },
+          { "text": "MFA i phishing" }
+        ],
+        "heroNodes": ["E-mail", "Token", "MFA", "Audit"]
+      },
+      "critical": {
+        "eyebrow": "Krok 0 · znaczenie biznesowe",
+        "title": "Reset hasła to alternatywne logowanie",
+        "summary": "Dla atakującego moduł odzyskiwania hasła jest inną bramą wejścia do konta. Jeżeli ta ścieżka jest słabiej chroniona niż standardowe logowanie, cały system bezpieczeństwa staje się nierówny i przewidywalny.",
+        "accentNote": "Projektując reset hasła, myślimy o nim jak o drugim procesie uwierzytelniania, a nie wygodnym dodatku.",
+        "panel": {
+          "eyebrow": "Dlaczego jest to ważne",
+          "title": "Najczęstsze konsekwencje błędów"
+        },
+        "bulletItems": [
+          "Przejęcie konta bez znajomości starego hasła.",
+          "Zbudowanie listy prawdziwych użytkowników do dalszych ataków.",
+          "Phishing wykorzystujący naturalny odruch kliknięcia w link resetu.",
+          "Chaos operacyjny, spam i obciążenie zespołu wsparcia."
+        ]
+      },
+      "flow": {
+        "eyebrow": "Krok 1 · poprawny przepływ",
+        "title": "Jak powinien działać bezpieczny reset hasła",
+        "summary": "Użytkownik wpisuje adres e-mail, system zachowuje się spójnie niezależnie od wyniku, a jeśli konto istnieje, generowany jest jednorazowy link. Następnie użytkownik ustawia nowe hasło, a aplikacja bezpiecznie aktualizuje dane w bazie i informuje o zmianie.",
+        "accentNote": "Dane są walidowane i przetwarzane tak samo rygorystycznie jak w formularzu rejestracji.",
+        "flowItems": [
+          "Użytkownik podaje adres e-mail w formularzu resetu hasła.",
+          "System zwraca ten sam ogólny komunikat dla każdego zgłoszenia.",
+          "Dla istniejącego konta tworzony jest losowy, jednorazowy token resetu.",
+          "Na adres e-mail wysyłany jest bezpieczny link HTTPS prowadzący do strony zmiany hasła.",
+          "Użytkownik podaje nowe hasło zgodne z polityką bezpieczeństwa.",
+          "Serwer zapisuje nowy hash hasła, unieważnia token i kończy proces.",
+          "Użytkownik otrzymuje powiadomienie o zmianie i loguje się nowym hasłem."
+        ]
+      },
+      "threat-surface": {
+        "eyebrow": "Krok 2 · gdzie atakuje napastnik",
+        "title": "Powierzchnia ataku modułu resetu hasła",
+        "summary": "Atak nie dzieje się tylko w jednym miejscu. Napastnik może uderzyć w formularz, odpowiedź serwera, token, skrzynkę pocztową, stronę zmiany hasła, sesję użytkownika lub proces monitorowania bezpieczeństwa.",
+        "cards": [
+          { "accent": "cyan", "icon": "🧾", "title": "Formularz", "body": "Wprowadzanie e-maila, walidacja, komunikaty, rate limiting i obsługa automatyzacji." },
+          { "accent": "violet", "icon": "🧠", "title": "Backend", "body": "Wyszukiwanie konta, generowanie tokenu, zapis w bazie i kolejka wysyłki wiadomości." },
+          { "accent": "amber", "icon": "📨", "title": "Poczta", "body": "Dostarczenie wiadomości, reputacja domeny, możliwość phishingu i przejęcia skrzynki." },
+          { "accent": "red", "icon": "🔗", "title": "Link resetu", "body": "Wygaśnięcie, jednorazowość, poprawna domena, brak wycieku do analityki lub referera." },
+          { "accent": "emerald", "icon": "🧬", "title": "Nowe hasło", "body": "Polityka jakości, blokada haseł słabych, bezpieczne hashowanie i unieważnienie sesji." },
+          { "accent": "cyan", "icon": "📊", "title": "Monitoring", "body": "Detekcja nadużyć, alerty, korelacja zdarzeń i ścieżka reakcji na incydent." }
+        ]
+      },
+      "enumeration": {
+        "eyebrow": "Krok 3 · pierwsze rozpoznanie atakującego",
+        "title": "Enumeracja kont użytkowników",
+        "summary": "Atakujący nie musi jeszcze znać hasła. Wystarczy, że sprawdzi, które adresy e-mail istnieją w systemie. Jeśli aplikacja odpowiada inaczej dla prawdziwego i nieistniejącego konta, buduje on listę realnych użytkowników.",
+        "accentNote": "To bardzo często etap przygotowawczy przed phishingiem, brute force i credential stuffing.",
+        "cards": [
+          { "accent": "red", "icon": "⚠", "title": "Jak działa atak", "body": "Skrypt wysyła wiele żądań z różnymi adresami e-mail i porównuje odpowiedzi zwracane przez aplikację." },
+          { "accent": "cyan", "icon": "🧪", "title": "Co zdradza system", "body": "Inny komunikat, inny kod HTTP, dodatkowy element UI albo nawet inny czas odpowiedzi mogą ujawnić istnienie konta." },
+          { "accent": "amber", "icon": "🎯", "title": "Po co to robić", "body": "Prawdziwa lista kont znacząco zwiększa skuteczność kolejnych kampanii phishingowych i automatycznych ataków." }
+        ]
+      },
+      "timing": {
+        "eyebrow": "Krok 4 · zagrożenie ukryte za kulisami",
+        "title": "Atak czasowy",
+        "summary": "Nawet jeśli aplikacja pokazuje identyczny komunikat dla każdego użytkownika, może nadal zdradzać prawdę przez czas odpowiedzi. Atakujący nie patrzy już tylko na tekst — analizuje milisekundy i na tej podstawie wnioskuje, czy konto istnieje.",
+        "accentNote": "Ten typ ataku jest trudniejszy do zauważenia, bo dla zwykłego użytkownika wszystko wygląda poprawnie.",
+        "cards": [
+          { "accent": "violet", "icon": "⏱", "title": "Za kulisami", "body": "Dla istniejącego konta backend wykonuje więcej operacji: wyszukuje użytkownika, generuje token, zapisuje go, przygotowuje wiadomość lub kolejkuje wysyłkę. Dla nieistniejącego konta ścieżka bywa krótsza." },
+          { "accent": "cyan", "icon": "📡", "title": "Skutek dla obrony", "body": "Gdy różnice są powtarzalne, atakujący wykonuje setki prób i statystycznie wykrywa, które adresy są prawdziwe. Obrona wymaga spójnej logiki wykonania i zbliżonego czasu odpowiedzi." }
+        ]
+      },
+      "abuse": {
+        "eyebrow": "Krok 5 · automatyzacja nadużyć",
+        "title": "Atak masowy i nadużycie formularza",
+        "summary": "Formularz resetu hasła może być użyty nie tylko do odzyskiwania dostępu, ale także do spamowania użytkowników, zgadywania kodów, zalewania skrzynek lub wymuszania ogromnej liczby operacji po stronie serwera.",
+        "accentNote": "Endpoint resetu trzeba zabezpieczać tak samo poważnie jak logowanie i rejestrację.",
+        "metrics": [
+          { "label": "Cel ataku", "value": "Spam i chaos operacyjny" },
+          { "label": "Narzędzie", "value": "Boty i skrypty" },
+          { "label": "Pierwsza linia obrony", "value": "Rate limiting" },
+          { "label": "Druga linia obrony", "value": "Monitoring anomalii" }
+        ]
+      },
+      "token": {
+        "eyebrow": "Krok 6 · kontrola dostępu w linku",
+        "title": "Bezpieczny link i token resetu",
+        "summary": "Link do resetu hasła jest w praktyce tymczasowym kluczem do konta. Jeżeli token jest przewidywalny, działa za długo albo można go użyć wiele razy, cały mechanizm staje się słabym punktem systemu.",
+        "accentNote": "Token powinien być silnie losowy, jednorazowy i ważny możliwie krótko.",
+        "panel": {
+          "eyebrow": "Checklist",
+          "title": "Wymagania dla bezpiecznego tokenu"
+        },
+        "bulletItems": [
+          "Link działa wyłącznie po HTTPS i wskazuje prawdziwą domenę aplikacji.",
+          "Token jest generowany kryptograficznie i ma wysoką entropię.",
+          "Każdy token można wykorzystać tylko raz i wygasa po krótkim czasie.",
+          "URL nie zawiera przewidywalnych identyfikatorów ani danych pozwalających zgadywać token.",
+          "Po stronie serwera token najlepiej przechowywać w postaci skrótu, a nie jawnej wartości.",
+          "Strona resetu nie powinna ładować zbędnych zewnętrznych skryptów ani ujawniać tokenu dalej."
+        ]
+      },
+      "backend": {
+        "eyebrow": "Krok 7 · architektura serwera",
+        "title": "Co musi zrobić backend i baza danych",
+        "summary": "Bezpieczeństwo resetu hasła nie kończy się na samym formularzu. Najważniejsze operacje dzieją się po stronie serwera: przechowywanie tokenów, aktualizacja hashy, unieważnianie sesji i zapis audytowy.",
+        "cards": [
+          {
+            "accent": "cyan",
+            "icon": "🗄",
+            "title": "Warstwa danych",
+            "body": "Token resetu zapisuj w bazie w postaci skrótu. Przechowuj datę wygaśnięcia, informację o użyciu i powiązanie z kontem. Po użyciu token musi być natychmiast unieważniony.",
+            "tags": ["hash tokenu", "expires_at", "used_at"]
+          },
+          {
+            "accent": "emerald",
+            "icon": "🔒",
+            "title": "Hasło i sesje",
+            "body": "Nowe hasło zapisuj bezpiecznie, najlepiej z użyciem Argon2id. Po zmianie hasła rozważ unieważnienie aktywnych sesji i refresh tokenów, aby odciąć potencjalnie przejęte logowania.",
+            "tags": ["Argon2id", "session invalidation", "logout all"]
+          }
+        ]
+      },
+      "mfa": {
+        "eyebrow": "Krok 8 · ochrona użytkownika i organizacji",
+        "title": "Dwuetapowa weryfikacja i zabezpieczenie przed phishingiem",
+        "summary": "Sam e-mail resetujący hasło nie wystarcza jako pełne zabezpieczenie. Atakujący może podszyć się pod organizację, wysłać fałszywy link lub przekonać użytkownika do wejścia na podrobioną stronę. Dlatego reset hasła nie może obchodzić MFA.",
+        "accentNote": "Im ważniejsze konto, tym mocniejsza powinna być dodatkowa weryfikacja tożsamości.",
+        "columns": [
+          {
+            "accent": "red",
+            "icon": "⚠",
+            "title": "Zagrożenie",
+            "items": [
+              "Fałszywe wiadomości e-mail z linkiem do resetu hasła.",
+              "Podrobione strony logowania wyglądające jak prawdziwa aplikacja.",
+              "Podszycie pod domenę organizacji i presja na szybkie kliknięcie."
+            ]
+          },
+          {
+            "accent": "emerald",
+            "icon": "🧬",
+            "title": "Obrona",
+            "items": [
+              "MFA lub step-up verification dla kont o podwyższonym ryzyku.",
+              "SPF, DKIM i DMARC dla domeny wysyłającej wiadomości.",
+              "Stały, rozpoznawalny wygląd wiadomości i czytelne ostrzeżenia dla użytkownika."
+            ]
+          }
+        ]
+      },
+      "mail": {
+        "eyebrow": "Krok 9 · warstwa komunikacji",
+        "title": "Jak zabezpieczyć e-mail z linkiem resetu",
+        "summary": "Nawet bardzo dobry token nie pomoże, jeśli użytkownik nie potrafi odróżnić prawdziwej wiadomości od fałszywej. Warstwa pocztowa musi wspierać bezpieczeństwo techniczne i zaufanie wizualne.",
+        "cards": [
+          {
+            "accent": "amber",
+            "icon": "📨",
+            "title": "Co wdrożyć",
+            "body": "Skonfiguruj SPF, DKIM i DMARC, używaj stałej domeny nadawcy, podpisuj wiadomości oraz ogranicz liczbę informacji w treści do minimum koniecznego do działania.",
+            "tags": ["SPF", "DKIM", "DMARC", "brand consistency"]
+          },
+          {
+            "accent": "cyan",
+            "icon": "👁",
+            "title": "Co pokazać użytkownikowi",
+            "body": "Jasny komunikat, że organizacja nigdy nie prosi o podanie starego hasła przez e-mail, wskazanie poprawnej domeny i informacja, co zrobić, jeśli użytkownik nie inicjował resetu.",
+            "tags": ["anti-phishing copy", "safe domain", "user guidance"]
+          }
+        ]
+      },
+      "monitoring": {
+        "eyebrow": "Krok 10 · wykrywanie incydentów",
+        "title": "Logowanie zdarzeń, alerty i reakcja",
+        "summary": "Nawet najlepiej zabezpieczony proces trzeba obserwować. Monitoring pozwala wykrywać kampanie enumeracyjne, nietypowe wolumeny żądań, fale resetów dla jednego użytkownika i próby użycia wygasłych tokenów.",
+        "cards": [
+          { "accent": "cyan", "icon": "📋", "title": "Loguj", "body": "Żądania resetu, wygenerowanie tokenu, użycie linku, zmianę hasła, błędy walidacji i informacje o limicie żądań." },
+          { "accent": "red", "icon": "🚨", "title": "Alertuj", "body": "Wiele prób z jednego IP, seria resetów dla jednego konta, wzrost żądań w krótkim oknie czasowym i anomalia geograficzna." },
+          { "accent": "emerald", "icon": "🧭", "title": "Reaguj", "body": "Tymczasowa blokada, dodatkowy challenge, eskalacja do SOC lub administratora oraz automatyczne powiadomienie użytkownika." }
+        ]
+      },
+      "antipatterns": {
+        "eyebrow": "Krok 11 · czego nie robić",
+        "title": "Najczęstsze błędy i antywzorce",
+        "summary": "Część systemów nadal popełnia stare błędy: zdradza istnienie konta, używa słabych tokenów, opiera się na pytaniach bezpieczeństwa albo wysyła użytkownika na niepewny link. To dokładnie te miejsca, które atakujący sprawdzają jako pierwsze.",
+        "cards": [
+          { "accent": "red", "icon": "❌", "title": "Różne komunikaty", "body": "„Ten e-mail nie istnieje” lub „konto zablokowane” to gotowa informacja dla atakującego." },
+          { "accent": "red", "icon": "❌", "title": "Długie życie tokenu", "body": "Link ważny przez wiele godzin lub dni zwiększa ryzyko przejęcia konta po wycieku wiadomości." },
+          { "accent": "red", "icon": "❌", "title": "Pytania bezpieczeństwa", "body": "Dane typu „imię psa” lub „nazwisko panieńskie matki” są często publiczne, zgadywalne albo odzyskiwalne z social media." }
+        ]
+      },
+      "architecture": {
+        "eyebrow": "Krok 12 · model wdrożeniowy",
+        "title": "Referencyjna architektura bezpiecznego wdrożenia",
+        "summary": "Dobra implementacja łączy frontend, backend, warstwę mailową, bazę danych, monitoring oraz mechanizm MFA. Każdy element ma własne zadanie i wzajemnie zamyka luki pozostałych warstw.",
+        "accentNote": "Myśl warstwami: UI, API, storage, messaging, identity, observability.",
+        "cards": [
+          {
+            "accent": "cyan",
+            "icon": "🖥",
+            "title": "Frontend",
+            "body": "Jednolity komunikat, bezpieczne formularze, brak nadmiarowych danych i czysta strona zmiany hasła."
+          },
+          {
+            "accent": "violet",
+            "icon": "⚙",
+            "title": "API / backend",
+            "body": "Walidacja wejścia, rate limiting, generowanie tokenu CSPRNG, zapis skrótu tokenu, zmiana hasła i unieważnienie sesji."
+          },
+          {
+            "accent": "amber",
+            "icon": "📮",
+            "title": "Mail + telemetry",
+            "body": "Dostarczenie wiadomości, DMARC, logowanie zdarzeń, alerty i analiza anomalii."
+          }
+        ]
+      },
+      "summary": {
+        "eyebrow": "Final · model wdrożenia",
+        "title": "Jak zbudować naprawdę bezpieczny reset hasła",
+        "summary": "Najlepszy mechanizm resetu hasła nie opiera się na jednym rozwiązaniu. To warstwowy model obrony, który łączy spójną komunikację z użytkownikiem, bezpieczny backend, silne tokeny, ochronę poczty, MFA, monitorowanie nadużyć i poprawne przechowywanie nowego hasła.",
+        "accentNote": "Warstwy bezpieczeństwa muszą działać razem — nie tylko „mieć checkbox”.",
+        "panel": {
+          "eyebrow": "Final checklist",
+          "title": "Najważniejsze zasady wdrożeniowe"
+        },
+        "bulletItems": [
+          "Zawsze ten sam komunikat dla istniejącego i nieistniejącego konta.",
+          "Spójny czas odpowiedzi i zbliżona ścieżka wykonania po stronie serwera.",
+          "Rate limiting, CAPTCHA i analiza nadużyć przy nietypowej aktywności.",
+          "Silny token resetu: jednorazowy, losowy, krótko ważny i bezpiecznie przechowywany.",
+          "Dodatkowe potwierdzenie tożsamości dla kont wrażliwych lub podwyższonego ryzyka.",
+          "Bezpieczne hashowanie nowego hasła oraz powiadomienie użytkownika po zmianie."
+        ]
+      }
+    }
+  }
+}
