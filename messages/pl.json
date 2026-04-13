@@ -30,7 +30,16 @@
     "eyebrow": "Podstrona prezentacji",
     "title": "System prezentacji BRIEF",
     "lead": "Ta sekcja służy do pokazania pojedynczej prezentacji, jej kontekstu oraz podstawowych informacji dla odbiorcy.",
-    "description": "Możesz tu umieścić deck konferencyjny, opis wystąpienia, streszczenie oraz odnośniki do materiałów pomocniczych. Układ pozostaje prosty, statyczny i gotowy do publikacji na GitHub Pages."
+    "description": "Możesz tu umieścić deck konferencyjny, opis wystąpienia, streszczenie oraz odnośniki do materiałów pomocniczych. Układ pozostaje prosty, statyczny i gotowy do publikacji na GitHub Pages.",
+    "slideOneEyebrow": "BRIEF deck",
+    "slideOneTitle": "Komponent Slide utrzymuje proporcje 16:9",
+    "slideOneBody": "Każdy slajd zajmuje pełny ekran przeglądarki, ale właściwa plansza pozostaje wpisana w obszar 16:9. Przy innych proporcjach viewportu nadmiar przestrzeni zostaje poza planszą.",
+    "slideTwoEyebrow": "Układ",
+    "slideTwoTitle": "Margines pochodzi z viewportu, nie z treści",
+    "slideTwoBody": "Zewnętrzny kontener dostaje bezpieczny odstęp od krawędzi ekranu, a sama szerokość slajdu jest ograniczana jednocześnie wysokością i szerokością viewportu. Dzięki temu treść nie rozjeżdża się przy 16:10 ani przy węższych ekranach.",
+    "slideThreeEyebrow": "Scroll flow",
+    "slideThreeTitle": "Przewijanie działa jak pionowy deck",
+    "slideThreeBody": "Każdy kolejny slajd wypełnia pełne 100dvh i korzysta z scroll snap, więc przewinięcie strony prowadzi użytkownika slajd po slajdzie. To daje zachowanie zbliżone do prezentacji bez potrzeby osobnego silnika do nawigacji."
   },
   "poster": {
     "eyebrow": "Podstrona posteru",

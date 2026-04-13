@@ -30,7 +30,16 @@
     "eyebrow": "Presentation page",
     "title": "BRIEF presentation system",
     "lead": "This section is intended to present a single deck, its context, and the essential information for the audience.",
-    "description": "You can place a conference presentation, talk summary, abstract, and supporting references here. The layout stays simple, static, and ready for GitHub Pages deployment."
+    "description": "You can place a conference presentation, talk summary, abstract, and supporting references here. The layout stays simple, static, and ready for GitHub Pages deployment.",
+    "slideOneEyebrow": "BRIEF deck",
+    "slideOneTitle": "The Slide component keeps a strict 16:9 frame",
+    "slideOneBody": "Each slide fills the browser step, while the actual canvas remains constrained to a 16:9 area. On other viewport ratios, the extra space stays outside the slide frame.",
+    "slideTwoEyebrow": "Layout",
+    "slideTwoTitle": "The margin is driven by the viewport, not by content",
+    "slideTwoBody": "The outer container keeps a safe offset from the screen edges, while slide width is constrained by both viewport height and width. This keeps the layout stable on 16:10 and narrower screens.",
+    "slideThreeEyebrow": "Scroll flow",
+    "slideThreeTitle": "Scrolling behaves like a vertical deck",
+    "slideThreeBody": "Each slide occupies a full 100dvh step and uses scroll snap, so page scrolling moves the viewer slide by slide. This gives presentation-like behavior without a separate navigation engine."
   },
   "poster": {
     "eyebrow": "Poster page",
