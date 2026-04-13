@@ -21,7 +21,7 @@ export default async function Page({ params }: LocalePageProps) {
   const t = await getTranslations("home");
 
   return (
-    <div className="flex min-h-[100dvh] flex-col">
+    <div className="flex min-h-dvh flex-col">
       <Navbar />
       <main className="mx-auto w-full grow">
         <section className="relative flex py-2 flex-col items-center justify-center px-6 text-center">
