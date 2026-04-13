@@ -6,6 +6,8 @@ import { routing } from "@/i18n/routing";
 import { isAppLocale } from "@/schema/i18n";
 import { SubpageControls } from "@/components/layout/SubpageControls";
 import { Slide, slideDeckClassName } from "@/components/presentation/Slide";
+import { SlideIndicators } from "@/components/presentation/SlideIndicators";
+import { SlideKeyboardNavigation } from "@/components/presentation/SlideKeyboardNavigation";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -18,12 +20,23 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
   setRequestLocale(locale);
   const t = await getTranslations("presentation");
+  const deckId = "presentation-deck";
+  const slideItems = [
+    { id: "slide-01", index: 1, title: t("slideOneTitle") },
+    { id: "slide-02", index: 2, title: t("slideTwoTitle") },
+    { id: "slide-03", index: 3, title: t("slideThreeTitle") },
+  ];
 
   return (
-    <section className={`h-[100dvh] overflow-y-auto snap-y snap-mandatory bg-background ${slideDeckClassName}`}>
+    <section
+      id={deckId}
+      className={`h-[100dvh] overflow-y-auto snap-y snap-mandatory bg-background ${slideDeckClassName}`}
+    >
       <SubpageControls />
+      <SlideIndicators deckId={deckId} items={slideItems} />
+      <SlideKeyboardNavigation slideIds={slideItems.map((item) => item.id)} />
 
-      <Slide>
+      <Slide id={slideItems[0].id} index={slideItems[0].index} title={slideItems[0].title}>
         <div className="flex h-full flex-col justify-between">
           <div className="max-w-4xl">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
@@ -58,7 +71,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
         </div>
       </Slide>
 
-      <Slide>
+      <Slide id={slideItems[1].id} index={slideItems[1].index} title={slideItems[1].title}>
         <div className="grid h-full gap-8 md:grid-cols-[0.95fr_1.05fr]">
           <div className="flex flex-col justify-between rounded-[1.5rem] border border-border bg-background/60 p-6">
             <div>
@@ -103,7 +116,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
         </div>
       </Slide>
 
-      <Slide>
+      <Slide id={slideItems[2].id} index={slideItems[2].index} title={slideItems[2].title}>
         <div className="flex h-full flex-col justify-between">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">

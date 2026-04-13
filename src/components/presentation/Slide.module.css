@@ -1,9 +1,5 @@
 /* @file: src/components/presentation/Slide.module.css */
 
-.deck {
-  counter-reset: slide;
-}
-
 .slide {
   min-height: 100dvh;
   scroll-snap-align: start;
@@ -11,28 +7,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(2rem, 5vw, 6rem);
+  padding: clamp(1.35rem, 3.35vw, 4rem);
+  position: relative;
+}
+
+.backgroundNumber {
+  position: absolute;
+  right: clamp(1.4rem, 3vw, 2.5rem);
+  bottom: clamp(0.4rem, 1.6vw, 1.25rem);
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: hsl(var(--foreground) / 0.16);
+  text-shadow: 0 0 24px hsl(var(--foreground) / 0.06);
+  pointer-events: none;
+  user-select: none;
 }
 
 .frame {
-  counter-increment: slide;
   position: relative;
-  width: min(calc(100vw - clamp(4rem, 10vw, 12rem)), calc((100dvh - clamp(4rem, 10vw, 12rem)) * 16 / 9));
-  max-height: calc(100dvh - clamp(4rem, 10vw, 12rem));
+  width: min(calc(100vw - clamp(2.7rem, 6.7vw, 8rem)), calc((100dvh - clamp(2.7rem, 6.7vw, 8rem)) * 16 / 9));
+  max-height: calc(100dvh - clamp(2.7rem, 6.7vw, 8rem));
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border: 1px solid hsl(var(--border));
-  border-radius: 2rem;
-  background:
-    radial-gradient(circle at top right, hsl(var(--accent) / 0.14), transparent 30%),
-    linear-gradient(180deg, hsl(var(--card)), hsl(var(--background)));
-  box-shadow:
-    0 20px 60px hsl(222 47% 11% / 0.12),
-    inset 0 1px 0 hsl(0 0% 100% / 0.08);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .frame::before {
-  content: counter(slide, decimal-leading-zero);
+  content: none;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
@@ -51,4 +58,42 @@
   width: 100%;
   flex-direction: column;
   padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+@media (max-width: 767px) {
+  .deck {
+    scroll-snap-type: none;
+  }
+
+  .slide {
+    min-height: auto;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    display: block;
+    padding: 1rem;
+  }
+
+  .backgroundNumber {
+    right: 0.75rem;
+    bottom: 0.25rem;
+    font-size: clamp(3.25rem, 14vw, 5rem);
+    color: hsl(var(--foreground) / 0.13);
+  }
+
+  .frame {
+    width: 100%;
+    max-height: none;
+    aspect-ratio: auto;
+    border-radius: 0;
+  }
+
+  .frame::before {
+    content: none;
+  }
+
+  .content {
+    height: auto;
+    min-height: 0;
+    padding: 1.25rem;
+  }
 }
