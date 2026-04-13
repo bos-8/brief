@@ -1,280 +1,32 @@
 {
-  "Metadata": {
-    "title": "Brief | Password Reset Security",
-    "description": "Bilingual landing page, interactive slide deck and PDF-ready print mode for a presentation about password reset security."
-  },
-  "HomePage": {
-    "eyebrow": "Interactive deck",
-    "title": "Password reset security as a premium full-screen presentation.",
-    "lead": "The landing page leads directly into a slide deck without vertical scroll. Every slide has its own URL, dedicated language and theme controls, plus a printable PDF-friendly version.",
-    "startPresentation": "Open presentation",
-    "deckLabel": "Deck preview",
-    "slideCount": "{count} slides in interactive mode",
-    "languageSwitcherLabel": "Language switcher",
-    "themeToggle": "Toggle theme",
-    "backToLanguage": "Language entry"
-  },
-  "Presentation": {
-    "backHome": "Home",
-    "previous": "Previous",
-    "next": "Next",
-    "languageSwitcherLabel": "Presentation language switcher",
-    "themeToggle": "Toggle theme",
-    "deckBadgeLabel": "Interactive deck",
-    "deckBadgeTitle": "Password Reset Security",
-    "deckModeLabel": "cyber security lecture mode",
-    "dotNavigationLabel": "Slide navigation",
-    "statusLabel": "Current slide",
-    "hintLabel": "Keys: ← → ↑ ↓ PageUp PageDown Home End",
-    "progress": "Slide {current} of {total}",
-    "printLabel": "PDF / print",
-    "printPageTitle": "Password Reset Security | Print version",
-    "printPageDescription": "PDF-ready print version of the password reset security presentation.",
-    "backToPresentation": "Back to presentation",
-    "printNowLabel": "Print to PDF",
-    "slides": {
-      "intro": {
-        "eyebrow": "⚡ Interactive presentation for students",
-        "title": "Secure password reset",
-        "summary": "Password reset is not just a support feature. It is an alternative path to account access, so the entire flow must be protected as rigorously as the standard login process. This presentation explains what the attack looks like, what happens behind the scenes and how to build a secure recovery mechanism correctly.",
-        "sideNote": "Navigation works through dots, buttons and the keyboard, and every move updates the URL to the current slide. A PDF-ready print version is available from the top control dock.",
-        "chips": [
-          { "text": "Account enumeration" },
-          { "text": "Timing attacks" },
-          { "text": "Mass abuse" },
-          { "text": "MFA and phishing" }
-        ],
-        "heroNodes": ["Email", "Token", "MFA", "Audit"]
-      },
-      "critical": {
-        "eyebrow": "Step 0 · business importance",
-        "title": "Password reset is alternative login",
-        "summary": "For an attacker, the recovery module is another gateway into the account. If that path is protected less rigorously than standard login, the entire security model becomes uneven and predictable.",
-        "accentNote": "When designing password reset, treat it as a second authentication process rather than a convenience add-on.",
-        "panel": {
-          "eyebrow": "Why this matters",
-          "title": "Most common consequences of weak design"
-        },
-        "bulletItems": [
-          "Account takeover without knowing the old password.",
-          "Building a list of real users for follow-up attacks.",
-          "Phishing campaigns that exploit the natural urge to click a reset link.",
-          "Operational chaos, spam and additional pressure on the support team."
-        ]
-      },
-      "flow": {
-        "eyebrow": "Step 1 · secure flow",
-        "title": "How a secure password reset should work",
-        "summary": "The user enters an email address, the system responds consistently regardless of the outcome and, if the account exists, a one-time reset link is created. The user then sets a new password and the application safely updates the stored data and reports the change.",
-        "accentNote": "Input should be validated and processed as rigorously as in the registration form.",
-        "flowItems": [
-          "The user submits an email address in the password reset form.",
-          "The system returns the same generic message for every request.",
-          "For an existing account, a random one-time reset token is created.",
-          "A secure HTTPS link is sent to the email address and leads to the password change page.",
-          "The user submits a new password that meets the security policy.",
-          "The server stores the new password hash, invalidates the token and completes the flow.",
-          "The user receives a confirmation and logs in with the new password."
-        ]
-      },
-      "threat-surface": {
-        "eyebrow": "Step 2 · where the attacker strikes",
-        "title": "Attack surface of the password reset module",
-        "summary": "The attack does not happen in one place only. An attacker can target the form, the server response, the token, the mailbox, the password change page, the user session or the monitoring process itself.",
-        "cards": [
-          { "accent": "cyan", "icon": "🧾", "title": "Form", "body": "Email input, validation, messages, rate limiting and protection against automation." },
-          { "accent": "violet", "icon": "🧠", "title": "Backend", "body": "Account lookup, token generation, database writes and email delivery queues." },
-          { "accent": "amber", "icon": "📨", "title": "Mail", "body": "Delivery, sender reputation, phishing exposure and possible mailbox compromise." },
-          { "accent": "red", "icon": "🔗", "title": "Reset link", "body": "Expiry, one-time use, correct domain and preventing leaks through analytics or referrers." },
-          { "accent": "emerald", "icon": "🧬", "title": "New password", "body": "Quality policy, weak password blocking, secure hashing and session invalidation." },
-          { "accent": "cyan", "icon": "📊", "title": "Monitoring", "body": "Abuse detection, alerts, event correlation and a response path for incidents." }
-        ]
-      },
-      "enumeration": {
-        "eyebrow": "Step 3 · the attacker starts with discovery",
-        "title": "User account enumeration",
-        "summary": "The attacker does not need the password yet. It is enough to test which email addresses exist in the system. If the application behaves differently for a valid and an invalid account, a list of real users can be built.",
-        "accentNote": "This is very often a preparation phase for phishing, brute force and credential stuffing.",
-        "cards": [
-          { "accent": "red", "icon": "⚠", "title": "How the attack works", "body": "A script submits many requests with different email addresses and compares the responses returned by the application." },
-          { "accent": "cyan", "icon": "🧪", "title": "What leaks data", "body": "Different messages, different HTTP codes, an extra UI element or even response time differences can reveal whether an account exists." },
-          { "accent": "amber", "icon": "🎯", "title": "Why it matters", "body": "A verified user list significantly increases the effectiveness of later phishing campaigns and automated attacks." }
-        ]
-      },
-      "timing": {
-        "eyebrow": "Step 4 · hidden threat behind the scenes",
-        "title": "Timing attack",
-        "summary": "Even if the application shows the same message for every user, it may still leak information through response time. The attacker no longer looks only at the text — they analyse milliseconds and infer whether the account exists.",
-        "accentNote": "This attack is harder to notice because everything appears correct to a normal user.",
-        "cards": [
-          { "accent": "violet", "icon": "⏱", "title": "Behind the scenes", "body": "For an existing account, the backend often performs more work: user lookup, token generation, database write, email preparation or queueing. For a non-existing account the path may be shorter." },
-          { "accent": "cyan", "icon": "📡", "title": "Defensive impact", "body": "When those differences are repeatable, an attacker can make hundreds of attempts and statistically infer which addresses are real. Defence requires consistent execution paths and similar response times." }
-        ]
-      },
-      "abuse": {
-        "eyebrow": "Step 5 · abuse through automation",
-        "title": "Mass attacks and reset form abuse",
-        "summary": "The password reset form can be used not only for recovery, but also to spam users, guess codes, flood mailboxes or trigger a large number of server-side operations.",
-        "accentNote": "The reset endpoint must be protected as seriously as login and registration.",
-        "metrics": [
-          { "label": "Attack goal", "value": "Spam and operational disruption" },
-          { "label": "Tooling", "value": "Bots and scripts" },
-          { "label": "First line of defence", "value": "Rate limiting" },
-          { "label": "Second line of defence", "value": "Anomaly monitoring" }
-        ]
-      },
-      "token": {
-        "eyebrow": "Step 6 · access control in the link",
-        "title": "Secure reset link and reset token",
-        "summary": "A password reset link is effectively a temporary key to the account. If the token is predictable, lives too long or can be reused, the whole mechanism becomes a weak point.",
-        "accentNote": "The token should be strongly random, single-use and valid only for a short period of time.",
-        "panel": {
-          "eyebrow": "Checklist",
-          "title": "Requirements for a secure token"
-        },
-        "bulletItems": [
-          "The link works only over HTTPS and points to the real application domain.",
-          "The token is generated cryptographically and has high entropy.",
-          "Each token can be used only once and expires quickly.",
-          "The URL must not contain predictable identifiers or data that helps guess the token.",
-          "On the server side, store the token as a hash rather than plain text whenever possible.",
-          "The reset page should not load unnecessary third-party scripts or leak the token any further."
-        ]
-      },
-      "backend": {
-        "eyebrow": "Step 7 · server architecture",
-        "title": "What the backend and the database must do",
-        "summary": "Password reset security does not end at the form. The most important operations happen on the server: token storage, password hash updates, session invalidation and audit trail creation.",
-        "cards": [
-          {
-            "accent": "cyan",
-            "icon": "🗄",
-            "title": "Data layer",
-            "body": "Store the reset token in the database as a hash. Keep the expiry time, usage state and link to the account. After use, the token must be invalidated immediately.",
-            "tags": ["token hash", "expires_at", "used_at"]
-          },
-          {
-            "accent": "emerald",
-            "icon": "🔒",
-            "title": "Password and sessions",
-            "body": "Store the new password safely, ideally with Argon2id. After a password change, consider invalidating active sessions and refresh tokens to cut off potentially hijacked logins.",
-            "tags": ["Argon2id", "session invalidation", "logout all"]
-          }
-        ]
-      },
-      "mfa": {
-        "eyebrow": "Step 8 · user and organisation protection",
-        "title": "Two-factor verification and phishing resistance",
-        "summary": "A reset email alone is not sufficient protection. An attacker can impersonate the organisation, send a fake link or trick the user into visiting a cloned page. That is why password reset must not bypass MFA.",
-        "accentNote": "The more sensitive the account, the stronger the additional identity verification should be.",
-        "columns": [
-          {
-            "accent": "red",
-            "icon": "⚠",
-            "title": "Threat",
-            "items": [
-              "Fake emails containing a password reset link.",
-              "Cloned login pages that look like the real application.",
-              "Impersonation of the organisation domain plus urgency to trigger a quick click."
-            ]
-          },
-          {
-            "accent": "emerald",
-            "icon": "🧬",
-            "title": "Defence",
-            "items": [
-              "MFA or step-up verification for high-risk accounts.",
-              "SPF, DKIM and DMARC on the sending domain.",
-              "A consistent email design and clear warnings for end users."
-            ]
-          }
-        ]
-      },
-      "mail": {
-        "eyebrow": "Step 9 · communication layer",
-        "title": "How to secure the reset email",
-        "summary": "Even a strong token will not help if the user cannot tell the real email from a fake one. The mail layer must support both technical security and visual trust.",
-        "cards": [
-          {
-            "accent": "amber",
-            "icon": "📨",
-            "title": "What to implement",
-            "body": "Configure SPF, DKIM and DMARC, use a stable sender domain, sign messages and keep the email content limited to the minimum required for action.",
-            "tags": ["SPF", "DKIM", "DMARC", "brand consistency"]
-          },
-          {
-            "accent": "cyan",
-            "icon": "👁",
-            "title": "What to show the user",
-            "body": "Use clear wording that the organisation never asks for the old password by email, highlight the correct domain and explain what to do when the user did not request the reset.",
-            "tags": ["anti-phishing copy", "safe domain", "user guidance"]
-          }
-        ]
-      },
-      "monitoring": {
-        "eyebrow": "Step 10 · incident detection",
-        "title": "Event logging, alerting and response",
-        "summary": "Even the best protected process has to be observed. Monitoring helps detect enumeration campaigns, unusual request volumes, waves of resets for one user and attempts to reuse expired tokens.",
-        "cards": [
-          { "accent": "cyan", "icon": "📋", "title": "Log", "body": "Reset requests, token generation, link usage, password changes, validation errors and rate limit events." },
-          { "accent": "red", "icon": "🚨", "title": "Alert", "body": "Many attempts from one IP, repeated resets for one account, sharp volume spikes and geographic anomalies." },
-          { "accent": "emerald", "icon": "🧭", "title": "Respond", "body": "Temporary blocking, additional challenge, escalation to SOC or administrators and automatic user notification." }
-        ]
-      },
-      "antipatterns": {
-        "eyebrow": "Step 11 · what not to do",
-        "title": "Common mistakes and anti-patterns",
-        "summary": "Some systems still repeat old mistakes: they reveal account existence, use weak tokens, rely on security questions or send users to unsafe links. Those are exactly the places attackers check first.",
-        "cards": [
-          { "accent": "red", "icon": "❌", "title": "Different messages", "body": "\"This email does not exist\" or \"account blocked\" is ready-made intelligence for an attacker." },
-          { "accent": "red", "icon": "❌", "title": "Long-lived token", "body": "A link that stays valid for many hours or days raises the risk of account takeover after email exposure." },
-          { "accent": "red", "icon": "❌", "title": "Security questions", "body": "Answers such as a pet name or a mother's maiden name are often public, guessable or recoverable from social media." }
-        ]
-      },
-      "architecture": {
-        "eyebrow": "Step 12 · implementation model",
-        "title": "Reference architecture for a secure rollout",
-        "summary": "A good implementation combines frontend, backend, mail delivery, database, monitoring and MFA. Each layer has a specific role and closes gaps left by the others.",
-        "accentNote": "Think in layers: UI, API, storage, messaging, identity and observability.",
-        "cards": [
-          {
-            "accent": "cyan",
-            "icon": "🖥",
-            "title": "Frontend",
-            "body": "A unified message, secure forms, no excess data and a clean password change page."
-          },
-          {
-            "accent": "violet",
-            "icon": "⚙",
-            "title": "API / backend",
-            "body": "Input validation, rate limiting, CSPRNG token generation, token hash storage, password update and session invalidation."
-          },
-          {
-            "accent": "amber",
-            "icon": "📮",
-            "title": "Mail + telemetry",
-            "body": "Message delivery, DMARC, event logging, alerting and anomaly analysis."
-          }
-        ]
-      },
-      "summary": {
-        "eyebrow": "Final · deployment model",
-        "title": "How to build a truly secure password reset",
-        "summary": "The best password reset mechanism does not depend on one single control. It is a layered defence model that combines consistent user messaging, a secure backend, strong tokens, protected email, MFA, abuse monitoring and correct password storage.",
-        "accentNote": "Security layers must work together instead of existing only as checked boxes.",
-        "panel": {
-          "eyebrow": "Final checklist",
-          "title": "Most important rollout rules"
-        },
-        "bulletItems": [
-          "Always return the same message for existing and non-existing accounts.",
-          "Keep response time and server-side execution paths consistent.",
-          "Use rate limiting, CAPTCHA and abuse analysis for abnormal activity.",
-          "Use a strong reset token: one-time, random, short-lived and stored safely.",
-          "Add extra identity verification for sensitive or higher-risk accounts.",
-          "Hash the new password securely and notify the user after the change."
-        ]
-      }
+  "common": {
+    "footer": {
+      "license": "Copyright © {year} BRIEF"
+    },
+    "localeSwitcher": {
+      "label": "Language",
+      "pl": "Polish",
+      "en": "English"
+    },
+    "theme": {
+      "toggle": "Toggle theme",
+      "dark": "Dark",
+      "light": "Light"
+    },
+    "navbar": {
+      "brand": "BRIEF",
+      "home": "Home"
     }
+  },
+  "home": {
+    "title": "BRIEF",
+    "tagline": "Scientific Decks · Bilingual Content · Conference-ready Output",
+    "descriptionLead": "BRIEF is a bilingual presentation system for scientific talks, conference materials, and structured publication-ready delivery.",
+    "descriptionBody": "It supports creating, presenting, and sharing professional slide flows with simple controls and clear localization."
   }
 }
+
+
+
+
+

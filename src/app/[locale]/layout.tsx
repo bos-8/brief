@@ -1,57 +1,37 @@
-// @file: src/app/[locale]/layout.tsx
-import type { Metadata } from "next";
-import DocumentLocaleSync from "@/components/layout/document-locale-sync";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+// @file: apps/web/src/app/[locale]/layout.tsx
+import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import { isValidLocale, routing } from "@/i18n/routing";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import type { LocaleLayoutProps } from "@/schema/app";
+import type { Metadata } from "next";
 
-type LocaleLayoutProps = Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}>;
+export const metadata: Metadata = {
+  title: "BRIEF",
+  description: "BRIEF is a bilingual presentation system for scientific talks and conference materials.",
+  authors: [{ name: "bos-8", url: "https://github.com/bos-8" }],
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const dynamicParams = false;
-
-export async function generateMetadata({
-  params,
-}: Pick<LocaleLayoutProps, "params">): Promise<Metadata> {
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;
 
-  if (!isValidLocale(locale)) {
-    notFound();
-  }
-
-  const t = await getTranslations({ locale, namespace: "Metadata" });
-
-  return {
-    title: t("title"),
-    description: t("description"),
-  };
-}
-
-export default async function LocaleLayout({
-  children,
-  params,
-}: LocaleLayoutProps) {
-  const { locale } = await params;
-
-  if (!isValidLocale(locale)) {
-    notFound();
-  }
+  if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
-
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <DocumentLocaleSync locale={locale} />
-      {children}
+    <NextIntlClientProvider messages={messages}>
+      <Navbar />
+      <main className="grow mx-auto w-full">{children}</main>
+      <Footer />
     </NextIntlClientProvider>
   );
 }
+

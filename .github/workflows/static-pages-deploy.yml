@@ -1,0 +1,67 @@
+name: Static Next.js Pages Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      out_changed: ${{ steps.out-changes.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build static site
+        run: |
+          echo "NEXT_PUBLIC_BASE_PATH=/${{ github.event.repository.name }}" >> "$GITHUB_ENV"
+          pnpm build
+
+      - name: Check out changes
+        id: out-changes
+        run: |
+          # TODO: for repository setups that commit generated /out:
+          #   compare out/ between HEAD and HEAD~1 and set changed=true only when it changed.
+          if git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- out | grep -q .; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+#  deploy:
+#    needs: build
+#    if: github.ref == 'refs/heads/main' && needs.build.outputs.out_changed == 'true'
+#    runs-on: ubuntu-latest
+#    permissions:
+#      pages: write
+#      id-token: write
+#      contents: read
+#    environment:
+#      name: github-pages
+#      url: ${{ steps.deployment.outputs.page_url }}
+#    steps:
+#      - name: Upload artifact
+#        uses: actions/upload-pages-artifact@v3
+#        with:
+#          path: ./out
+#
+#      - name: Deploy to GitHub Pages
+#        id: deployment
+#        uses: actions/deploy-pages@v4

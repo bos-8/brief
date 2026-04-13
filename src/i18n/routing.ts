@@ -1,14 +1,10 @@
 // @file: src/i18n/routing.ts
 import { defineRouting } from "next-intl/routing";
+import { APP_LOCALES, DEFAULT_LOCALE } from "@/schema/i18n";
 
 export const routing = defineRouting({
-  locales: ["pl", "en"],
-  defaultLocale: "pl",
+  locales: [...APP_LOCALES],
+  defaultLocale: DEFAULT_LOCALE,
   localePrefix: "always",
+  localeDetection: true,
 });
-
-export type AppLocale = (typeof routing.locales)[number];
-
-export function isValidLocale(locale: string): locale is AppLocale {
-  return routing.locales.includes(locale as AppLocale);
-}
