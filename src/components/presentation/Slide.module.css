@@ -57,10 +57,10 @@
   height: 100%;
   width: 100%;
   flex-direction: column;
-  padding: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(0.75rem, 1.5vw, 1.5rem);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1279px) {
   .deck {
     scroll-snap-type: none;
   }
@@ -94,6 +94,6 @@
   .content {
     height: auto;
     min-height: 0;
-    padding: 1.25rem;
+    padding: 0.625rem;
   }
 }

@@ -1,0 +1,80 @@
+/* @file: src/components/presentation/PresentationBackdrop.module.css */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 14%, hsl(var(--accent) / 0.1), transparent 22%),
+    radial-gradient(circle at 84% 18%, hsl(var(--foreground) / 0.06), transparent 20%),
+    radial-gradient(circle at 24% 88%, hsl(var(--accent) / 0.08), transparent 18%),
+    linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(circle at center, black 44%, transparent 100%);
+}
+
+.glowLeft,
+.glowRight,
+.glowCenter {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(48px);
+  opacity: 0.22;
+}
+
+.glowLeft {
+  top: 10%;
+  left: 4%;
+  width: 20rem;
+  height: 20rem;
+  background: radial-gradient(circle, hsl(var(--accent) / 0.9), transparent 68%);
+}
+
+.glowRight {
+  right: 2%;
+  bottom: 12%;
+  width: 24rem;
+  height: 24rem;
+  background: radial-gradient(circle, hsl(var(--foreground) / 0.35), transparent 70%);
+}
+
+.glowCenter {
+  left: 42%;
+  top: 36%;
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, hsl(var(--accent) / 0.45), transparent 72%);
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background: linear-gradient(to bottom, hsl(var(--foreground) / 0.06), transparent 3px);
+  background-size: 100% 4px;
+}
+
+@media (max-width: 767px) {
+  .grid {
+    opacity: 0.1;
+    background-size: 2.25rem 2.25rem;
+  }
+
+  .glowLeft,
+  .glowRight,
+  .glowCenter {
+    filter: blur(36px);
+    opacity: 0.16;
+  }
+}

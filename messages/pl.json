@@ -1,7 +1,9 @@
 {
   "common": {
     "footer": {
-      "license": "Copyright © {year} BRIEF"
+      "license": "Copyright © {year} BRIEF",
+      "licenseLink": "LICENCJA",
+      "licenseType": "AGPL v3"
     },
     "localeSwitcher": {
       "label": "Język",
@@ -17,14 +19,28 @@
       "brand": "BRIEF",
       "home": "Strona główna",
       "presentation": "Prezentacja",
-      "poster": "Poster"
+      "poster": "Poster",
+      "notes": "Notatki"
     }
   },
   "home": {
     "title": "BRIEF",
     "tagline": "Prezentacje naukowe · Dwujęzyczna wersja · Gotowość konferencyjna",
     "descriptionLead": "BRIEF to system prezentacji do materiałów naukowych i konferencyjnych z dwujęzyczną obsługą.",
-    "descriptionBody": "Pozwala tworzyć, prezentować i udostępniać profesjonalne decki z prostą obsługą nawigacji oraz spójną lokalizacją."
+    "descriptionBody": "Pozwala tworzyć, prezentować i udostępniać profesjonalne decki z prostą obsługą nawigacji oraz spójną lokalizacją.",
+    "overviewEyebrow": "Przestrzeń prezentacyjna",
+    "overviewTitle": "BRIEF to centrum prezentacji i posterów do komunikacji akademickiej.",
+    "overviewBody": "Łączy pełnoekranowy tryb prezentacji konferencyjnej, notatki prelegenta oraz materiały posterowe w jednym statycznym, przenośnym interfejsie gotowym do GitHub Pages.",
+    "cardsEyebrow": "Dostępne materiały",
+    "presentationCardLabel": "Prezentacja",
+    "presentationCardTitle": "A Rights-Based Governance Framework for AI-Enabled Human Enhancement",
+    "presentationCardBody": "Pełny 15-slajdowy deck poświęcony governance, prawom, ryzykom i operacyjnym ograniczeniom dla AI-enabled human enhancement.",
+    "posterCardLabel": "Plakat",
+    "posterCardTitle": "Ethical and legal aspects of AIgmented HUMANity",
+    "posterCardBody": "Widok posterowy dla tego samego tematu badawczego, przygotowany do zwięzłej, wizualnej prezentacji akademickiej.",
+    "openPresentation": "Prezentacja",
+    "openPoster": "Plakat",
+    "openNotes": "Notatki"
   },
   "presentation": {
     "eyebrow": "Podstrona prezentacji",

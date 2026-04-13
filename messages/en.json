@@ -1,7 +1,9 @@
 {
   "common": {
     "footer": {
-      "license": "Copyright © {year} BRIEF"
+      "license": "Copyright © {year} BRIEF",
+      "licenseLink": "LICENSE",
+      "licenseType": "AGPL v3"
     },
     "localeSwitcher": {
       "label": "Language",
@@ -17,14 +19,28 @@
       "brand": "BRIEF",
       "home": "Home",
       "presentation": "Presentation",
-      "poster": "Poster"
+      "poster": "Poster",
+      "notes": "Notes"
     }
   },
   "home": {
     "title": "BRIEF",
     "tagline": "Scientific Decks · Bilingual Content · Conference-ready Output",
     "descriptionLead": "BRIEF is a bilingual presentation system for scientific talks, conference materials, and structured publication-ready delivery.",
-    "descriptionBody": "It supports creating, presenting, and sharing professional slide flows with simple controls and clear localization."
+    "descriptionBody": "It supports creating, presenting, and sharing professional slide flows with simple controls and clear localization.",
+    "overviewEyebrow": "Presentation workspace",
+    "overviewTitle": "BRIEF is a presentation and poster hub for academic communication.",
+    "overviewBody": "It brings together a full-screen conference presentation mode, speaker notes, and poster-oriented materials in one static, portable, GitHub Pages-ready interface.",
+    "cardsEyebrow": "Available materials",
+    "presentationCardLabel": "Presentation",
+    "presentationCardTitle": "A Rights-Based Governance Framework for AI-Enabled Human Enhancement",
+    "presentationCardBody": "A full 15-slide deck focused on governance, rights, risk, and operational constraints for AI-enabled human enhancement.",
+    "posterCardLabel": "Poster",
+    "posterCardTitle": "Ethical and legal aspects of AIgmented HUMANity",
+    "posterCardBody": "A poster-oriented view for the same research theme, prepared for concise, visual academic presentation.",
+    "openPresentation": "Presentation",
+    "openPoster": "Poster",
+    "openNotes": "Notes"
   },
   "presentation": {
     "eyebrow": "Presentation page",
