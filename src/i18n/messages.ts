@@ -1,5 +1,5 @@
 // @file: apps/web/src/i18n/messages.ts
-import { FALLBACK_LOCALE, type AppLocale, type MessageNamespace } from "@/schema/i18n";
+import { FALLBACK_LOCALE, type AppLocale, type MessageNamespace } from "../schema/i18n";
 
 type MessagesObject = Record<string, unknown>;
 

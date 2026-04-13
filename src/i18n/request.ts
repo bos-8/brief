@@ -5,8 +5,8 @@ import {
   GLOBAL_MESSAGE_NAMESPACES,
   isAppLocale,
   type AppLocale,
-} from "@/schema/i18n";
-import { loadMergedMessages } from "@/i18n/messages";
+} from "../schema/i18n";
+import { loadMergedMessages } from "./messages";
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const resolvedRequestLocale = await requestLocale;
