@@ -79,6 +79,19 @@ pnpm build
 
 The production build generates static output in `out/`.
 
+## Deployment
+
+GitHub Pages is deployed from GitHub Actions:
+
+- manual only: use **Actions → Deploy static content to Pages → Run workflow**.
+- automatic deploy on `main` push is currently disabled.
+
+Local workflow behavior:
+- uses Node 22 on `ubuntu-latest`,
+- installs dependencies with pnpm via `corepack`,
+- builds static site with `pnpm build`,
+- deploys `out/` to GitHub Pages.
+
 ## Content Ownership
 
 Presentation structure is split across three layers:
