@@ -7,10 +7,6 @@ import { LocaleSwitcher } from "@/components/ui/LocaleSwitcher";
 import { NavbarLinks } from "@/components/layout/NavbarLinks";
 import type { NavItem } from "@/schema/navigation";
 
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH?.replace(/\/$/, "") ?? "";
-const logoSrc =
-  `${BASE_PATH ? (BASE_PATH.startsWith("/") ? BASE_PATH : `/${BASE_PATH}`) : ""}/logo.png`;
-
 type NavbarProps = {
 };
 
@@ -23,7 +19,7 @@ export async function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-2">
         <div className="flex items-center gap-6">
           <Link href="/" className="inline-flex items-center" aria-label={t("brand")}>
-            <Image src={logoSrc} alt="" width={132} height={54} priority className="h-8 w-auto object-contain" />
+            <Image src="/logo.png" alt="" width={132} height={54} priority className="h-8 w-auto object-contain" />
           </Link>
 
           <NavbarLinks items={navItems} />
