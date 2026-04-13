@@ -6,7 +6,7 @@ export type AppLocale = (typeof APP_LOCALES)[number];
 export const DEFAULT_LOCALE: AppLocale = "pl";
 export const FALLBACK_LOCALE: AppLocale = "en";
 
-export const GLOBAL_MESSAGE_NAMESPACES = ["common", "home"] as const;
+export const GLOBAL_MESSAGE_NAMESPACES = ["common", "home", "presentation", "poster"] as const;
 export type GlobalMessageNamespace = (typeof GLOBAL_MESSAGE_NAMESPACES)[number];
 export type MessageNamespace = GlobalMessageNamespace;
 

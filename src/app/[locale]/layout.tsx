@@ -3,8 +3,6 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import type { LocaleLayoutProps } from "@/schema/app";
 import type { Metadata } from "next";
 
@@ -28,9 +26,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <Navbar />
       <main className="grow mx-auto w-full">{children}</main>
-      <Footer />
     </NextIntlClientProvider>
   );
 }

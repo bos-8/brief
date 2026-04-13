@@ -15,7 +15,9 @@
     },
     "navbar": {
       "brand": "BRIEF",
-      "home": "Strona główna"
+      "home": "Strona główna",
+      "presentation": "Prezentacja",
+      "poster": "Poster"
     }
   },
   "home": {
@@ -23,5 +25,17 @@
     "tagline": "Prezentacje naukowe · Dwujęzyczna wersja · Gotowość konferencyjna",
     "descriptionLead": "BRIEF to system prezentacji do materiałów naukowych i konferencyjnych z dwujęzyczną obsługą.",
     "descriptionBody": "Pozwala tworzyć, prezentować i udostępniać profesjonalne decki z prostą obsługą nawigacji oraz spójną lokalizacją."
+  },
+  "presentation": {
+    "eyebrow": "Podstrona prezentacji",
+    "title": "System prezentacji BRIEF",
+    "lead": "Ta sekcja służy do pokazania pojedynczej prezentacji, jej kontekstu oraz podstawowych informacji dla odbiorcy.",
+    "description": "Możesz tu umieścić deck konferencyjny, opis wystąpienia, streszczenie oraz odnośniki do materiałów pomocniczych. Układ pozostaje prosty, statyczny i gotowy do publikacji na GitHub Pages."
+  },
+  "poster": {
+    "eyebrow": "Podstrona posteru",
+    "title": "Poster naukowy",
+    "lead": "Ta sekcja służy do prezentacji posteru konferencyjnego w czytelnej, statycznej formie internetowej.",
+    "description": "Możesz tu dodać skrót badań, główne wyniki, autorów, afiliacje oraz materiały pomocnicze. Układ pozostaje lekki i zgodny ze statycznym deploymentem."
   }
 }

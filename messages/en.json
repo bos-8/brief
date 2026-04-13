@@ -15,7 +15,9 @@
     },
     "navbar": {
       "brand": "BRIEF",
-      "home": "Home"
+      "home": "Home",
+      "presentation": "Presentation",
+      "poster": "Poster"
     }
   },
   "home": {
@@ -23,6 +25,18 @@
     "tagline": "Scientific Decks · Bilingual Content · Conference-ready Output",
     "descriptionLead": "BRIEF is a bilingual presentation system for scientific talks, conference materials, and structured publication-ready delivery.",
     "descriptionBody": "It supports creating, presenting, and sharing professional slide flows with simple controls and clear localization."
+  },
+  "presentation": {
+    "eyebrow": "Presentation page",
+    "title": "BRIEF presentation system",
+    "lead": "This section is intended to present a single deck, its context, and the essential information for the audience.",
+    "description": "You can place a conference presentation, talk summary, abstract, and supporting references here. The layout stays simple, static, and ready for GitHub Pages deployment."
+  },
+  "poster": {
+    "eyebrow": "Poster page",
+    "title": "Scientific poster",
+    "lead": "This section is intended to present a conference poster in a clear static web format.",
+    "description": "You can place the research summary, key findings, authors, affiliations, and supporting references here. The layout remains lightweight and compatible with static deployment."
   }
 }
 

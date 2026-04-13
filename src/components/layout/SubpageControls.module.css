@@ -1,0 +1,31 @@
+/* @file: src/components/layout/SubpageControls.module.css */
+
+.container {
+  position: fixed;
+  top: .5rem;
+  right: .5rem;
+  z-index: 30;
+  opacity: 0.28;
+  transition: opacity 150ms ease;
+}
+
+.container:hover {
+  opacity: 1;
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.75rem;
+  background: hsl(var(--background) / 0.01);
+  padding: 0.5rem;
+  box-shadow: 0 1px 2px hsl(222 47% 11% / 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.homeButtonLink {
+  display: inline-flex;
+  text-decoration: none;
+}
