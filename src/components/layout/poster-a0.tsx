@@ -33,16 +33,11 @@ const regulations = [
   },
 ];
 
-const contributions = [
+const contributionScope = [
   "Defines AIgmented HUMANity as a near-term synthesis of AI with mechanical and biological enhancement.",
-  "Connects ethical risks with enforceable legal safeguards instead of treating them as symbolic principles.",
-  "Operationalizes compliance-by-design as measurable AI system requirements.",
-];
-
-const scopePoints = [
-  "Conceptual and methodological contribution.",
-  "Risk-to-control mapping for evaluating AI-driven enhancement systems.",
-  "Foundation for reference architectures, bias evaluation, and compliance metrics.",
+  "Provides a compliance-by-design evaluation framework, not a single product implementation.",
+  "Maps ethical and legal risks to system-level controls.",
+  "Creates a basis for reference architectures, bias evaluation, and compliance metrics.",
 ];
 
 const dataRightsScenarios = [
@@ -137,6 +132,9 @@ export default function PosterA0() {
               Ethical and legal aspects of <br />
               <span className={styles.titleStrong}>AIgmented HUMANity</span>
             </h1>
+            <p className={styles.subtitle}>
+              A compliance-by-design framework for AI-driven human enhancement systems
+            </p>
             <p className={styles.authors}>
               Nikolas Jerzy Feduniewicz, Kacper Boś, Anna Bryniarska
             </p>
@@ -164,27 +162,11 @@ export default function PosterA0() {
             <section className={styles.card}>
               <h2 className={styles.sectionTitle}>
                 <span className={styles.titleBar} aria-hidden="true" />
-                Article Contribution
+                Contribution & Scope
               </h2>
               <ul className={styles.contributionList}>
-                {contributions.map((item) => (
+                {contributionScope.map((item) => (
                   <li className={styles.contributionItem} key={item}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section className={styles.scopeCard}>
-              <h2 className={styles.scopeTitle}>Scope of the Work</h2>
-              <p className={styles.scopeLead}>
-                The contribution is a compliance-by-design evaluation framework
-                for AI-driven enhancement systems, not a single product
-                implementation.
-              </p>
-              <ul className={styles.scopeList}>
-                {scopePoints.map((item) => (
-                  <li className={styles.scopeItem} key={item}>
                     {item}
                   </li>
                 ))}
@@ -238,6 +220,10 @@ export default function PosterA0() {
                   </li>
                 ))}
               </ul>
+              <p className={styles.regulatoryNote}>
+                Outside the EU, protections remain fragmented, especially for
+                insurance and direct-to-consumer genetic services.
+              </p>
             </section>
 
             <section className={styles.dataRightsCard}>
@@ -255,7 +241,9 @@ export default function PosterA0() {
             </section>
 
             <section className={styles.frameworkCard}>
-              <h2 className={styles.frameworkTitle}>Compliance-by-Design Framework</h2>
+              <h2 className={styles.frameworkTitle}>
+                Main Result: Compliance-by-Design Framework
+              </h2>
               <p className={styles.frameworkLead}>
                 System-level mapping of ethical risks to control mechanisms, based
                 on Table 1.
@@ -313,10 +301,9 @@ export default function PosterA0() {
           <div className={styles.conclusion}>
             <h2 className={styles.footerTitle}>Conclusion</h2>
             <p className={styles.footerText}>
-              AI-driven human enhancement must be treated as a system design problem.
-              Governance requirements cannot be external constraints, but must be
-              embedded directly into AI architectures through enforceable mechanisms
-              across the AI lifecycle.
+              AI-driven human enhancement should be governed as an architecture
+              problem: ethical and legal safeguards must be embedded into data,
+              model, decision, and monitoring layers.
             </p>
           </div>
           <address className={styles.contact}>
@@ -326,7 +313,7 @@ export default function PosterA0() {
             <p className={styles.referencesText}>
               Citation numbers follow the full paper bibliography. Key refs:
               IHL [1, 19], GDPR [8], EHDS [6], WHO [23], genomic risk [12-14,
-              24, 25], bias [15, 16, 31].
+              24, 25], bias [15, 16, 31]. Full bibliography in the paper.
             </p>
           </address>
         </footer>
