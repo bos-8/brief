@@ -14,6 +14,10 @@
     "themeToggle": "Toggle theme",
     "backToLanguage": "Language entry"
   },
+  "Poster": {
+    "pageTitle": "AIgmented HUMANity | Scientific poster",
+    "pageDescription": "A0 scientific poster about ethical and legal aspects of AIgmented HUMANity."
+  },
   "Presentation": {
     "backHome": "Home",
     "previous": "Previous",
