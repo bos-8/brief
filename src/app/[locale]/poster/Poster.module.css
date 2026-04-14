@@ -1,0 +1,397 @@
+/* @file: src/app/[locale]/poster/Poster.module.css */
+
+.page {
+  min-height: 100dvh;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at top left, hsl(var(--accent) / 0.1), transparent 22%),
+    linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted) / 0.45));
+}
+
+.poster {
+  --poster-surface: rgba(255, 255, 255, 0.96);
+  --poster-surface-soft: rgba(255, 255, 255, 0.82);
+  --poster-border: rgba(16, 32, 61, 0.1);
+  --poster-border-strong: rgba(16, 32, 61, 0.16);
+  --poster-text: #10203d;
+  --poster-text-soft: rgba(16, 32, 61, 0.8);
+  --poster-text-muted: rgba(16, 32, 61, 0.58);
+  --poster-accent: #0d7f8b;
+  --poster-accent-2: #16346d;
+  --poster-risk: #9b6a1c;
+  --poster-shadow: 0 30px 80px rgba(16, 32, 61, 0.16);
+  width: min(100%, 92rem);
+  max-width: calc((100dvh - 4rem) * 841 / 1189 + 22rem);
+  margin: 0 auto;
+  background: var(--poster-surface);
+  color: var(--poster-text);
+  border: 1px solid var(--poster-border);
+  border-radius: 2rem;
+  box-shadow: var(--poster-shadow);
+  padding: 2.5rem;
+  container-type: inline-size;
+}
+
+.layout {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-rows: auto auto auto auto auto auto;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 1.5rem;
+  align-items: start;
+  min-height: 0;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.title {
+  font-size: clamp(3rem, 4.4cqw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: var(--poster-text);
+}
+
+.accentAi {
+  color: var(--poster-accent);
+}
+
+.accentHuman {
+  color: var(--poster-accent-2);
+}
+
+.subtitle {
+  max-width: 46rem;
+  font-size: clamp(1.2rem, 1.45cqw, 1.8rem);
+  line-height: 1.55;
+  color: var(--poster-text-soft);
+}
+
+.authors,
+.affiliation {
+  font-size: clamp(1.02rem, 1.08cqw, 1.35rem);
+  line-height: 1.65;
+  color: var(--poster-text-soft);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.25rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--poster-border);
+  background: color-mix(in srgb, var(--poster-accent) 8%, transparent);
+  color: var(--poster-text-soft);
+  font-size: clamp(0.74rem, 0.76cqw, 0.96rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.logoArea {
+  justify-self: end;
+  width: 100%;
+  max-width: 15rem;
+  min-height: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--poster-border-strong);
+  border-radius: 1.5rem;
+  background: color-mix(in srgb, var(--poster-accent-2) 5%, transparent);
+  text-align: center;
+  font-size: clamp(0.78rem, 0.82cqw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--poster-text-muted);
+}
+
+.summaryRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.summaryCard,
+.sectionCard,
+.footerCard {
+  border: 1px solid var(--poster-border);
+  border-radius: 1.5rem;
+  background: var(--poster-surface-soft);
+  padding: 1.35rem;
+}
+
+.summaryCard h3,
+.sectionCard h3,
+.framework h3,
+.footerCard h3 {
+  font-size: clamp(1.2rem, 1.18cqw, 1.52rem);
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--poster-text);
+}
+
+.summaryCard p,
+.sectionCard p,
+.footerCard p,
+.bulletList li,
+.frameworkNote,
+.miniFlow span,
+.miniDiagramCaption {
+  margin-top: 0.65rem;
+  font-size: clamp(1rem, 0.98cqw, 1.22rem);
+  line-height: 1.65;
+  color: var(--poster-text-soft);
+}
+
+.topRow,
+.bottomRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.sectionNo {
+  display: inline-flex;
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.78rem, 0.74cqw, 0.96rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--poster-accent);
+}
+
+.bulletList {
+  margin-top: 0.25rem;
+  padding-left: 1.1rem;
+}
+
+.bulletList li {
+  margin-top: 0.55rem;
+}
+
+.miniDiagram {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.miniDiagramRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.miniBox,
+.flowStep,
+.riskRow,
+.frameworkInput,
+.frameworkLayer,
+.frameworkOutput {
+  border: 1px solid var(--poster-border);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--poster-text) 3%, transparent);
+  padding: 1rem;
+}
+
+.miniBox strong,
+.flowStep strong,
+.riskRow strong,
+.frameworkInput strong,
+.frameworkLayer strong,
+.frameworkOutput strong {
+  display: block;
+  font-size: clamp(0.94rem, 0.94cqw, 1.16rem);
+  line-height: 1.3;
+  font-weight: 800;
+  color: var(--poster-text);
+}
+
+.miniDiagramCaption {
+  text-align: center;
+  font-weight: 700;
+  color: var(--poster-accent);
+}
+
+.framework {
+  border: 1px solid var(--poster-border);
+  border-radius: 1.75rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--poster-accent) 6%, transparent),
+    color-mix(in srgb, var(--poster-surface) 94%, transparent)
+  );
+  padding: 1.5rem;
+}
+
+.frameworkGrid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 0.9fr 1.5fr 0.9fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.frameworkColumn {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.frameworkLayers {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.frameworkLayer {
+  background: color-mix(in srgb, var(--poster-accent) 8%, transparent);
+}
+
+.frameworkNote {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--poster-accent-2);
+}
+
+.miniFlow {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.flowStep {
+  text-align: center;
+}
+
+.riskTable {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.riskRow {
+  display: grid;
+  grid-template-columns: 0.95fr auto 1.35fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.arrow {
+  font-size: clamp(1rem, 0.96cqw, 1.2rem);
+  font-weight: 900;
+  color: var(--poster-accent);
+  text-align: center;
+}
+
+.closing {
+  margin-top: 1rem;
+  font-size: clamp(1.18rem, 1.16cqw, 1.6rem);
+  line-height: 1.45;
+  font-weight: 900;
+  color: var(--poster-accent-2);
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 0.75fr 0.9fr 1.35fr;
+  gap: 1rem;
+}
+
+.qrBox {
+  width: 7.5rem;
+  height: 7.5rem;
+  min-width: 5rem;
+  min-height: 5rem;
+  border: 1px dashed var(--poster-border-strong);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--poster-text) 3%, transparent);
+  font-size: clamp(0.72rem, 0.72cqw, 0.95rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--poster-text-muted);
+}
+
+.references {
+  margin-top: 0.7rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.references li {
+  font-size: clamp(0.92rem, 0.88cqw, 1.06rem);
+  line-height: 1.55;
+  color: var(--poster-text-soft);
+}
+
+:global(html[data-theme="dark"]) .poster {
+  --poster-surface: rgba(10, 18, 35, 0.96);
+  --poster-surface-soft: rgba(15, 25, 46, 0.86);
+  --poster-border: rgba(193, 213, 255, 0.1);
+  --poster-border-strong: rgba(193, 213, 255, 0.18);
+  --poster-text: #edf4ff;
+  --poster-text-soft: rgba(237, 244, 255, 0.82);
+  --poster-text-muted: rgba(237, 244, 255, 0.48);
+  --poster-accent: #7ce7ff;
+  --poster-accent-2: #9cb8ff;
+  --poster-risk: #ffc975;
+  --poster-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+}
+
+@media (max-width: 1279px) {
+  .page {
+    padding: 1rem;
+  }
+
+  .poster {
+    width: 100%;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+    container-type: normal;
+  }
+
+  .header,
+  .summaryRow,
+  .topRow,
+  .frameworkGrid,
+  .bottomRow,
+  .footer,
+  .miniDiagramRow,
+  .miniFlow {
+    grid-template-columns: 1fr;
+  }
+
+  .riskRow {
+    grid-template-columns: 1fr;
+  }
+
+  .logoArea {
+    justify-self: start;
+    max-width: none;
+  }
+
+  .layout {
+    gap: 1rem;
+    grid-template-rows: none;
+  }
+}
