@@ -1,4 +1,5 @@
 // @file: src/app/[locale]/poster/page.tsx
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import type { LocalePageProps } from "@/schema/app";
@@ -6,6 +7,11 @@ import { routing } from "@/i18n/routing";
 import { isAppLocale } from "@/schema/i18n";
 import { SubpageControls } from "@/components/layout/SubpageControls";
 import styles from "./Poster.module.css";
+
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
+const basePath = repositoryName ? `/${repositoryName}` : "";
+const posterLogoSrc = `${basePath}/logo_politechnika_opolska_en.png`;
+const posterLogoDarkSrc = `${basePath}/logo_politechnika_opolska_en_dark.png`;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -45,7 +51,26 @@ export default async function PosterPage({ params }: LocalePageProps) {
               </div>
             </div>
 
-            <div className={styles.logoArea}>Opole University of Technology logo</div>
+            <div className={styles.logoArea} role="img" aria-label="Opole University of Technology">
+              <Image
+                src={posterLogoSrc}
+                alt=""
+                width={1716}
+                height={397}
+                priority
+                aria-hidden="true"
+                className={`${styles.logoImage} ${styles.logoImageLight}`}
+              />
+              <Image
+                src={posterLogoDarkSrc}
+                alt=""
+                width={1716}
+                height={397}
+                priority
+                aria-hidden="true"
+                className={`${styles.logoImage} ${styles.logoImageDark}`}
+              />
+            </div>
           </header>
 
           <section className={styles.summaryRow}>

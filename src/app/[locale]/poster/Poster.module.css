@@ -114,20 +114,21 @@
 .logoArea {
   justify-self: end;
   width: 100%;
-  max-width: 15rem;
-  min-height: 9rem;
+  max-width: clamp(17rem, 25cqw, 30rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px dashed var(--poster-border-strong);
-  border-radius: var(--radius-2);
-  background: color-mix(in srgb, var(--poster-accent-2) 5%, transparent);
-  text-align: center;
-  font-size: clamp(0.82rem, 0.88cqw, 1.08rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--poster-text-muted);
+}
+
+.logoImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.logoImageDark {
+  display: none;
 }
 
 .summaryRow {
@@ -363,6 +364,14 @@
   --poster-accent-2: #9cb8ff;
   --poster-risk: #ffc975;
   --poster-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+}
+
+:global(html[data-theme="dark"]) .logoImageLight {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .logoImageDark {
+  display: block;
 }
 
 @media (max-width: 1279px) {

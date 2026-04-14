@@ -29,3 +29,9 @@
   display: inline-flex;
   text-decoration: none;
 }
+
+@media print {
+  .container {
+    display: none;
+  }
+}

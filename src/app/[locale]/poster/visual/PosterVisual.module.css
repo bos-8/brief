@@ -1,0 +1,903 @@
+/* @file: src/app/[locale]/poster/visual/PosterVisual.module.css */
+
+.page {
+  min-height: 100dvh;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at top left, hsl(var(--accent) / 0.1), transparent 22%),
+    linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted) / 0.45));
+}
+
+.printPage {
+  padding: 0;
+  background: #ffffff;
+}
+
+.poster {
+  --surface: rgba(255, 255, 255, 0.96);
+  --surface-soft: rgba(255, 255, 255, 0.82);
+  --surface-strong: #ffffff;
+  --border: rgba(16, 32, 61, 0.1);
+  --border-strong: rgba(16, 32, 61, 0.16);
+  --text: #10203d;
+  --text-soft: rgba(16, 32, 61, 0.8);
+  --text-muted: rgba(16, 32, 61, 0.58);
+  --accent: #0d7f8b;
+  --accent-2: #16346d;
+  --risk: #9b6a1c;
+  width: min(100%, 122rem);
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--text);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 4%, transparent) 1px, transparent 1px),
+    var(--surface);
+  background-size: 2.4rem 2.4rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 30px 80px rgba(16, 32, 61, 0.16);
+  container-type: inline-size;
+}
+
+.printPage .poster {
+  width: 100%;
+  max-width: none;
+  min-height: 100dvh;
+  margin: 0;
+  box-shadow: none;
+}
+
+.layout {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(20rem, 0.82fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.printPage .header {
+  padding: 1.45rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+
+.printPage .titleBlock,
+.printPage .heroPanel {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.printPage .logoArea {
+  min-height: 10rem;
+}
+
+.titleBlock,
+.heroPanel,
+.sectionCard,
+.framework,
+.footerCard,
+.iconRailCard,
+.evidenceStrip {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+
+.titleBlock {
+  padding: 1.45rem;
+}
+
+.versionLabel {
+  font-size: 0.78rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.title {
+  margin-top: 0.55rem;
+  max-width: 64rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 4.9cqw, 4.75rem);
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  color: var(--text);
+}
+
+.accentAi {
+  color: var(--accent);
+}
+
+.accentHuman {
+  color: var(--accent-2);
+}
+
+.subtitle {
+  max-width: 46rem;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  line-height: 1.55;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.authors,
+.affiliation {
+  margin-top: 0.55rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.heroPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 1.45rem;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 13rem;
+}
+
+.logoImage {
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.logoImageDark {
+  display: none;
+}
+
+.summaryRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.iconRailCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: start;
+  padding: 1rem;
+}
+
+.iconShell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  color: var(--accent);
+}
+
+.iconRailCard h4,
+.sectionCard h3,
+.framework h3,
+.footerCard h3 {
+  font-size: 1.2rem;
+  line-height: 1.22;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.iconRailCard p,
+.sectionCard p,
+.footerCard p,
+.frameworkHeader p,
+.legalItem p,
+.flowStep span,
+.references li,
+.bulletList li {
+  margin-top: 0.45rem;
+  font-size: 0.92rem;
+  line-height: 1.58;
+  color: var(--text-soft);
+}
+
+.evidenceStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: hidden;
+}
+
+.statCell {
+  min-height: 6.2rem;
+  display: grid;
+  align-content: center;
+  gap: 0.2rem;
+  padding: 1rem;
+  border-left: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface-strong) 70%, transparent);
+}
+
+.statCell:first-child {
+  border-left: 0;
+}
+
+.statCell strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--accent-2);
+}
+
+.statCell span {
+  min-width: 0;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  color: var(--text-soft);
+}
+
+.topRow,
+.bottomRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.sectionCard {
+  padding: 1rem;
+}
+
+.riskLandscapeCard,
+.framework {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.riskLandscapeCard::before,
+.framework::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--ornament-image);
+  background-repeat: no-repeat;
+  filter: saturate(0.86) contrast(1.04);
+}
+
+.riskLandscapeCard > *,
+.framework > * {
+  position: relative;
+  z-index: 1;
+}
+
+.riskLandscapeCard::before {
+  inset: -1.5rem -1rem auto -1rem;
+  height: 16rem;
+  background-position: center top;
+  background-size: 125% auto;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  filter: saturate(0.9) contrast(1.12);
+  mask-image: linear-gradient(180deg, #000 0%, #000 42%, transparent 100%);
+}
+
+.sectionNo {
+  display: inline-flex;
+  margin-bottom: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+
+.pathwayDiagram {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.pathwayBranch,
+.pathwayCenter,
+.frameworkInput,
+.frameworkLayer,
+.frameworkOutput,
+.flowStep,
+.riskMatrixRow,
+.legalItem {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-strong);
+}
+
+.pathwayBranch,
+.pathwayCenter {
+  min-height: 7.9rem;
+  min-width: 0;
+  display: grid;
+  align-content: center;
+  gap: 0.35rem;
+  padding: 0.7rem;
+  text-align: center;
+}
+
+.pathwayBranch strong,
+.pathwayCenter strong {
+  min-width: 0;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: var(--text);
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.pathwayBranch span,
+.pathwayCenter span {
+  min-width: 0;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: var(--text-soft);
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.pathwayCenter {
+  color: var(--accent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 10%, transparent),
+    color-mix(in srgb, var(--surface-strong) 86%, transparent)
+  );
+}
+
+.riskTriad {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.legalStack {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.legalItem {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: start;
+  padding: 0.7rem;
+}
+
+.legalItem > div {
+  min-width: 0;
+}
+
+.legalIndex {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: var(--risk);
+}
+
+.legalItem svg {
+  color: var(--accent);
+}
+
+.legalItem strong {
+  display: block;
+  min-width: 0;
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  color: var(--text);
+}
+
+.legalItem p,
+.frameworkHeader h3 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.framework {
+  padding: 1.15rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 42%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-strong) 92%, transparent),
+      color-mix(in srgb, var(--surface) 94%, transparent)
+    );
+}
+
+.framework::before {
+  inset: 0.2rem;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.095;
+  mix-blend-mode: multiply;
+  filter: saturate(0.86) contrast(1.12);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 90%, transparent 100%);
+}
+
+.frameworkHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+}
+
+.frameworkBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.8rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  color: var(--risk);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.frameworkGrid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 0.82fr 1.36fr 0.82fr;
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+.frameworkColumn {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.columnLabel {
+  font-size: 0.72rem;
+  line-height: 1.1;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.frameworkInput,
+.frameworkOutput {
+  min-height: 3.3rem;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
+.frameworkInput {
+  border-left: 5px solid var(--accent-2);
+}
+
+.frameworkOutput {
+  border-left: 5px solid var(--risk);
+}
+
+.frameworkCore {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.frameworkLayer {
+  min-height: 4.35rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
+  padding: 0.9rem;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.frameworkLayer span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.frameworkLayer strong {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.operationalFlow {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.75rem, 1fr));
+  gap: 0.55rem;
+}
+
+.flowStep {
+  min-height: 7rem;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.35rem;
+  padding: 0.7rem;
+  text-align: center;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.flowStep svg {
+  color: var(--accent);
+}
+
+.flowStep strong {
+  max-width: 100%;
+  min-width: 0;
+  font-size: 0.88rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  color: var(--text);
+}
+
+.flowStep span {
+  max-width: 8.5rem;
+  min-width: 0;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.riskMatrix {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.riskMatrixRow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.2fr);
+  gap: 0.65rem;
+  align-items: stretch;
+  padding: 0.7rem;
+}
+
+.riskMatrixRow > div {
+  min-width: 0;
+}
+
+.riskMatrixRow > div:first-child {
+  border-right: 1px solid var(--border);
+  padding-right: 0.65rem;
+}
+
+.riskMatrixRow span {
+  display: block;
+  font-size: 0.68rem;
+  line-height: 1.2;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.riskMatrixRow strong {
+  display: block;
+  margin-top: 0.3rem;
+  min-width: 0;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  color: var(--text);
+}
+
+.riskMatrixRow p {
+  margin: 0;
+  min-width: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  color: var(--text-soft);
+}
+
+.riskMatrixRow > div:last-child {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: start;
+}
+
+.toneData {
+  border-left: 5px solid var(--accent-2);
+}
+
+.toneModel {
+  border-left: 5px solid var(--accent);
+}
+
+.toneDecision {
+  border-left: 5px solid var(--risk);
+}
+
+.toneGovernance {
+  border-left: 5px solid var(--accent-2);
+}
+
+.bulletList {
+  margin-top: 0.45rem;
+  padding-left: 1rem;
+}
+
+.bulletList li {
+  margin-top: 0.45rem;
+}
+
+.closing {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent-2) 8%, transparent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 900;
+  color: var(--accent-2);
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 1.25fr;
+  gap: 1rem;
+}
+
+.footerCard {
+  padding: 1rem;
+}
+
+.qrBox {
+  width: 6.5rem;
+  height: 6.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.references {
+  margin-top: 0.65rem;
+  display: grid;
+  gap: 0.35rem;
+  padding-left: 1rem;
+}
+
+:global(html[data-theme="dark"]) .poster {
+  --surface: rgba(10, 18, 35, 0.96);
+  --surface-soft: rgba(15, 25, 46, 0.86);
+  --surface-strong: rgba(15, 25, 46, 0.94);
+  --border: rgba(193, 213, 255, 0.1);
+  --border-strong: rgba(193, 213, 255, 0.18);
+  --text: #edf4ff;
+  --text-soft: rgba(237, 244, 255, 0.82);
+  --text-muted: rgba(237, 244, 255, 0.48);
+  --accent: #7ce7ff;
+  --accent-2: #9cb8ff;
+  --risk: #ffc975;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+}
+
+:global(html[data-theme="dark"]) .riskLandscapeCard::before {
+  opacity: 0.24;
+  filter: saturate(1.05) contrast(1.18) brightness(1.08);
+}
+
+:global(html[data-theme="dark"]) .framework::before {
+  opacity: 0.2;
+  mix-blend-mode: screen;
+  filter: saturate(0.95) contrast(1.12) brightness(1.05);
+}
+
+:global(html[data-theme="dark"]) .printPage .poster {
+  --surface: rgba(255, 255, 255, 0.96);
+  --surface-soft: rgba(255, 255, 255, 0.82);
+  --surface-strong: #ffffff;
+  --border: rgba(16, 32, 61, 0.1);
+  --border-strong: rgba(16, 32, 61, 0.16);
+  --text: #10203d;
+  --text-soft: rgba(16, 32, 61, 0.8);
+  --text-muted: rgba(16, 32, 61, 0.58);
+  --accent: #0d7f8b;
+  --accent-2: #16346d;
+  --risk: #9b6a1c;
+  box-shadow: none;
+}
+
+:global(html[data-theme="dark"]) .printPage .riskLandscapeCard::before {
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  filter: saturate(0.9) contrast(1.12);
+}
+
+:global(html[data-theme="dark"]) .printPage .framework::before {
+  opacity: 0.095;
+  mix-blend-mode: multiply;
+  filter: saturate(0.86) contrast(1.12);
+}
+
+:global(html[data-theme="dark"]) .printPage .logoImageLight {
+  display: block;
+}
+
+:global(html[data-theme="dark"]) .printPage .logoImageDark {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .logoImageLight {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .logoImageDark {
+  display: block;
+}
+
+@media (max-width: 1279px) {
+  .page {
+    padding: 1rem;
+  }
+
+  .poster {
+    padding: 1rem;
+    container-type: normal;
+  }
+
+  .header,
+  .summaryRow,
+  .topRow,
+  .bottomRow,
+  .footer,
+  .frameworkGrid,
+  .frameworkHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .evidenceStrip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .statCell:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .pathwayDiagram,
+  .operationalFlow {
+    grid-template-columns: 1fr;
+  }
+
+  .riskMatrixRow {
+    grid-template-columns: 1fr;
+  }
+
+  .riskMatrixRow > div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding-right: 0;
+    padding-bottom: 0.55rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .evidenceStrip {
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+
+  .statCell,
+  .statCell:nth-child(odd) {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .statCell:first-child {
+    border-top: 0;
+  }
+
+  .statCell strong {
+    font-size: 2.2rem;
+  }
+
+}
+
+@media print {
+  @page {
+    size: A0 landscape;
+    margin: 8mm;
+  }
+
+  .page {
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .poster {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .riskLandscapeCard::before {
+    opacity: 0.16;
+    filter: saturate(0.86) contrast(1.18);
+  }
+
+  .framework::before {
+    opacity: 0.13;
+    filter: saturate(0.82) contrast(1.18);
+  }
+}

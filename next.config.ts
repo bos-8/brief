@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath,
   assetPrefix: basePath,
+  turbopack: {
+    root: process.cwd(),
+  },
   trailingSlash: true,
   images: {
     unoptimized: true,
