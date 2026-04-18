@@ -1,0 +1,50 @@
+/* @file: src/components/presentation/PresentationWordmark.module.css */
+
+.wrapper {
+  position: absolute;
+  top: clamp(0.25rem, 1vw, 0.55rem);
+  left: max(
+    clamp(1.35rem, 3.35vw, 4rem),
+    calc(
+      (100vw - min(
+        calc(100vw - clamp(2.7rem, 6.7vw, 8rem)),
+        calc((100dvh - clamp(2.7rem, 6.7vw, 8rem)) * 16 / 9)
+      )) / 2
+    )
+  );
+  z-index: 24;
+  pointer-events: none;
+}
+
+.panel {
+  display: inline-flex;
+  align-items: center;
+  min-height: 0;
+  padding: 0;
+}
+
+.wordmark {
+  margin: 0;
+  color: hsl(var(--foreground) / 0.5);
+  font-size: clamp(1.38rem, 1.05rem + 1.05vw, 1.875rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.accent {
+  color: hsl(var(--accent) / 0.5);
+  text-shadow: 0 0 18px hsl(var(--accent) / 0.12);
+}
+
+@media (max-width: 1279px) {
+  .wrapper {
+    display: none;
+  }
+}
+
+@media print {
+  .wrapper {
+    display: none;
+  }
+}

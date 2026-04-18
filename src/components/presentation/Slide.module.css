@@ -9,6 +9,21 @@
   justify-content: center;
   padding: clamp(1.35rem, 3.35vw, 4rem);
   position: relative;
+  container-type: inline-size;
+  --fs-title-scale: 1.8;
+  --fs-title-base: clamp(2rem, 1rem + 3.2vw, 4.5rem);
+  --fs-title: calc(var(--fs-title-base) * var(--fs-title-scale));
+  --fs-slide-title: calc(var(--fs-title) * 0.8);
+  --fs-body: calc(var(--fs-title) * 0.5);
+  --fs-subtitle: calc(var(--fs-body) * 1.14);
+  --fs-note: var(--fs-body);
+  --fs-tag: var(--fs-body);
+}
+
+@supports (font-size: 1cqi) {
+  .slide {
+    --fs-title-base: clamp(2rem, 1rem + 3.2cqi, 4.5rem);
+  }
 }
 
 .backgroundNumber {
