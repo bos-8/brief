@@ -640,46 +640,44 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
         <Slide id={visibleSlideItems[0].id} index={visibleSlideItems[0].index} title={visibleSlideItems[0].title}>
           <div className={styles.openingSlide}>
-            <div className={styles.openingContent}>
-              <div className={styles.openingHeader}>
-                <h1 className={cx(styles["type-2"], styles.openingTitle, "text-foreground")}>{openingTitle}</h1>
-                <p className={cx(styles["type-4"], styles.openingSubtitle, styles.openingCompactCopy, "text-foreground/78")}>
-                  {openingSubtitle}
+            <div className={styles.openingHeader}>
+              <h1 className={cx(styles["type-2"], styles.openingTitle, "text-foreground")}>{openingTitle}</h1>
+              <p className={cx(styles["type-4"], styles.openingSubtitle, styles.openingCompactCopy, "text-foreground/78")}>
+                {openingSubtitle}
+              </p>
+            </div>
+
+            <div aria-hidden="true" className={styles.openingSpace} />
+
+            <div className={styles.openingLogoWrap}>
+              <Image
+                src={openingLightLogoSrc}
+                alt={openingAffiliation}
+                width={288}
+                height={66}
+                priority
+                className={cx(styles.openingLogo, styles.logoLight)}
+              />
+              <Image
+                src={openingDarkLogoSrc}
+                alt={openingAffiliation}
+                width={288}
+                height={66}
+                priority
+                className={cx(styles.openingLogo, styles.logoDark)}
+              />
+            </div>
+
+            <div className={styles.openingAuthors}>
+              <p className={cx(styles["type-6"], styles.openingTag, styles.tagContrast)}>{openingAuthorsLabel}</p>
+              {deck.hero.authors.map((author) => (
+                <p key={author} className={cx(styles["type-4"], styles.openingAuthorText, styles.openingCompactCopy, "text-foreground/90")}>
+                  {author}
                 </p>
-              </div>
-
-              <div className={styles.openingMeta}>
-                <div className={styles.openingLogoWrap}>
-                  <Image
-                    src={openingLightLogoSrc}
-                    alt={openingAffiliation}
-                    width={280}
-                    height={96}
-                    priority
-                    className={cx(styles.openingLogo, styles.logoLight)}
-                  />
-                  <Image
-                    src={openingDarkLogoSrc}
-                    alt={openingAffiliation}
-                    width={280}
-                    height={96}
-                    priority
-                    className={cx(styles.openingLogo, styles.logoDark)}
-                  />
-                </div>
-
-                <div className={styles.openingAuthors}>
-                  <p className={cx(styles["type-6"], styles.tagContrast)}>{openingAuthorsLabel}</p>
-                  <div className={styles.openingAuthorList}>
-                    {deck.hero.authors.map((author) => (
-                      <p key={author} className={cx(styles["type-4"], styles.openingCompactCopy, "text-right text-foreground/90")}>
-                        {author}
-                      </p>
-                    ))}
-                  </div>
-                  <p className={cx(styles["type-6"], styles.tagContrast, styles.openingAffiliationLine)}>{openingAffiliation}</p>
-                </div>
-              </div>
+              ))}
+              <p className={cx(styles["type-6"], styles.openingTag, styles.tagContrast, styles.openingAffiliationLine)}>
+                {openingAffiliation}
+              </p>
             </div>
 
             <div className={styles.openingFigureAnchor}>

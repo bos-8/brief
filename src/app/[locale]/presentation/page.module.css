@@ -189,35 +189,37 @@
 }
 
 .openingSlide {
-  --fs-body: calc(var(--fs-title) * 0.334);
-  --fs-note: calc(var(--fs-title) * 0.334);
-  --fs-tag: calc(var(--fs-title) * 0.334);
+  --opening-title-size: 64px;
+  --opening-copy-size: 36px;
+  --opening-logo-width: 288px;
+  --opening-logo-height: 66px;
+  --opening-figure-width: 860px;
   position: relative;
-  display: flex;
+  display: grid;
   height: 100%;
-  flex-direction: column;
-  justify-content: flex-start;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 0;
-  padding-top: 0;
   overflow: hidden;
   isolation: isolate;
 }
 
-.openingContent {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
+@supports (font-size: 1cqi) {
+  .openingSlide {
+    --opening-title-size: 4.1721cqi;
+    --opening-copy-size: 2.3468cqi;
+    --opening-logo-width: 18.7744cqi;
+    --opening-logo-height: 4.3025cqi;
+    --opening-figure-width: 56.0639cqi;
+  }
 }
 
 .openingFigureAnchor {
   position: absolute;
   inset-inline: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 0;
   display: flex;
   justify-content: center;
   pointer-events: none;
@@ -232,7 +234,7 @@
 }
 
 .openingFigure {
-  width: min(84vw, 50rem);
+  width: var(--opening-figure-width);
   max-width: none;
   height: auto;
   object-fit: contain;
@@ -243,10 +245,16 @@
 }
 
 .openingHeader {
+  position: relative;
+  z-index: 2;
+  grid-column: 1 / -1;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.75rem, 1.6vw, 1.25rem);
+  justify-content: start;
+  align-self: start;
+  gap: calc(var(--opening-copy-size) * 0.35);
   width: 100%;
   text-align: center;
 }
@@ -254,35 +262,43 @@
 .openingTitle {
   width: 100%;
   max-width: none;
-  font-size: calc(var(--fs-slide-title) * 0.667);
-  text-wrap: pretty;
+  font-size: var(--opening-title-size);
+  line-height: 1;
+  text-wrap: balance;
 }
 
 .openingSubtitle {
-  max-width: 54ch;
+  width: min(100%, 58ch);
+  max-width: none;
+  font-size: var(--opening-copy-size);
+  line-height: 1;
   text-align: center;
 }
 
 .openingCompactCopy {
-  line-height: 0.97;
+  line-height: 1;
 }
 
-.openingMeta {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: clamp(1rem, 2vw, 2rem);
+.openingSpace {
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
 .openingLogoWrap {
+  position: relative;
+  z-index: 2;
   display: flex;
-  align-items: flex-end;
-  flex: 0 1 38%;
+  grid-column: 1;
+  grid-row: 3;
+  align-items: end;
+  align-self: end;
+  justify-content: start;
+  width: 100%;
 }
 
 .openingLogo {
-  width: min(100%, 18rem);
-  height: auto;
+  width: var(--opening-logo-width);
+  height: var(--opening-logo-height);
   object-fit: contain;
 }
 
@@ -291,22 +307,32 @@
 }
 
 .openingAuthors {
+  position: relative;
+  z-index: 2;
   display: flex;
-  max-width: min(40rem, 62%);
+  grid-column: 2;
+  grid-row: 3;
+  max-width: 100%;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.5rem;
+  align-self: end;
+  justify-content: end;
+  gap: calc(var(--opening-copy-size) * 0.08);
   text-align: right;
 }
 
-.openingAuthorList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.18rem;
+.openingAuthorText {
+  font-size: var(--opening-copy-size);
+  line-height: 1;
+}
+
+.openingTag {
+  font-size: var(--opening-copy-size);
+  line-height: 1;
 }
 
 .openingAffiliationLine {
-  margin-top: 0.55rem;
+  margin-top: calc(var(--opening-copy-size) * 0.22);
   max-width: none;
   white-space: nowrap;
 }
@@ -333,29 +359,33 @@
   .openingSlide {
     height: auto;
     min-height: calc(100dvh - 6rem);
-    padding-top: 0;
-  }
-
-  .openingContent {
-    min-height: calc(100dvh - 6rem);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
   }
 
   .openingFigure {
     width: min(110vw, 32rem);
   }
 
-  .openingMeta {
-    flex-direction: column;
-    align-items: flex-end;
+  .openingSpace {
+    grid-row: 2;
   }
 
   .openingLogoWrap {
+    grid-column: 1;
+    grid-row: 3;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 
   .openingAuthors {
+    grid-column: 1;
+    grid-row: 4;
     max-width: 100%;
+  }
+
+  .openingAffiliationLine {
+    white-space: normal;
   }
 }
 

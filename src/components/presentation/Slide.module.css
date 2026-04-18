@@ -45,6 +45,7 @@
   width: min(calc(100vw - clamp(2.7rem, 6.7vw, 8rem)), calc((100dvh - clamp(2.7rem, 6.7vw, 8rem)) * 16 / 9));
   max-height: calc(100dvh - clamp(2.7rem, 6.7vw, 8rem));
   aspect-ratio: 16 / 9;
+  container-type: inline-size;
   overflow: hidden;
   border: 0;
   border-radius: 0;
