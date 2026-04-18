@@ -613,12 +613,21 @@ export default async function PresentationPage({ params }: LocalePageProps) {
     { id: "slide-14", index: 14, title: deck.caseStudy.navTitle },
     { id: "slide-15", index: 15, title: deck.closing.navTitle },
   ];
-  const visibleSlideItems = slideItems.slice(0, 6);
+  const visibleSlideItems = slideItems.slice(0, 15);
   const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
   const basePath = repositoryName ? `/${repositoryName}` : "";
   const openingFigureSrc = `${basePath}/prezentation_s1.png`;
   const openingLightLogoSrc = `${basePath}/logo_opole_univercity_of_technology_light.png`;
   const openingDarkLogoSrc = `${basePath}/logo_opole_univercity_of_technology_dark.png`;
+  const slideFourHumanSrc = `${basePath}/human.png`;
+  const slideTwoImageSrc = `${basePath}/presentation_scales.png`;
+  const slideSevenImageSrc = `${basePath}/presentation_militaryzation.png`;
+  const slideEightImageSrc = `${basePath}/presentation_connectivity.png`;
+  const slideNineImageSrc = `${basePath}/presentation_dna.png`;
+  const slideTenImageSrc = `${basePath}/presentation_syphon.png`;
+  const slideElevenImageSrc = `${basePath}/presentation_heart.png`;
+  const slideTwelveImageSrc = `${basePath}/prezentation_stack.png`;
+  const slideFifteenImageSrc = `${basePath}/presentation_end.png`;
   const openingTitle = "A Rights-Based Governance Framework for AI-Enabled Human Enhancement";
   const openingSubtitle =
     "Introducing the Codex of Augmented Humanity as a governance layer for structural risks in AI-enabled augmentation";
@@ -739,6 +748,136 @@ export default async function PresentationPage({ params }: LocalePageProps) {
       body: "must account for hierarchies, market leverage, and competitive pressures, not just benign therapeutic use.",
     },
   ] as const;
+  const slideSevenTitle = "Militarization generates structural pressure to upgrade";
+  const slideSevenPanels = [
+    {
+      tone: styles.slideSevenPanelNeutral,
+      lead: "The Mechanism",
+      body: "Upgrading resilience or perception creates “upgrade pressure” within hierarchies, eroding meaningful consent. Therapeutic capabilities easily pivot into strategic defense assets.",
+    },
+    {
+      tone: styles.slideSevenPanelDark,
+      lead: "Codex Normative Constraints",
+      body: "• Strict prohibition of coercive enhancement as a condition of service or employment.\n• Mandatory long-term medical support obligations for irreversible interventions.",
+    },
+  ] as const;
+  const slideEightTitle = "Connectivity transforms implants into cyber-physical attack surfaces";
+  const slideEightPanels = [
+    {
+      tone: styles.slideEightPanelNeutral,
+      lead: "The Mechanism",
+      body: "Remote configuration concentrates practical control in the hands of vendors or malicious actors. A compromised wireless insulin pump directly alters biological states, causing severe hypoglycemia or hyperglycemia.",
+    },
+    {
+      tone: styles.slideEightPanelNeutral,
+      lead: "Codex Normative Constraints",
+      body: "• Life-critical implants must not be remotely controllable by default.\n• Mandatory implementation of a secure, offline degraded mode that preserves life when networks fail.",
+    },
+  ] as const;
+  const slideNineTitle = "AI optimization lowers the barrier for biologically targeted harm";
+  const slideNinePanels = [
+    {
+      tone: styles.slideNinePanelNeutral,
+      lead: "The Mechanism",
+      body: "AI accelerates the design, simulation, and parameter optimization of biological interventions. Misuse now requires only access to data and compute, enabling population-targeted effects.",
+    },
+    {
+      tone: styles.slideNinePanelAmber,
+      lead: "Codex Red Line Constraints",
+      body: "• Absolute ban on enhancement-related biological research intended to harm or persecute.\n• Strict dual-use risk reviews mandatory for AI-accelerated biological scaling.",
+    },
+  ] as const;
+  const slideTenTitle = "Continuous telemetry enables hidden social sorting";
+  const slideTenMechanism =
+    "AI transforms intimate biological markers into scalable risk-scoring systems. Access to basic opportunities becomes probabilistically conditioned on continuous biological metrics.";
+  const slideTenConstraints = [
+    "Absolute ban on enhancement-based discrimination by insurers, employers, or platforms.",
+    'Enforcement of strict purpose limitation to prevent general surveillance "function creep".',
+  ] as const;
+  const slideTenOutcomes = ["Employment Status", "Insurance Risk", "Credit Access"] as const;
+  const slideElevenTitle = 'Proprietary infrastructure creates "pay-to-live" economic coercion';
+  const slideElevenPanels = [
+    {
+      title: "The Mechanism",
+      body: "When essential bodily functions rely on proprietary software or continuous vendor support, market power translates directly into leverage over bodily integrity.",
+    },
+    {
+      title: "Codex Normative Constraints",
+      body: "• Prohibit design patterns that throttle or disable life-sustaining functions for financial leverage.\n• Mandate credible exit and software escrow mechanisms for durable dependency relationships.",
+    },
+  ] as const;
+  const slideTwelveTitle = "Optional optimization normalizes into structural requirements";
+  const slideTwelveMechanism =
+    "In highly competitive environments like sport, enhancement alters physiological baselines. What begins as an optional upgrade quickly becomes a structural prerequisite for basic participation.";
+  const slideTwelveConstraints = [
+    {
+      lead: "Require transparent, standardized eligibility frameworks",
+      body: "for enhanced participation.",
+    },
+    {
+      lead: "Ensure integrity rules do not inadvertently discriminate",
+      body: "against individuals utilizing legitimate therapeutic interventions.",
+    },
+  ] as const;
+  const slideThirteenTitle = "The Codex translates fundamental rights into operational constraints";
+  const slideThirteenRows = [
+    {
+      threat: "Militarization",
+      risk: "Hierarchical pressure & reduced voluntariness",
+      principle: "Prohibit coercive enhancement; ensure meaningful consent",
+      icon: ShieldLock,
+      accent: styles.slideThirteenAccentCyan,
+    },
+    {
+      threat: "Biological Misuse",
+      risk: "AI-accelerated design and targeting",
+      principle: "Ban harmful applications; enforce dual-use review",
+      icon: Activity,
+      accent: styles.slideThirteenAccentCyan,
+    },
+    {
+      threat: "Cyber-Physical",
+      risk: "Remote access to bodily implants",
+      principle: "Restrict remote control; mandate fail-safe offline design",
+      icon: Diagram3,
+      accent: styles.slideThirteenAccentSlate,
+    },
+    {
+      threat: "Data Misuse",
+      risk: "Predictive profiling and social inference",
+      principle: "Enforce purpose limitation; prohibit algorithmic discrimination",
+      icon: Database,
+      accent: styles.slideThirteenAccentAmber,
+    },
+    {
+      threat: "Economic",
+      risk: "Vendor lock-in and life-critical reliance",
+      principle: "Guarantee continuity; prohibit exploitative functional control",
+      icon: BarChartLine,
+      accent: styles.slideThirteenAccentAmber,
+    },
+  ] as const;
+  const slideFourteenTitle = "Governance must match the continuous structure of the technology";
+  const slideFourteenSections = [
+    {
+      title: "Design-Time Constraints:",
+      body: "Hardcoded physical and software limits (e.g., physically disabling remote overrides of critical biological functions).",
+    },
+    {
+      title: "Lifecycle Obligations:",
+      body: "Guaranteed long-term security updates, continuous auditability, and mandatory offline degraded modes.",
+    },
+    {
+      title: "Institutional Enforcement:",
+      body: "Mandatory certification, compliance audits, and proactive regulatory oversight bridging medical and digital domains.",
+    },
+  ] as const;
+  const slideFifteenTitle = "A structural precondition for human dignity";
+  const slideFifteenStatements = [
+    "AI-assisted augmentation possesses immense potential to restore health, independence, and capacity.",
+    "However, a professional Codex is not an optional ethical supplement it is an operational necessity.",
+    "By embedding EU fundamental rights directly into system architecture, we ensure augmentation serves the human being, rather than instrumentalizing them.",
+  ] as const;
 
   return (
     <section className="relative bg-background text-foreground">
@@ -814,7 +953,17 @@ export default async function PresentationPage({ params }: LocalePageProps) {
               <h1 className={cx(mainTextClass, styles.slideTwoTitle)}>{slideTwoTitle}</h1>
             </div>
 
-            <div aria-hidden="true" className={styles.slideTwoImageSpace} />
+            <div className={styles.slideTwoImageSpace}>
+              <Image
+                src={slideTwoImageSrc}
+                alt=""
+                aria-hidden="true"
+                width={1200}
+                height={675}
+                priority
+                className={styles.slideTwoImage}
+              />
+            </div>
 
             {slideTwoCards.map((card, index) => (
               <div
@@ -894,7 +1043,15 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                 </div>
               ))}
 
-              <div className={styles.slideFourCenter}>
+              <div
+                className={styles.slideFourCenter}
+                style={{
+                  backgroundImage: `linear-gradient(hsl(var(--background) / 0.5), hsl(var(--background) / 0.5)), url(${slideFourHumanSrc})`,
+                  backgroundPosition: "center, center 108%",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "100% 100%, 60%",
+                }}
+              >
                 <svg viewBox="0 0 760 760" className={styles.slideFourDiagram} aria-hidden="true">
                   <circle cx="380" cy="380" r="276" className={styles.slideFourOuterRing} />
                   <path d="M350 86 L380 104 L350 122" className={styles.slideFourChevron} />
@@ -1040,6 +1197,383 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                   <tspan x="380" dy="1.08em">Safety</tspan>
                 </text>
               </svg>
+            </div>
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[6].id} index={visibleSlideItems[6].index} title={visibleSlideItems[6].title}>
+          <div className={styles.slideSeven}>
+            <div className={styles.slideSevenHeader}>
+              <h1 className={cx(mainTextClass, styles.slideSevenTitle)}>{slideSevenTitle}</h1>
+            </div>
+
+            <div className={styles.slideSevenVisual}>
+              <Image
+                src={slideSevenImageSrc}
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
+                priority
+                className={styles.slideSevenImage}
+              />
+            </div>
+
+            {slideSevenPanels.map((panel, index) => (
+              <div
+                key={panel.lead}
+                className={cx(
+                  styles.slideSevenPanel,
+                  panel.tone,
+                  index === 0 ? styles.slideSevenPanelOne : styles.slideSevenPanelTwo,
+                )}
+              >
+                <p className={styles.slideSevenPanelText}>
+                  <span className={styles.slideSevenPanelLead}>{panel.lead}</span>
+                </p>
+                <p className={styles.slideSevenPanelBody}>{panel.body}</p>
+              </div>
+            ))}
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[7].id} index={visibleSlideItems[7].index} title={visibleSlideItems[7].title}>
+          <div className={styles.slideEight}>
+            <div className={styles.slideEightHeader}>
+              <h1 className={cx(mainTextClass, styles.slideEightTitle)}>{slideEightTitle}</h1>
+            </div>
+
+            <div className={styles.slideEightVisual}>
+              <Image
+                src={slideEightImageSrc}
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
+                priority
+                className={styles.slideEightImage}
+              />
+            </div>
+
+            {slideEightPanels.map((panel, index) => (
+              <div
+                key={panel.lead}
+                className={cx(
+                  styles.slideEightPanel,
+                  panel.tone,
+                  index === 0 ? styles.slideEightPanelOne : styles.slideEightPanelTwo,
+                )}
+              >
+                <p className={styles.slideEightPanelText}>
+                  <span className={styles.slideEightPanelLead}>{panel.lead}</span>
+                </p>
+                <p className={styles.slideEightPanelBody}>{panel.body}</p>
+              </div>
+            ))}
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[8].id} index={visibleSlideItems[8].index} title={visibleSlideItems[8].title}>
+          <div className={styles.slideNine}>
+            <div className={styles.slideNineHeader}>
+              <h1 className={cx(mainTextClass, styles.slideNineTitle)}>{slideNineTitle}</h1>
+            </div>
+
+            {slideNinePanels.map((panel, index) => (
+              <div
+                key={panel.lead}
+                className={cx(
+                  styles.slideNinePanel,
+                  panel.tone,
+                  index === 0 ? styles.slideNinePanelOne : styles.slideNinePanelTwo,
+                )}
+              >
+                <p className={styles.slideNinePanelText}>
+                  <span className={styles.slideNinePanelLead}>{panel.lead}</span>
+                </p>
+                <p className={styles.slideNinePanelBody}>{panel.body}</p>
+              </div>
+            ))}
+
+            <div className={styles.slideNineVisual}>
+              <Image
+                src={slideNineImageSrc}
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
+                className={styles.slideNineImage}
+              />
+            </div>
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[9].id} index={visibleSlideItems[9].index} title={visibleSlideItems[9].title}>
+          <div className={styles.slideTen}>
+            <div className={styles.slideTenHeader}>
+              <h1 className={cx(mainTextClass, styles.slideTenTitle)}>{slideTenTitle}</h1>
+            </div>
+
+            <div className={cx(styles.slideTenPanel, styles.slideTenPanelLeft)}>
+              <p className={styles.slideTenPanelTitle}>The Mechanism</p>
+              <p className={styles.slideTenPanelBody}>{slideTenMechanism}</p>
+            </div>
+
+            <div className={styles.slideTenVisual}>
+              <Image
+                src={slideTenImageSrc}
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
+                className={styles.slideTenImage}
+              />
+
+              <div className={styles.slideTenOutcomeRow}>
+                {slideTenOutcomes.map((item) => (
+                  <div key={item} className={styles.slideTenOutcomeCard}>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={cx(styles.slideTenPanel, styles.slideTenPanelRight)}>
+              <p className={styles.slideTenPanelTitle}>Codex Normative Constraints</p>
+              {slideTenConstraints.map((item) => (
+                <p key={item} className={styles.slideTenPanelBody}>
+                  {item}
+                </p>
+              ))}
+            </div>
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[10].id} index={visibleSlideItems[10].index} title={visibleSlideItems[10].title}>
+          <div className={styles.slideEleven}>
+            <div className={styles.slideElevenHeader}>
+              <h1 className={cx(mainTextClass, styles.slideElevenTitle)}>{slideElevenTitle}</h1>
+            </div>
+
+            <div className={styles.slideElevenVisual}>
+              <Image
+                src={slideElevenImageSrc}
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
+                className={styles.slideElevenImage}
+              />
+            </div>
+
+            {slideElevenPanels.map((panel, index) => (
+              <div
+                key={panel.title}
+                className={cx(styles.slideElevenPanel, index === 0 ? styles.slideElevenPanelOne : styles.slideElevenPanelTwo)}
+              >
+                <p className={styles.slideElevenPanelTitle}>{panel.title}</p>
+                <p className={styles.slideElevenPanelBody}>{panel.body}</p>
+              </div>
+            ))}
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[11].id} index={visibleSlideItems[11].index} title={visibleSlideItems[11].title}>
+          <div className={styles.slideTwelve}>
+            <div className={styles.slideTwelveHeader}>
+              <h1 className={cx(mainTextClass, styles.slideTwelveTitle)}>{slideTwelveTitle}</h1>
+            </div>
+
+            <div className={styles.slideTwelveVisual}>
+              <Image
+                src={slideTwelveImageSrc}
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
+                className={styles.slideTwelveImage}
+              />
+            </div>
+
+            <div className={cx(styles.slideTwelvePanel, styles.slideTwelvePanelOne)}>
+              <p className={styles.slideTwelvePanelTitle}>The Mechanism</p>
+              <p className={styles.slideTwelvePanelBody}>{slideTwelveMechanism}</p>
+            </div>
+
+            <div className={cx(styles.slideTwelvePanel, styles.slideTwelvePanelTwo)}>
+              <p className={styles.slideTwelvePanelTitle}>Codex Normative Constraints</p>
+              <ul className={styles.slideTwelveConstraintList}>
+                {slideTwelveConstraints.map((item) => (
+                  <li key={item.lead} className={styles.slideTwelveConstraintItem}>
+                    <span className={styles.slideTwelveConstraintLead}>{item.lead}</span> {item.body}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[12].id} index={visibleSlideItems[12].index} title={visibleSlideItems[12].title}>
+          <div className={styles.slideThirteen}>
+            <div className={styles.slideThirteenHeader}>
+              <h1 className={cx(mainTextClass, styles.slideThirteenTitle)}>{slideThirteenTitle}</h1>
+            </div>
+
+            <div className={styles.slideThirteenTableWrap}>
+              <span aria-hidden="true" className={cx(styles.slideThirteenCorner, styles.slideThirteenCornerTopLeft)} />
+              <span aria-hidden="true" className={cx(styles.slideThirteenCorner, styles.slideThirteenCornerTopRight)} />
+              <span aria-hidden="true" className={cx(styles.slideThirteenCorner, styles.slideThirteenCornerBottomLeft)} />
+              <span aria-hidden="true" className={cx(styles.slideThirteenCorner, styles.slideThirteenCornerBottomRight)} />
+
+              <div className={styles.slideThirteenGrid}>
+                <div className={styles.slideThirteenHead}>Threat Domain</div>
+                <div className={styles.slideThirteenHead}>Structural Risk Mechanism</div>
+                <div className={styles.slideThirteenHead}>Core Codex Principle</div>
+
+                {slideThirteenRows.map((row) => (
+                  <Fragment key={row.threat}>
+                    <div className={styles.slideThirteenThreatCell}>
+                      <span className={cx(styles.slideThirteenThreatIconWrap, row.accent)}>
+                        <row.icon className={styles.slideThirteenThreatIcon} />
+                      </span>
+                      <span className={styles.slideThirteenThreatText}>{row.threat}</span>
+                    </div>
+                    <div className={styles.slideThirteenBodyCell}>{row.risk}</div>
+                    <div className={styles.slideThirteenBodyCell}>{row.principle}</div>
+                  </Fragment>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[13].id} index={visibleSlideItems[13].index} title={visibleSlideItems[13].title}>
+          <div className={styles.slideFourteen}>
+            <div className={styles.slideFourteenHeader}>
+              <h1 className={cx(mainTextClass, styles.slideFourteenTitle)}>{slideFourteenTitle}</h1>
+            </div>
+
+            <div className={styles.slideFourteenVisual}>
+              <svg viewBox="0 0 760 760" className={styles.slideFourteenDiagram} aria-hidden="true">
+                <defs>
+                  <linearGradient id="slideFourteenOuterStroke" x1="108" y1="176" x2="652" y2="584" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#f7cf74" />
+                    <stop offset="46%" stopColor="#d8a037" />
+                    <stop offset="100%" stopColor="#b97716" />
+                  </linearGradient>
+                  <linearGradient id="slideFourteenMiddleStroke" x1="160" y1="206" x2="600" y2="554" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#c5e6e7" />
+                    <stop offset="50%" stopColor="#8fc4cb" />
+                    <stop offset="100%" stopColor="#6aa8b2" />
+                  </linearGradient>
+                  <linearGradient id="slideFourteenInnerStroke" x1="212" y1="236" x2="548" y2="524" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#bae0e2" />
+                    <stop offset="50%" stopColor="#89c3cb" />
+                    <stop offset="100%" stopColor="#6aaab3" />
+                  </linearGradient>
+                  <radialGradient id="slideFourteenCoreFill" cx="50%" cy="42%" r="66%">
+                    <stop offset="0%" stopColor="#b6e0df" />
+                    <stop offset="62%" stopColor="#8bc4c8" />
+                    <stop offset="100%" stopColor="#6daab2" />
+                  </radialGradient>
+                  <path id="slideFourteenOuterArc" d="M104 380 A276 276 0 0 1 656 380" />
+                  <path id="slideFourteenMiddleArc" d="M160 380 A220 220 0 0 1 600 380" />
+                </defs>
+
+                <circle cx="380" cy="380" r="292" className={styles.slideSixGuideRing} />
+                <circle cx="380" cy="380" r="236" className={styles.slideSixGuideRing} />
+                <circle cx="380" cy="380" r="180" className={styles.slideSixGuideRingSoft} />
+                <circle cx="380" cy="380" r="124" className={styles.slideSixGuideRingSoft} />
+
+                <circle cx="380" cy="380" r="274" className={styles.slideSixOuterRing} stroke="url(#slideFourteenOuterStroke)" />
+                <circle cx="380" cy="380" r="218" className={styles.slideSixMiddleRing} stroke="url(#slideFourteenMiddleStroke)" />
+                <circle cx="380" cy="380" r="162" className={styles.slideSixInnerRing} stroke="url(#slideFourteenInnerStroke)" />
+                <circle cx="380" cy="380" r="110" className={styles.slideSixCore} fill="url(#slideFourteenCoreFill)" />
+
+                <text className={styles.slideSixRingLabel}>
+                  <textPath href="#slideFourteenOuterArc" startOffset="50%" textAnchor="middle">
+                    Institutional Enforcement
+                  </textPath>
+                </text>
+                <text className={styles.slideSixRingLabel}>
+                  <textPath href="#slideFourteenMiddleArc" startOffset="50%" textAnchor="middle">
+                    Lifecycle
+                  </textPath>
+                </text>
+                <text x="380" y="394" textAnchor="middle" className={styles.slideFourteenCenterLabel}>
+                  Design-Time
+                </text>
+
+                <circle cx="380" cy="218" r="14" className={styles.slideFourteenNodeLight} />
+                <circle cx="520" cy="276" r="14" className={styles.slideFourteenNodeDark} />
+                <circle cx="544" cy="418" r="14" className={styles.slideFourteenNodeLight} />
+                <circle cx="438" cy="544" r="14" className={styles.slideFourteenNodeDark} />
+                <circle cx="272" cy="514" r="14" className={styles.slideFourteenNodeGold} />
+                <circle cx="196" cy="360" r="14" className={styles.slideFourteenNodeDark} />
+                <circle cx="278" cy="236" r="14" className={styles.slideFourteenNodeGold} />
+
+                <circle cx="380" cy="128" r="14" className={styles.slideFourteenNodeLight} />
+                <circle cx="602" cy="212" r="14" className={styles.slideFourteenNodeDark} />
+                <circle cx="632" cy="362" r="14" className={styles.slideFourteenNodeLight} />
+                <circle cx="588" cy="578" r="14" className={styles.slideFourteenNodeGold} />
+                <circle cx="380" cy="664" r="14" className={styles.slideFourteenNodeDark} />
+                <circle cx="168" cy="576" r="14" className={styles.slideFourteenNodeGold} />
+                <circle cx="94" cy="362" r="14" className={styles.slideFourteenNodeDark} />
+                <circle cx="170" cy="212" r="14" className={styles.slideFourteenNodeDark} />
+
+                <path d="M380 128 L520 276 L632 362 L544 418 L380 664 L168 576 L94 362 L170 212 Z" className={styles.slideFourteenLinkGold} />
+                <path d="M170 212 L196 360 L380 664 L602 212 L520 276 L94 362 H632" className={styles.slideFourteenLinkDark} />
+                <path d="M278 236 L380 218 L520 276" className={styles.slideFourteenLinkGold} />
+                <path d="M272 514 L380 544 L544 418" className={styles.slideFourteenLinkGold} />
+                <path d="M278 236 L196 360 L272 514 L438 544" className={styles.slideFourteenLinkDark} />
+              </svg>
+            </div>
+
+            <div className={styles.slideFourteenDivider} />
+
+            <div className={styles.slideFourteenContent}>
+              {slideFourteenSections.map((section) => (
+                <div key={section.title} className={styles.slideFourteenSection}>
+                  <p className={styles.slideFourteenSectionTitle}>{section.title}</p>
+                  <p className={styles.slideFourteenSectionBody}>{section.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[14].id} index={visibleSlideItems[14].index} title={visibleSlideItems[14].title}>
+          <div className={styles.slideFifteen}>
+            <span aria-hidden="true" className={cx(styles.slideFifteenCorner, styles.slideFifteenCornerTopLeft)} />
+            <span aria-hidden="true" className={cx(styles.slideFifteenCorner, styles.slideFifteenCornerTopRight)} />
+            <span aria-hidden="true" className={cx(styles.slideFifteenCorner, styles.slideFifteenCornerBottomLeft)} />
+            <span aria-hidden="true" className={cx(styles.slideFifteenCorner, styles.slideFifteenCornerBottomRight)} />
+
+            <div className={styles.slideFifteenHeader}>
+              <h1 className={cx(mainTextClass, styles.slideFifteenTitle)}>{slideFifteenTitle}</h1>
+            </div>
+
+            <div className={styles.slideFifteenVisual}>
+              <Image
+                src={slideFifteenImageSrc}
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
+                className={styles.slideFifteenImage}
+              />
+            </div>
+
+            <div className={cx(styles.slideFifteenStatement, styles.slideFifteenStatementLeft)}>
+              <p className={styles.slideFifteenStatementText}>{slideFifteenStatements[0]}</p>
+            </div>
+
+            <div className={cx(styles.slideFifteenStatement, styles.slideFifteenStatementCenter)}>
+              <p className={styles.slideFifteenStatementText}>{slideFifteenStatements[1]}</p>
+            </div>
+
+            <div className={cx(styles.slideFifteenStatement, styles.slideFifteenStatementRight)}>
+              <p className={styles.slideFifteenStatementText}>{slideFifteenStatements[2]}</p>
             </div>
           </div>
         </Slide>
