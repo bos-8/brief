@@ -1,5 +1,5 @@
 // @file: src/app/[locale]/presentation/page.tsx
-import type { ComponentType, ReactNode, SVGProps } from "react";
+import { Fragment, type ComponentType, type ReactNode, type SVGProps } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -11,7 +11,6 @@ import {
   BoundingBoxCircles,
   CheckCircle,
   Check2Circle,
-  ClipboardPulse,
   Cpu,
   Database,
   Diagram3,
@@ -23,12 +22,10 @@ import {
   Hexagon,
   Hospital,
   Layers,
-  LightningCharge,
   People,
   Person,
   Robot,
   Server,
-  ShieldCheck,
   ShieldLock,
   Stars,
   XCircle,
@@ -616,7 +613,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
     { id: "slide-14", index: 14, title: deck.caseStudy.navTitle },
     { id: "slide-15", index: 15, title: deck.closing.navTitle },
   ];
-  const visibleSlideItems = slideItems.slice(0, 2);
+  const visibleSlideItems = slideItems.slice(0, 6);
   const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
   const basePath = repositoryName ? `/${repositoryName}` : "";
   const openingFigureSrc = `${basePath}/prezentation_s1.png`;
@@ -627,6 +624,121 @@ export default async function PresentationPage({ params }: LocalePageProps) {
     "Introducing the Codex of Augmented Humanity as a governance layer for structural risks in AI-enabled augmentation";
   const openingAuthorsLabel = locale === "pl" ? "AUTORZY" : "AUTHORS";
   const openingAffiliation = "Opole University of Technology";
+  const slideTwoTitle = "Continuous socio-technical augmentation outpaces sectoral regulation";
+  const slideTwoCards = [
+    {
+      title: "The Shift",
+      body: "Enhancement is evolving from episodic clinical interventions into continuous, AI-driven systems.",
+    },
+    {
+      title: "The Gap",
+      body: "EU laws (GDPR, AI Act, Medical Devices) operate in isolated silos, failing to address continuous, connected augmentation.",
+    },
+    {
+      title: "The Resolution",
+      body: "The Codex of Augmented Humanity translates fundamental EU rights (dignity, bodily integrity) into operational design constraints to prevent systemic exploitation.",
+    },
+  ] as const;
+  const slideThreeTitle = "AI alters the fundamental architecture of biological intervention";
+  const slideThreeRows = [
+    {
+      label: "Temporal Dimension",
+      traditional: "Episodic & bounded",
+      enhanced: "Continuos & persistent",
+      traditionalIcon: Activity,
+      enhancedIcon: BoundingBoxCircles,
+    },
+    {
+      label: "Operational Profile",
+      traditional: "Predefined therapeutic parameters",
+      enhanced: "Adaptive machine learning & ongoing optimization",
+      traditionalIcon: Gear,
+      enhancedIcon: Cpu,
+    },
+    {
+      label: "Infrastructural Base",
+      traditional: "Standalone local device",
+      enhanced: "Networked cyber-physical system",
+      traditionalIcon: Server,
+      enhancedIcon: Diagram3,
+    },
+    {
+      label: "Core Risk Profile",
+      traditional: "Clinical error & mechanical malfuntion",
+      enhanced: "Structural dependency & power asymmetry",
+      traditionalIcon: ExclamationTriangle,
+      enhancedIcon: ShieldLock,
+    },
+  ] as const;
+  const slideFourTitle = "The continuous feedback loop of AI-enabled augmentation";
+  const slideFourCards = [
+    {
+      position: styles.slideFourCardTopLeft,
+      tone: styles.slideFourCardFour,
+      index: "4.",
+      title: "Oversight Layer",
+      body: "Manages logging, human validation limits, and regulatory compliance.",
+    },
+    {
+      position: styles.slideFourCardTopRight,
+      tone: styles.slideFourCardOne,
+      index: "1.",
+      title: "Sensing Layer",
+      body: "Collects continuous telemetry, physiological, and behavioral data directly from the body.",
+    },
+    {
+      position: styles.slideFourCardBottomRight,
+      tone: styles.slideFourCardTwo,
+      index: "2.",
+      title: "AI Layer",
+      body: "Performs predictive classification and adaptive optimization (frequently processed on external vendor clouds).",
+    },
+    {
+      position: styles.slideFourCardBottomLeft,
+      tone: styles.slideFourCardThree,
+      index: "3.",
+      title: "Actuation Layer",
+      body: "Dynamically modifies physical or cognitive treatment parameters in real-time.",
+    },
+  ] as const;
+  const slideFiveTitle = "Sectoral EU frameworks fail to capture systemic infrastructural risks";
+  const slideFivePillars = ["GDPR", "AI Act", "Medical Devices", "Cybersecurity"] as const;
+  const slideFivePillarSrc = `${basePath}/presentation_filar.png`;
+  const slideFivePanels = [
+    {
+      tone: styles.slideFivePanelNeutral,
+      lead: null,
+      body: "Existing regulations are robust but isolated. None independently address the convergence of functional body integration, algorithmic adaptability, and economic embeddedness.",
+    },
+    {
+      tone: styles.slideFivePanelAmber,
+      lead: "The Blindspot:",
+      body: "Long-term dependency, continuous optimization, and contractual lock-in.",
+    },
+    {
+      tone: styles.slideFivePanelDark,
+      lead: "The Imperative:",
+      body: "Enhancement must never become a channel for exploitation, particularly where life-sustaining functions or core autonomy are at stake.",
+    },
+  ] as const;
+  const slideSixTitle = "Threat analysis must now assume adversarial environments";
+  const slideSixPanels = [
+    {
+      tone: styles.slideSixPanelNeutral,
+      lead: "AI-enabled augmentation",
+      body: "shifts risk away from isolated clinical defects toward structural coercion.",
+    },
+    {
+      tone: styles.slideSixPanelAmber,
+      lead: "Acceleration & Opacity:",
+      body: "Algorithms rapidly scale interventions and turn intimate health data into predictive tools.",
+    },
+    {
+      tone: styles.slideSixPanelDark,
+      lead: "Threat modeling",
+      body: "must account for hierarchies, market leverage, and competitive pressures, not just benign therapeutic use.",
+    },
+  ] as const;
 
   return (
     <section className="relative bg-background text-foreground">
@@ -697,10 +809,238 @@ export default async function PresentationPage({ params }: LocalePageProps) {
         </Slide>
 
         <Slide id={visibleSlideItems[1].id} index={visibleSlideItems[1].index} title={visibleSlideItems[1].title}>
-          <div className="flex h-full flex-col justify-center gap-4">
-            <h2 className={cx(mainTextClass, styles["type-2"])}>{deck.evolution.title}</h2>
-            <p className={cx(styles["type-6"], styles.tagContrast)}>Kto to zrobił</p>
-            <p className={cx(subTitleClass, "text-foreground/90")}>{deck.hero.authors.join(", ")}</p>
+          <div className={styles.slideTwo}>
+            <div className={styles.slideTwoHeader}>
+              <h1 className={cx(mainTextClass, styles.slideTwoTitle)}>{slideTwoTitle}</h1>
+            </div>
+
+            <div aria-hidden="true" className={styles.slideTwoImageSpace} />
+
+            {slideTwoCards.map((card, index) => (
+              <div
+                key={card.title}
+                className={cx(
+                  styles.slideTwoCard,
+                  index === 0 ? styles.slideTwoCardOne : index === 1 ? styles.slideTwoCardTwo : styles.slideTwoCardThree,
+                )}
+              >
+                <h3 className={cx(styles.slideTwoCardTitle, styles.tagContrast)}>{card.title}</h3>
+                <p className={styles.slideTwoCardBody}>{card.body}</p>
+              </div>
+            ))}
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[2].id} index={visibleSlideItems[2].index} title={visibleSlideItems[2].title}>
+          <div className={styles.slideThree}>
+            <div className={styles.slideThreeHeader}>
+              <h1 className={cx(mainTextClass, styles.slideThreeTitle)}>{slideThreeTitle}</h1>
+            </div>
+
+            <div aria-hidden="true" className={styles.slideThreeSpacer} />
+            <div className={cx(styles.slideThreeColumnHead, styles.slideThreeTraditionalHead)}>Traditional Medical Intervention</div>
+            <div className={cx(styles.slideThreeColumnHead, styles.slideThreeEnhancedHead)}>AI-Enabled Enhancement</div>
+
+            {slideThreeRows.map((row, index) => {
+              const rowClass =
+                index === 0
+                  ? styles.slideThreeRowOne
+                  : index === 1
+                    ? styles.slideThreeRowTwo
+                    : index === 2
+                      ? styles.slideThreeRowThree
+                      : styles.slideThreeRowFour;
+
+              return (
+                <Fragment key={row.label}>
+                  <div className={cx(styles.slideThreeLabelCell, rowClass)}>
+                    {row.label}
+                  </div>
+                  <div className={cx(styles.slideThreeValueCell, styles.slideThreeTraditionalCell, rowClass)}>
+                    <div className={styles.slideThreeValueContent}>
+                      <span>{row.traditional}</span>
+                      <span className={cx(styles.slideThreeIconWrap, styles.slideThreeTraditionalIconWrap)}>
+                        <row.traditionalIcon className={styles.slideThreeIcon} />
+                      </span>
+                    </div>
+                  </div>
+                  <div className={cx(styles.slideThreeValueCell, styles.slideThreeEnhancedCell, rowClass)}>
+                    <div className={styles.slideThreeValueContent}>
+                      <span>{row.enhanced}</span>
+                      <span className={cx(styles.slideThreeIconWrap, styles.slideThreeEnhancedIconWrap)}>
+                        <row.enhancedIcon className={styles.slideThreeIcon} />
+                      </span>
+                    </div>
+                  </div>
+                </Fragment>
+              );
+            })}
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[3].id} index={visibleSlideItems[3].index} title={visibleSlideItems[3].title}>
+          <div className={styles.slideFour}>
+            <div className={styles.slideFourHeader}>
+              <h1 className={cx(mainTextClass, styles.slideFourTitle)}>{slideFourTitle}</h1>
+            </div>
+
+            <div className={styles.slideFourCanvas}>
+              {slideFourCards.map((card) => (
+                <div key={card.title} className={cx(styles.slideFourCard, card.position, card.tone)}>
+                  <p className={styles.slideFourCardTitle}>
+                    <span className={styles.slideFourCardIndex}>{card.index}</span> {card.title}:
+                  </p>
+                  <p className={styles.slideFourCardBody}>{card.body}</p>
+                </div>
+              ))}
+
+              <div className={styles.slideFourCenter}>
+                <svg viewBox="0 0 760 760" className={styles.slideFourDiagram} aria-hidden="true">
+                  <circle cx="380" cy="380" r="276" className={styles.slideFourOuterRing} />
+                  <path d="M350 86 L380 104 L350 122" className={styles.slideFourChevron} />
+                  <path d="M638 350 L656 380 L674 350" className={styles.slideFourChevron} />
+                  <path d="M410 638 L380 656 L410 674" className={styles.slideFourChevron} />
+                  <path d="M86 410 L104 380 L122 410" className={styles.slideFourChevron} />
+
+                  <text x="148" y="174" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelFour)}>CONTROL</text>
+                  <text x="130" y="208" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelFour)}>SIGNALS</text>
+
+                  <text x="484" y="174" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelOne)}>TELEMETRY</text>
+
+                  <text x="486" y="610" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelTwo)}>PREDICTIONS</text>
+
+                  <text x="110" y="610" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelThree)}>DYNAMIC</text>
+                  <text x="84" y="644" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelThree)}>MODIFICATION</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[4].id} index={visibleSlideItems[4].index} title={visibleSlideItems[4].title}>
+          <div className={styles.slideFive}>
+            <div className={styles.slideFiveHeader}>
+              <h1 className={cx(mainTextClass, styles.slideFiveTitle)}>{slideFiveTitle}</h1>
+            </div>
+
+            <div className={styles.slideFiveVisual}>
+              {slideFivePillars.map((pillar) => (
+                <div key={pillar} className={styles.slideFivePillar}>
+                  <div className={styles.slideFivePillarFrame}>
+                    <Image
+                      src={slideFivePillarSrc}
+                      alt=""
+                      aria-hidden="true"
+                      fill
+                      sizes="20vw"
+                      className={styles.slideFivePillarImage}
+                    />
+                    <span className={styles.slideFivePillarLabel}>{pillar}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {slideFivePanels.map((panel, index) => (
+              <div
+                key={panel.body}
+                className={cx(
+                  styles.slideFivePanel,
+                  panel.tone,
+                  index === 0 ? styles.slideFivePanelOne : index === 1 ? styles.slideFivePanelTwo : styles.slideFivePanelThree,
+                )}
+              >
+                <p className={styles.slideFivePanelText}>
+                  {panel.lead ? <span className={styles.slideFivePanelLead}>{panel.lead} </span> : null}
+                  {panel.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Slide>
+
+        <Slide id={visibleSlideItems[5].id} index={visibleSlideItems[5].index} title={visibleSlideItems[5].title}>
+          <div className={styles.slideSix}>
+            <div className={styles.slideSixHeader}>
+              <h1 className={cx(mainTextClass, styles.slideSixTitle)}>{slideSixTitle}</h1>
+            </div>
+
+            {slideSixPanels.map((panel, index) => (
+              <div
+                key={panel.body}
+                className={cx(
+                  styles.slideSixPanel,
+                  panel.tone,
+                  index === 0 ? styles.slideSixPanelOne : index === 1 ? styles.slideSixPanelTwo : styles.slideSixPanelThree,
+                )}
+              >
+                <p className={styles.slideSixPanelText}>
+                  <span className={styles.slideSixPanelLead}>{panel.lead}</span> {panel.body}
+                </p>
+              </div>
+            ))}
+
+            <div className={styles.slideSixDiagramWrap}>
+              <svg viewBox="0 0 760 760" className={styles.slideSixDiagram} aria-hidden="true">
+                <defs>
+                  <linearGradient id="slideSixOuterStroke" x1="108" y1="176" x2="652" y2="584" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#f7cf74" />
+                    <stop offset="46%" stopColor="#d8a037" />
+                    <stop offset="100%" stopColor="#b97716" />
+                  </linearGradient>
+                  <linearGradient id="slideSixMiddleStroke" x1="160" y1="206" x2="600" y2="554" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#f5ca69" />
+                    <stop offset="50%" stopColor="#d89b2a" />
+                    <stop offset="100%" stopColor="#b87415" />
+                  </linearGradient>
+                  <linearGradient id="slideSixInnerStroke" x1="212" y1="236" x2="548" y2="524" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#f7d277" />
+                    <stop offset="50%" stopColor="#d79e2f" />
+                    <stop offset="100%" stopColor="#b8791b" />
+                  </linearGradient>
+                  <radialGradient id="slideSixCoreFill" cx="50%" cy="42%" r="66%">
+                    <stop offset="0%" stopColor="#b6e0df" />
+                    <stop offset="62%" stopColor="#8bc4c8" />
+                    <stop offset="100%" stopColor="#6daab2" />
+                  </radialGradient>
+                  <path id="slideSixOuterArc" d="M128 380 A252 252 0 0 1 632 380" />
+                  <path id="slideSixMiddleArc" d="M176 380 A204 204 0 0 1 584 380" />
+                  <path id="slideSixInnerArc" d="M228 380 A152 152 0 0 1 532 380" />
+                </defs>
+
+                <circle cx="380" cy="380" r="292" className={styles.slideSixGuideRing} />
+                <circle cx="380" cy="380" r="246" className={styles.slideSixGuideRing} />
+                <circle cx="380" cy="380" r="194" className={styles.slideSixGuideRing} />
+                <circle cx="380" cy="380" r="142" className={styles.slideSixGuideRingSoft} />
+
+                <circle cx="380" cy="380" r="272" className={styles.slideSixOuterRing} stroke="url(#slideSixOuterStroke)" />
+                <circle cx="380" cy="380" r="220" className={styles.slideSixMiddleRing} stroke="url(#slideSixMiddleStroke)" />
+                <circle cx="380" cy="380" r="168" className={styles.slideSixInnerRing} stroke="url(#slideSixInnerStroke)" />
+                <circle cx="380" cy="380" r="118" className={styles.slideSixCore} fill="url(#slideSixCoreFill)" />
+
+                <text className={styles.slideSixRingLabel}>
+                  <textPath href="#slideSixOuterArc" startOffset="50%" textAnchor="middle" dy="-0.5em">
+                    State & Institutional Abuse
+                  </textPath>
+                </text>
+                <text className={styles.slideSixRingLabel}>
+                  <textPath href="#slideSixMiddleArc" startOffset="50%" textAnchor="middle" dy="-0.5em">
+                    Economic Coercion
+                  </textPath>
+                </text>
+                <text className={styles.slideSixRingLabel}>
+                  <textPath href="#slideSixInnerArc" startOffset="50%" textAnchor="middle" dy="-0.5em">
+                    Network Vulnerabilities
+                  </textPath>
+                </text>
+
+                <text x="380" y="340" textAnchor="middle" className={styles.slideSixCoreLabel}>
+                  <tspan x="380" dy="0">Individual</tspan>
+                  <tspan x="380" dy="1.08em">Clinical</tspan>
+                  <tspan x="380" dy="1.08em">Safety</tspan>
+                </text>
+              </svg>
+            </div>
           </div>
         </Slide>
       </div>
