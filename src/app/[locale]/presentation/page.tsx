@@ -1569,11 +1569,11 @@ export default async function PresentationPage({ params }: LocalePageProps) {
             </div>
 
             <div className={cx(styles.slideFifteenStatement, styles.slideFifteenStatementCenter)}>
-              <p className={styles.slideFifteenStatementText}>{slideFifteenStatements[1]}</p>
+              <p className={styles.slideFifteenStatementText}>{slideFifteenStatements[2]}</p>
             </div>
 
             <div className={cx(styles.slideFifteenStatement, styles.slideFifteenStatementRight)}>
-              <p className={styles.slideFifteenStatementText}>{slideFifteenStatements[2]}</p>
+              <p className={styles.slideFifteenStatementText}>{slideFifteenStatements[1]}</p>
             </div>
           </div>
         </Slide>

@@ -2573,7 +2573,7 @@
   height: 100%;
   width: 100%;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1.8fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1.8fr);
   gap: 1rem;
 }
 
@@ -2688,7 +2688,7 @@
 .slideFifteenStatement {
   display: flex;
   align-items: start;
-  justify-content: center;
+  justify-content: stretch;
   min-width: 0;
 }
 
@@ -2709,7 +2709,8 @@
 
 .slideFifteenStatementText {
   margin: 0;
-  max-width: 19ch;
+  width: 100%;
+  max-width: none;
   color: hsl(var(--foreground) / 0.96);
   font-size: var(--slide-fifteen-body-size);
   font-weight: 500;
@@ -3163,6 +3164,257 @@
 
 :global(html[data-theme="dark"]) .logoDark {
   display: block;
+}
+
+.slideTwoCardOne {
+  --presentation-panel-accent: rgb(74 222 128 / 0.8);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(255 255 255 / 0.97), rgb(244 253 248 / 0.95));
+}
+
+.slideTwoCardTwo {
+  --presentation-panel-accent: rgb(96 165 250 / 0.82);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(255 255 255 / 0.97), rgb(244 249 255 / 0.95));
+}
+
+.slideTwoCardThree {
+  --presentation-panel-accent: rgb(245 158 11 / 0.84);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(255 253 247 / 0.98), rgb(255 247 232 / 0.96));
+}
+
+.slideFivePanelNeutral,
+.slideSixPanelNeutral,
+.slideSevenPanelNeutral,
+.slideEightPanelNeutral,
+.slideNinePanelNeutral {
+  --presentation-panel-accent: rgb(86 131 139 / 0.72);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(255 255 255 / 0.97), rgb(245 250 251 / 0.95));
+}
+
+.slideFivePanelAmber,
+.slideSixPanelAmber,
+.slideNinePanelAmber,
+.slideTenPanelRight,
+.slideTwelvePanelTwo,
+.slideElevenPanelTwo,
+.slideFourteenSection:nth-child(2),
+.slideFifteenStatementCenter {
+  --presentation-panel-accent: rgb(207 141 32 / 0.8);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(255 253 247 / 0.98), rgb(255 246 229 / 0.96));
+}
+
+.slideFivePanelDark,
+.slideSixPanelDark,
+.slideSevenPanelDark {
+  --presentation-panel-accent: rgb(44 62 80 / 0.82);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(247 250 252 / 0.98), rgb(237 242 247 / 0.96));
+}
+
+.slideTenPanelLeft,
+.slideElevenPanelOne,
+.slideTwelvePanelOne,
+.slideFourteenSection:nth-child(1),
+.slideFifteenStatementLeft {
+  --presentation-panel-accent: rgb(96 165 250 / 0.82);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(255 255 255 / 0.97), rgb(244 249 255 / 0.95));
+}
+
+.slideTenOutcomeCard {
+  --presentation-panel-accent: rgb(122 72 8 / 0.74);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(245 197 93 / 0.96), rgb(221 160 44 / 0.96));
+}
+
+.slideFourteenSection:nth-child(3),
+.slideFifteenStatementRight {
+  --presentation-panel-accent: rgb(74 222 128 / 0.78);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(255 255 255 / 0.97), rgb(244 253 248 / 0.95));
+}
+
+.slideTwoCard,
+.slideFivePanel,
+.slideSixPanel,
+.slideSevenPanel,
+.slideEightPanel,
+.slideNinePanel,
+.slideTenPanel,
+.slideTenOutcomeCard,
+.slideElevenPanel,
+.slideTwelvePanel,
+.slideFourteenSection,
+.slideFifteenStatement {
+  --presentation-panel-accent: rgb(86 131 139 / 0.72);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(255 255 255 / 0.97), rgb(248 250 252 / 0.95));
+  --presentation-panel-radius: 0.45rem;
+  position: relative;
+  isolation: isolate;
+  border: 1.5px solid transparent;
+  border-radius: var(--presentation-panel-radius);
+  background:
+    var(--presentation-panel-fill) padding-box,
+    linear-gradient(
+        135deg,
+        var(--presentation-panel-accent),
+        rgb(255 255 255 / 0) 22%,
+        rgb(255 255 255 / 0) 78%,
+        var(--presentation-panel-accent)
+      )
+      border-box;
+  box-shadow: 0 12px 28px rgb(15 23 42 / 0.08);
+}
+
+.slideTwoCard,
+.slideFourteenSection {
+  padding: 1.05rem 1.15rem 1.1rem;
+}
+
+.slideFifteenStatement {
+  align-self: stretch;
+  padding: 0.35rem 0.5rem 0.45rem;
+}
+
+.slideTwoCard::before,
+.slideTwoCard::after,
+.slideFivePanel::before,
+.slideFivePanel::after,
+.slideSixPanel::before,
+.slideSixPanel::after,
+.slideSevenPanel::before,
+.slideSevenPanel::after,
+.slideEightPanel::before,
+.slideEightPanel::after,
+.slideNinePanel::before,
+.slideNinePanel::after,
+.slideTenPanel::before,
+.slideTenPanel::after,
+.slideTenOutcomeCard::before,
+.slideTenOutcomeCard::after,
+.slideElevenPanel::before,
+.slideElevenPanel::after,
+.slideTwelvePanel::before,
+.slideTwelvePanel::after,
+.slideFourteenSection::before,
+.slideFourteenSection::after,
+.slideFifteenStatement::before,
+.slideFifteenStatement::after {
+  content: "";
+  position: absolute;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-color: var(--presentation-panel-accent);
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+.slideTwoCard::before,
+.slideFivePanel::before,
+.slideSixPanel::before,
+.slideSevenPanel::before,
+.slideEightPanel::before,
+.slideNinePanel::before,
+.slideTenPanel::before,
+.slideTenOutcomeCard::before,
+.slideElevenPanel::before,
+.slideTwelvePanel::before,
+.slideFourteenSection::before,
+.slideFifteenStatement::before {
+  top: 0.4rem;
+  left: 0.4rem;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  color: var(--presentation-panel-accent);
+}
+
+.slideTwoCard::after,
+.slideFivePanel::after,
+.slideSixPanel::after,
+.slideSevenPanel::after,
+.slideEightPanel::after,
+.slideNinePanel::after,
+.slideTenPanel::after,
+.slideTenOutcomeCard::after,
+.slideElevenPanel::after,
+.slideTwelvePanel::after,
+.slideFourteenSection::after,
+.slideFifteenStatement::after {
+  right: 0.4rem;
+  bottom: 0.4rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  color: var(--presentation-panel-accent);
+}
+
+.slideFivePanelText,
+.slideSixPanelText,
+.slideSevenPanelText,
+.slideSevenPanelBody,
+.slideFifteenStatementText {
+  position: relative;
+  z-index: 1;
+}
+
+.slideFivePanelDark .slideFivePanelText,
+.slideSixPanelDark .slideSixPanelText,
+.slideSevenPanelDark .slideSevenPanelText,
+.slideSevenPanelDark .slideSevenPanelBody {
+  color: hsl(var(--foreground) / 0.94);
+}
+
+:global(html[data-theme="dark"]) .slideTwoCard,
+:global(html[data-theme="dark"]) .slideFivePanel,
+:global(html[data-theme="dark"]) .slideSixPanel,
+:global(html[data-theme="dark"]) .slideSevenPanel,
+:global(html[data-theme="dark"]) .slideEightPanel,
+:global(html[data-theme="dark"]) .slideNinePanel,
+:global(html[data-theme="dark"]) .slideTenPanel,
+:global(html[data-theme="dark"]) .slideElevenPanel,
+:global(html[data-theme="dark"]) .slideTwelvePanel,
+:global(html[data-theme="dark"]) .slideFourteenSection,
+:global(html[data-theme="dark"]) .slideFifteenStatement {
+  --presentation-panel-fill: linear-gradient(180deg, rgb(15 23 42 / 0.92), rgb(2 6 23 / 0.96));
+}
+
+:global(html[data-theme="dark"]) .slideTwoCardOne,
+:global(html[data-theme="dark"]) .slideFourteenSection:nth-child(3),
+:global(html[data-theme="dark"]) .slideFifteenStatementRight {
+  --presentation-panel-accent: rgb(74 222 128 / 0.78);
+}
+
+:global(html[data-theme="dark"]) .slideTwoCardTwo,
+:global(html[data-theme="dark"]) .slideFivePanelNeutral,
+:global(html[data-theme="dark"]) .slideSixPanelNeutral,
+:global(html[data-theme="dark"]) .slideSevenPanelNeutral,
+:global(html[data-theme="dark"]) .slideEightPanelNeutral,
+:global(html[data-theme="dark"]) .slideNinePanelNeutral,
+:global(html[data-theme="dark"]) .slideTenPanelLeft,
+:global(html[data-theme="dark"]) .slideElevenPanelOne,
+:global(html[data-theme="dark"]) .slideTwelvePanelOne,
+:global(html[data-theme="dark"]) .slideFourteenSection:nth-child(1),
+:global(html[data-theme="dark"]) .slideFifteenStatementLeft {
+  --presentation-panel-accent: rgb(125 211 252 / 0.62);
+}
+
+:global(html[data-theme="dark"]) .slideTwoCardThree,
+:global(html[data-theme="dark"]) .slideFivePanelAmber,
+:global(html[data-theme="dark"]) .slideSixPanelAmber,
+:global(html[data-theme="dark"]) .slideNinePanelAmber,
+:global(html[data-theme="dark"]) .slideTenPanelRight,
+:global(html[data-theme="dark"]) .slideTwelvePanelTwo,
+:global(html[data-theme="dark"]) .slideElevenPanelTwo,
+:global(html[data-theme="dark"]) .slideFourteenSection:nth-child(2),
+:global(html[data-theme="dark"]) .slideFifteenStatementCenter {
+  --presentation-panel-accent: rgb(251 191 36 / 0.68);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(36 27 13 / 0.96), rgb(24 24 27 / 0.94));
+}
+
+:global(html[data-theme="dark"]) .slideFivePanelDark,
+:global(html[data-theme="dark"]) .slideSixPanelDark,
+:global(html[data-theme="dark"]) .slideSevenPanelDark {
+  --presentation-panel-accent: rgb(148 163 184 / 0.48);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(15 23 42 / 0.92), rgb(2 6 23 / 0.98));
+}
+
+:global(html[data-theme="dark"]) .slideTenOutcomeCard {
+  --presentation-panel-accent: rgb(251 191 36 / 0.44);
+  --presentation-panel-fill: linear-gradient(180deg, rgb(245 197 93 / 0.96), rgb(221 160 44 / 0.96));
 }
 
 @media (max-width: 1279px) {
