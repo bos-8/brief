@@ -25,42 +25,358 @@
   },
   "home": {
     "title": "BRIEF",
-    "tagline": "Prezentacje naukowe · Dwujęzyczna wersja · Gotowość konferencyjna",
-    "descriptionLead": "BRIEF to system prezentacji do materiałów naukowych i konferencyjnych z dwujęzyczną obsługą.",
-    "descriptionBody": "Pozwala tworzyć, prezentować i udostępniać profesjonalne decki z prostą obsługą nawigacji oraz spójną lokalizacją.",
+    "tagline": "Prezentacje naukowe · Treść dwujęzyczna · Gotowość konferencyjna",
+    "descriptionLead": "BRIEF to dwujęzyczny system prezentacyjny dla wystąpień naukowych, materiałów konferencyjnych i uporządkowanych treści gotowych do publikacji.",
+    "descriptionBody": "Umożliwia tworzenie, prezentowanie i udostępnianie profesjonalnych decków z prostą nawigacją i spójną lokalizacją.",
     "overviewEyebrow": "Przestrzeń prezentacyjna",
     "overviewTitle": "BRIEF to centrum prezentacji i posterów do komunikacji akademickiej.",
-    "overviewBody": "Łączy pełnoekranowy tryb prezentacji konferencyjnej, notatki prelegenta oraz materiały posterowe w jednym statycznym, przenośnym interfejsie gotowym do GitHub Pages.",
+    "overviewBody": "Łączy pełnoekranowy tryb prezentacji konferencyjnej, notatki prelegenta i materiały posterowe w jednym statycznym, przenośnym interfejsie gotowym do GitHub Pages.",
     "cardsEyebrow": "Dostępne materiały",
     "presentationCardLabel": "Prezentacja",
     "presentationCardTitle": "A Rights-Based Governance Framework for AI-Enabled Human Enhancement",
-    "presentationCardBody": "Pełny 15-slajdowy deck poświęcony governance, prawom, ryzykom i operacyjnym ograniczeniom dla AI-enabled human enhancement.",
-    "posterCardLabel": "Plakat",
-    "posterCardTitle": "Ethical and legal aspects of AIgmented HUMANity",
-    "posterCardBody": "Widok posterowy dla tego samego tematu badawczego, przygotowany do zwięzłej, wizualnej prezentacji akademickiej.",
+    "presentationCardBody": "Pełny 15-slajdowy deck poświęcony governance, prawom, ryzyku i ograniczeniom operacyjnym związanym z ulepszaniem człowieka wspieranym przez AI.",
+    "posterCardLabel": "Poster",
+    "posterCardTitle": "Etyczne i prawne aspekty AIgmented HUMANity",
+    "posterCardBody": "Widok posterowy dla tego samego tematu badawczego, przygotowany do zwięzłej i wizualnej prezentacji akademickiej.",
     "openPresentation": "Prezentacja",
-    "openPoster": "Plakat",
+    "openPoster": "Poster",
     "openNotes": "Notatki"
   },
   "presentation": {
     "eyebrow": "Podstrona prezentacji",
     "title": "System prezentacji BRIEF",
-    "lead": "Ta sekcja służy do pokazania pojedynczej prezentacji, jej kontekstu oraz podstawowych informacji dla odbiorcy.",
-    "description": "Możesz tu umieścić deck konferencyjny, opis wystąpienia, streszczenie oraz odnośniki do materiałów pomocniczych. Układ pozostaje prosty, statyczny i gotowy do publikacji na GitHub Pages.",
-    "slideOneEyebrow": "BRIEF deck",
-    "slideOneTitle": "Komponent Slide utrzymuje proporcje 16:9",
-    "slideOneBody": "Każdy slajd zajmuje pełny ekran przeglądarki, ale właściwa plansza pozostaje wpisana w obszar 16:9. Przy innych proporcjach viewportu nadmiar przestrzeni zostaje poza planszą.",
+    "lead": "Ta sekcja służy do prezentacji pojedynczego decka, jego kontekstu oraz kluczowych informacji dla odbiorcy.",
+    "description": "Możesz umieścić tutaj prezentację konferencyjną, streszczenie wystąpienia, abstrakt oraz materiały pomocnicze. Układ pozostaje prosty, statyczny i gotowy do wdrożenia na GitHub Pages.",
+    "slideOneEyebrow": "Deck BRIEF",
+    "slideOneTitle": "Komponent Slide utrzymuje ścisłe proporcje 16:9",
+    "slideOneBody": "Każdy slajd wypełnia krok przeglądarki, ale właściwe płótno pozostaje ograniczone do obszaru 16:9. Przy innych proporcjach viewportu nadmiar przestrzeni pozostaje poza ramą slajdu.",
     "slideTwoEyebrow": "Układ",
-    "slideTwoTitle": "Margines pochodzi z viewportu, nie z treści",
-    "slideTwoBody": "Zewnętrzny kontener dostaje bezpieczny odstęp od krawędzi ekranu, a sama szerokość slajdu jest ograniczana jednocześnie wysokością i szerokością viewportu. Dzięki temu treść nie rozjeżdża się przy 16:10 ani przy węższych ekranach.",
-    "slideThreeEyebrow": "Scroll flow",
+    "slideTwoTitle": "Margines wynika z viewportu, a nie z treści",
+    "slideTwoBody": "Zewnętrzny kontener utrzymuje bezpieczny odstęp od krawędzi ekranu, a szerokość slajdu jest ograniczana jednocześnie wysokością i szerokością viewportu. Dzięki temu układ pozostaje stabilny na ekranach 16:10 i węższych.",
+    "slideThreeEyebrow": "Przepływ przewijania",
     "slideThreeTitle": "Przewijanie działa jak pionowy deck",
-    "slideThreeBody": "Każdy kolejny slajd wypełnia pełne 100dvh i korzysta z scroll snap, więc przewinięcie strony prowadzi użytkownika slajd po slajdzie. To daje zachowanie zbliżone do prezentacji bez potrzeby osobnego silnika do nawigacji."
+    "slideThreeBody": "Każdy slajd zajmuje pełne 100dvh i korzysta ze scroll snap, więc przewijanie strony prowadzi odbiorcę slajd po slajdzie. Daje to zachowanie zbliżone do prezentacji bez osobnego silnika nawigacji.",
+    "notes": {
+      "eyebrow": "Notatki do prezentacji",
+      "title": "Notatki prelegenta do decka BRIEF",
+      "text1": "Robocze notatki do tego decka są utrzymywane w dokumentacji projektu pod ścieżką <path>docs/notes.md</path>."
+    },
+    "slides": {
+      "slide1": {
+        "navTitle": "Ramy governance",
+        "title": "A <focus>Rights-Based Governance Framework</focus> for AI-Enabled Human Enhancement",
+        "subtitle": "Wprowadzenie <codex>Kodeksu Ulepszonego Człowieczeństwa</codex> jako warstwy governance dla strukturalnych ryzyk związanych z augmentacją wspieraną przez AI",
+        "authorsLabel": "AUTORZY",
+        "authors": [
+          "Kacper Boś",
+          "Nikolas Jerzy Feduniewicz",
+          "Anna Bryniarska"
+        ],
+        "affiliation": "Politechnika Opolska"
+      },
+      "slide2": {
+        "navTitle": "Luka regulacyjna",
+        "title": "Ciągła augmentacja społeczno-techniczna wyprzedza sektorowe regulacje",
+        "cards": [
+          {
+            "title": "Przesunięcie",
+            "text1": "Ulepszanie przechodzi od epizodycznych interwencji klinicznych do ciągłych systemów napędzanych przez AI."
+          },
+          {
+            "title": "Luka",
+            "text1": "Prawo UE, takie jak RODO, AI Act i regulacje dotyczące wyrobów medycznych, działa w odseparowanych silosach i nie obejmuje ciągłej, połączonej augmentacji."
+          },
+          {
+            "title": "Rozwiązanie",
+            "text1": "Kodeks Ulepszonego Człowieczeństwa przekłada podstawowe prawa UE, takie jak godność i integralność cielesna, na operacyjne ograniczenia projektowe, które zapobiegają systemowej eksploatacji."
+          }
+        ]
+      },
+      "slide3": {
+        "navTitle": "Zmiana architektury",
+        "title": "AI zmienia fundamentalną architekturę interwencji biologicznej",
+        "traditionalLabel": "Tradycyjna interwencja medyczna",
+        "enhancedLabel": "Ulepszanie wspomagane przez AI",
+        "rows": [
+          {
+            "rowLabel": "Wymiar czasowy",
+            "left": "Epizodyczne i ograniczone",
+            "right": "Ciągłe i trwałe"
+          },
+          {
+            "rowLabel": "Profil operacyjny",
+            "left": "Z góry określone parametry terapeutyczne",
+            "right": "Adaptacyjne uczenie maszynowe i ciągła optymalizacja"
+          },
+          {
+            "rowLabel": "Baza infrastrukturalna",
+            "left": "Samodzielne lokalne urządzenie",
+            "right": "Sieciowy system cyber-fizyczny"
+          },
+          {
+            "rowLabel": "Podstawowy profil ryzyka",
+            "left": "Błąd kliniczny i awaria mechaniczna",
+            "right": "Strukturalna zależność i asymetria władzy"
+          }
+        ]
+      },
+      "slide4": {
+        "navTitle": "Pętla sprzężenia",
+        "title": "Ciągła pętla sprzężenia zwrotnego w augmentacji wspomaganej przez AI",
+        "cards": [
+          {
+            "index": "1.",
+            "title": "Warstwa sensingu",
+            "text1": "Zbiera ciągłą telemetrię oraz dane fizjologiczne i behawioralne bezpośrednio z ciała."
+          },
+          {
+            "index": "2.",
+            "title": "Warstwa AI",
+            "text1": "Wykonuje predykcyjną klasyfikację i adaptacyjną optymalizację, często z udziałem zewnętrznej infrastruktury dostawcy."
+          },
+          {
+            "index": "3.",
+            "title": "Warstwa wykonawcza",
+            "text1": "Dynamicznie modyfikuje fizyczne lub poznawcze parametry leczenia w czasie rzeczywistym."
+          },
+          {
+            "index": "4.",
+            "title": "Warstwa nadzoru",
+            "text1": "Zarządza logowaniem, granicami walidacji przez człowieka i zgodnością regulacyjną."
+          }
+        ],
+        "diagram": {
+          "controlSignals": {
+            "text1": "SYGNAŁY",
+            "text2": "STERUJĄCE"
+          },
+          "telemetry": {
+            "text1": "TELEMETRIA"
+          },
+          "predictions": {
+            "text1": "PREDYKCJE"
+          },
+          "dynamicModification": {
+            "text1": "DYNAMICZNA",
+            "text2": "MODYFIKACJA"
+          }
+        }
+      },
+      "slide5": {
+        "navTitle": "Ślepe punkty ram",
+        "title": "Sektorowe ramy UE nie obejmują systemowych ryzyk infrastrukturalnych",
+        "pillars": [
+          "RODO",
+          "AI Act",
+          "Wyroby medyczne",
+          "Cyberbezpieczeństwo"
+        ],
+        "panels": [
+          {
+            "lead": null,
+            "text1": "Obecne regulacje są solidne, ale odseparowane. Żadna z nich samodzielnie nie obejmuje zbiegu funkcjonalnej integracji z ciałem, adaptacyjności algorytmicznej i osadzenia ekonomicznego."
+          },
+          {
+            "lead": "Ślepy punkt:",
+            "text1": "Długoterminowa zależność, ciągła optymalizacja i kontraktowe zamknięcie użytkownika."
+          },
+          {
+            "lead": "Imperatyw:",
+            "text1": "Ulepszanie nigdy nie może stać się kanałem eksploatacji, zwłaszcza tam, gdzie stawką są funkcje podtrzymujące życie lub podstawowa autonomia."
+          }
+        ]
+      },
+      "slide6": {
+        "navTitle": "Analiza zagrożeń",
+        "title": "Analiza zagrożeń musi dziś zakładać środowiska antagonistyczne",
+        "panels": [
+          {
+            "lead": "Augmentacja wspomagana przez AI",
+            "text1": "przesuwa ryzyko z odizolowanych błędów klinicznych w stronę strukturalnego przymusu."
+          },
+          {
+            "lead": "Przyspieszenie i nieprzejrzystość:",
+            "text1": "Algorytmy szybko skalują interwencje i zamieniają intymne dane zdrowotne w narzędzia predykcyjne."
+          },
+          {
+            "lead": "Modelowanie zagrożeń",
+            "text1": "musi uwzględniać hierarchie, przewagę rynkową i presję konkurencyjną, a nie wyłącznie życzliwy scenariusz terapeutyczny."
+          }
+        ],
+        "diagram": {
+          "outerRing": "Nadużycia państwowe i instytucjonalne",
+          "middleRing": "Przymus ekonomiczny",
+          "innerRing": "Podatności sieciowe",
+          "core": [
+            "Bezpieczeństwo",
+            "jednostki",
+            "i kliniczne"
+          ]
+        }
+      },
+      "slide7": {
+        "navTitle": "Militaryzacja",
+        "title": "Militaryzacja wytwarza strukturalną presję na ulepszanie",
+        "panels": [
+          {
+            "lead": "Mechanizm",
+            "text1": "Zwiększanie odporności lub percepcji tworzy w hierarchiach presję na upgrade, podważając realną dobrowolność. Możliwości terapeutyczne mogą szybko zostać przestawione na aktywa strategiczne."
+          },
+          {
+            "lead": "Normatywne ograniczenia Kodeksu",
+            "text1": "Należy bezwzględnie zakazać przymusowej augmentacji jako warunku służby lub zatrudnienia. Trzeba też nałożyć obowiązek długoterminowego wsparcia medycznego dla interwencji nieodwracalnych."
+          }
+        ]
+      },
+      "slide8": {
+        "navTitle": "Ryzyka cyber-fizyczne",
+        "title": "Łączność zamienia implanty w cyber-fizyczne powierzchnie ataku",
+        "panels": [
+          {
+            "lead": "Mechanizm",
+            "text1": "Zdalna konfiguracja skupia praktyczną kontrolę w rękach dostawców lub złośliwych aktorów. Przejęta bezprzewodowa pompa insulinowa może bezpośrednio zmieniać stany biologiczne i powodować poważne szkody."
+          },
+          {
+            "lead": "Normatywne ograniczenia Kodeksu",
+            "text1": "Implanty krytyczne dla życia nie powinny być zdalnie sterowalne domyślnie. Bezpieczne tryby degradacji offline muszą podtrzymywać życie w razie awarii sieci."
+          }
+        ]
+      },
+      "slide9": {
+        "navTitle": "Szkoda biologiczna",
+        "title": "Optymalizacja przez AI obniża próg dla biologicznie ukierunkowanej szkody",
+        "panels": [
+          {
+            "lead": "Mechanizm",
+            "text1": "AI przyspiesza projektowanie, symulację i optymalizację parametrów interwencji biologicznych. Nadużycie wymaga dziś niewiele więcej niż dostępu do danych i mocy obliczeniowej."
+          },
+          {
+            "lead": "Czerwone linie Kodeksu",
+            "text1": "Należy wprowadzić absolutny zakaz badań biologicznych związanych z ulepszaniem, jeśli ich celem jest szkodzenie lub prześladowanie. Konieczne są też ścisłe przeglądy dual-use dla skalowania biologicznego przyspieszanego przez AI."
+          }
+        ]
+      },
+      "slide10": {
+        "navTitle": "Ukryte sortowanie społeczne",
+        "title": "Ciągła telemetria umożliwia ukryte sortowanie społeczne",
+        "mechanismTitle": "Mechanizm",
+        "mechanismText": "AI przekształca intymne markery biologiczne w skalowalne systemy scoringu ryzyka. Dostęp do podstawowych szans życiowych staje się probabilistycznie uzależniony od ciągłych metryk biologicznych.",
+        "constraintsTitle": "Normatywne ograniczenia Kodeksu",
+        "constraints": [
+          "Absolutny zakaz dyskryminacji opartej na ulepszaniu przez ubezpieczycieli, pracodawców lub platformy.",
+          "Ścisłe ograniczenie celu przetwarzania, aby zapobiec rozszerzaniu funkcji nadzoru."
+        ],
+        "outcomes": [
+          "Status zatrudnienia",
+          "Ryzyko ubezpieczeniowe",
+          "Dostęp do kredytu"
+        ]
+      },
+      "slide11": {
+        "navTitle": "Przymus ekonomiczny",
+        "title": "Własnościowa infrastruktura tworzy ekonomiczny przymus typu pay-to-live",
+        "panels": [
+          {
+            "title": "Mechanizm",
+            "text1": "Gdy podstawowe funkcje ciała zależą od własnościowego oprogramowania lub ciągłego wsparcia dostawcy, siła rynkowa bezpośrednio przekłada się na nacisk wobec integralności cielesnej."
+          },
+          {
+            "title": "Normatywne ograniczenia Kodeksu",
+            "text1": "Należy zakazać wzorców projektowych, które spowalniają lub wyłączają funkcje podtrzymujące życie dla uzyskania przewagi finansowej. Trzeba też wymagać wiarygodnych mechanizmów wyjścia i escrow oprogramowania przy trwałych zależnościach."
+          }
+        ]
+      },
+      "slide12": {
+        "navTitle": "Presja normalizacji",
+        "title": "Opcjonalna optymalizacja normalizuje się w strukturalny wymóg",
+        "mechanismTitle": "Mechanizm",
+        "mechanismText": "W silnie konkurencyjnych środowiskach, takich jak sport, ulepszanie przesuwa fizjologiczne punkty odniesienia. To, co zaczyna się jako opcjonalny upgrade, może szybko stać się strukturalnym warunkiem uczestnictwa.",
+        "constraintsTitle": "Normatywne ograniczenia Kodeksu",
+        "constraints": [
+          {
+            "title": "Wymagaj przejrzystych, standaryzowanych ram kwalifikacji",
+            "text1": "dla uczestnictwa osób ulepszonych."
+          },
+          {
+            "title": "Zapewnij, że reguły integralności nie dyskryminują nieintencjonalnie",
+            "text1": "osób korzystających z uzasadnionych interwencji terapeutycznych."
+          }
+        ]
+      },
+      "slide13": {
+        "navTitle": "Ograniczenia operacyjne",
+        "title": "Kodeks przekłada prawa podstawowe na operacyjne ograniczenia",
+        "headers": [
+          "Obszar zagrożenia",
+          "Mechanizm ryzyka strukturalnego",
+          "Podstawowa zasada Kodeksu"
+        ],
+        "rows": [
+          {
+            "threat": "Militaryzacja",
+            "risk": "Presja hierarchiczna i osłabiona dobrowolność",
+            "principle": "Zakazać przymusowej augmentacji i zapewnić realną zgodę"
+          },
+          {
+            "threat": "Nadużycie biologiczne",
+            "risk": "Projektowanie i targetowanie przyspieszane przez AI",
+            "principle": "Zakazać szkodliwych zastosowań i egzekwować przegląd dual-use"
+          },
+          {
+            "threat": "Cyber-fizyczne",
+            "risk": "Zdalny dostęp do implantów cielesnych",
+            "principle": "Ograniczyć zdalną kontrolę i wymagać bezpiecznego trybu offline"
+          },
+          {
+            "threat": "Nadużycie danych",
+            "risk": "Profilowanie predykcyjne i wnioskowanie społeczne",
+            "principle": "Egzekwować ograniczenie celu i zakazać dyskryminacji algorytmicznej"
+          },
+          {
+            "threat": "Ekonomiczne",
+            "risk": "Vendor lock-in i zależność krytyczna dla życia",
+            "principle": "Gwarantować ciągłość i zakazać eksploatacyjnej kontroli funkcjonalnej"
+          }
+        ]
+      },
+      "slide14": {
+        "navTitle": "Ciągłe governance",
+        "title": "Governance musi odpowiadać ciągłej strukturze technologii",
+        "diagram": {
+          "outerRing": "Egzekwowanie instytucjonalne",
+          "middleRing": "Cykl życia",
+          "center": "Etap projektowania"
+        },
+        "sections": [
+          {
+            "title": "Ograniczenia na etapie projektowania:",
+            "text1": "Twardo zakodowane limity fizyczne i programowe, na przykład wyłączenie zdalnych nadpisań krytycznych funkcji biologicznych."
+          },
+          {
+            "title": "Obowiązki w cyklu życia:",
+            "text1": "Gwarantowane długoterminowe aktualizacje bezpieczeństwa, ciągła audytowalność i obowiązkowe tryby degradacji offline."
+          },
+          {
+            "title": "Egzekwowanie instytucjonalne:",
+            "text1": "Obowiązkowa certyfikacja, audyty zgodności i proaktywny nadzór obejmujący zarówno domenę medyczną, jak i cyfrową."
+          }
+        ]
+      },
+      "slide15": {
+        "navTitle": "Godność człowieka",
+        "title": "Strukturalny warunek wstępny ludzkiej godności",
+        "statements": [
+          "Augmentacja wspomagana przez AI ma ogromny potencjał przywracania zdrowia, niezależności i sprawczości.",
+          "Profesjonalny Kodeks nie jest opcjonalnym dodatkiem etycznym. Jest operacyjną koniecznością.",
+          "Osadzając podstawowe prawa UE bezpośrednio w architekturze systemu, można sprawić, że augmentacja będzie służyć człowiekowi, zamiast go uprzedmiotawiać."
+        ]
+      }
+    }
   },
   "poster": {
     "eyebrow": "Podstrona posteru",
     "title": "Poster naukowy",
-    "lead": "Ta sekcja służy do prezentacji posteru konferencyjnego w czytelnej, statycznej formie internetowej.",
-    "description": "Możesz tu dodać skrót badań, główne wyniki, autorów, afiliacje oraz materiały pomocnicze. Układ pozostaje lekki i zgodny ze statycznym deploymentem."
+    "lead": "Ta sekcja służy do prezentacji posteru konferencyjnego w czytelnej, statycznej formie webowej.",
+    "description": "Możesz umieścić tutaj streszczenie badań, kluczowe wyniki, autorów, afiliacje i materiały pomocnicze. Układ pozostaje lekki i zgodny ze statycznym wdrożeniem."
   }
 }

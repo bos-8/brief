@@ -3,7 +3,7 @@ import { Fragment, type ComponentType, type ReactNode, type SVGProps } from "rea
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   Activity,
   ArrowRight,
@@ -593,25 +593,26 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
   setRequestLocale(locale);
 
-  const deck = getPresentationDeck(locale);
+  const deck = await getPresentationDeck(locale);
   const deckId = "presentation-deck";
+  const t = await getTranslations({ locale, namespace: "presentation" });
 
   const slideItems: readonly SlideItem[] = [
-    { id: "slide-01", index: 1, title: deck.hero.navTitle },
-    { id: "slide-02", index: 2, title: deck.evolution.navTitle },
-    { id: "slide-03", index: 3, title: deck.objective.navTitle },
-    { id: "slide-04", index: 4, title: deck.ethics.navTitle },
-    { id: "slide-05", index: 5, title: deck.dualUse.navTitle },
-    { id: "slide-06", index: 6, title: deck.genomeRisk.navTitle },
-    { id: "slide-07", index: 7, title: deck.bias.navTitle },
-    { id: "slide-08", index: 8, title: deck.legal.navTitle },
-    { id: "slide-09", index: 9, title: deck.anonymization.navTitle },
-    { id: "slide-10", index: 10, title: deck.lawAsCode.navTitle },
-    { id: "slide-11", index: 11, title: deck.framework.navTitle },
-    { id: "slide-12", index: 12, title: deck.dataModels.navTitle },
-    { id: "slide-13", index: 13, title: deck.decisions.navTitle },
-    { id: "slide-14", index: 14, title: deck.caseStudy.navTitle },
-    { id: "slide-15", index: 15, title: deck.closing.navTitle },
+    { id: "slide-01", index: 1, title: deck.slide1.navTitle },
+    { id: "slide-02", index: 2, title: deck.slide2.navTitle },
+    { id: "slide-03", index: 3, title: deck.slide3.navTitle },
+    { id: "slide-04", index: 4, title: deck.slide4.navTitle },
+    { id: "slide-05", index: 5, title: deck.slide5.navTitle },
+    { id: "slide-06", index: 6, title: deck.slide6.navTitle },
+    { id: "slide-07", index: 7, title: deck.slide7.navTitle },
+    { id: "slide-08", index: 8, title: deck.slide8.navTitle },
+    { id: "slide-09", index: 9, title: deck.slide9.navTitle },
+    { id: "slide-10", index: 10, title: deck.slide10.navTitle },
+    { id: "slide-11", index: 11, title: deck.slide11.navTitle },
+    { id: "slide-12", index: 12, title: deck.slide12.navTitle },
+    { id: "slide-13", index: 13, title: deck.slide13.navTitle },
+    { id: "slide-14", index: 14, title: deck.slide14.navTitle },
+    { id: "slide-15", index: 15, title: deck.slide15.navTitle },
   ];
   const visibleSlideItems = slideItems.slice(0, 15);
   const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
@@ -628,256 +629,120 @@ export default async function PresentationPage({ params }: LocalePageProps) {
   const slideElevenImageSrc = `${basePath}/presentation_heart.png`;
   const slideTwelveImageSrc = `${basePath}/prezentation_stack.png`;
   const slideFifteenImageSrc = `${basePath}/presentation_end.png`;
-  const openingTitle = "A Rights-Based Governance Framework for AI-Enabled Human Enhancement";
-  const openingSubtitle =
-    "Introducing the Codex of Augmented Humanity as a governance layer for structural risks in AI-enabled augmentation";
-  const openingAuthorsLabel = locale === "pl" ? "AUTORZY" : "AUTHORS";
-  const openingAffiliation = "Opole University of Technology";
-  const slideTwoTitle = "Continuous socio-technical augmentation outpaces sectoral regulation";
-  const slideTwoCards = [
-    {
-      title: "The Shift",
-      body: "Enhancement is evolving from episodic clinical interventions into continuous, AI-driven systems.",
-    },
-    {
-      title: "The Gap",
-      body: "EU laws (GDPR, AI Act, Medical Devices) operate in isolated silos, failing to address continuous, connected augmentation.",
-    },
-    {
-      title: "The Resolution",
-      body: "The Codex of Augmented Humanity translates fundamental EU rights (dignity, bodily integrity) into operational design constraints to prevent systemic exploitation.",
-    },
-  ] as const;
-  const slideThreeTitle = "AI alters the fundamental architecture of biological intervention";
+  const openingTitle = t.rich("slides.slide1.title", {
+    focus: (chunks) => <>{chunks}</>,
+  });
+  const openingSubtitle = t.rich("slides.slide1.subtitle", {
+    codex: (chunks) => <span className="font-semibold">{chunks}</span>,
+  });
+  const openingAuthorsLabel = deck.slide1.authorsLabel;
+  const openingAffiliation = deck.slide1.affiliation;
+  const slideTwoTitle = deck.slide2.title;
+  const slideTwoCards = deck.slide2.cards;
+  const slideThreeTitle = deck.slide3.title;
   const slideThreeRows = [
     {
-      label: "Temporal Dimension",
-      traditional: "Episodic & bounded",
-      enhanced: "Continuos & persistent",
+      ...deck.slide3.rows[0],
       traditionalIcon: Activity,
       enhancedIcon: BoundingBoxCircles,
     },
     {
-      label: "Operational Profile",
-      traditional: "Predefined therapeutic parameters",
-      enhanced: "Adaptive machine learning & ongoing optimization",
+      ...deck.slide3.rows[1],
       traditionalIcon: Gear,
       enhancedIcon: Cpu,
     },
     {
-      label: "Infrastructural Base",
-      traditional: "Standalone local device",
-      enhanced: "Networked cyber-physical system",
+      ...deck.slide3.rows[2],
       traditionalIcon: Server,
       enhancedIcon: Diagram3,
     },
     {
-      label: "Core Risk Profile",
-      traditional: "Clinical error & mechanical malfuntion",
-      enhanced: "Structural dependency & power asymmetry",
+      ...deck.slide3.rows[3],
       traditionalIcon: ExclamationTriangle,
       enhancedIcon: ShieldLock,
     },
   ] as const;
-  const slideFourTitle = "The continuous feedback loop of AI-enabled augmentation";
+  const slideFourTitle = deck.slide4.title;
   const slideFourCards = [
     {
       position: styles.slideFourCardTopLeft,
       tone: styles.slideFourCardFour,
-      index: "4.",
-      title: "Oversight Layer",
-      body: "Manages logging, human validation limits, and regulatory compliance.",
+      ...deck.slide4.cards[3],
     },
     {
       position: styles.slideFourCardTopRight,
       tone: styles.slideFourCardOne,
-      index: "1.",
-      title: "Sensing Layer",
-      body: "Collects continuous telemetry, physiological, and behavioral data directly from the body.",
+      ...deck.slide4.cards[0],
     },
     {
       position: styles.slideFourCardBottomRight,
       tone: styles.slideFourCardTwo,
-      index: "2.",
-      title: "AI Layer",
-      body: "Performs predictive classification and adaptive optimization (frequently processed on external vendor clouds).",
+      ...deck.slide4.cards[1],
     },
     {
       position: styles.slideFourCardBottomLeft,
       tone: styles.slideFourCardThree,
-      index: "3.",
-      title: "Actuation Layer",
-      body: "Dynamically modifies physical or cognitive treatment parameters in real-time.",
+      ...deck.slide4.cards[2],
     },
   ] as const;
-  const slideFiveTitle = "Sectoral EU frameworks fail to capture systemic infrastructural risks";
-  const slideFivePillars = ["GDPR", "AI Act", "Medical Devices", "Cybersecurity"] as const;
+  const slideFourDiagram = deck.slide4.diagram;
+  const slideFiveTitle = deck.slide5.title;
+  const slideFivePillars = deck.slide5.pillars;
   const slideFivePillarSrc = `${basePath}/presentation_filar.png`;
   const slideFivePanels = [
-    {
-      tone: styles.slideFivePanelNeutral,
-      lead: null,
-      body: "Existing regulations are robust but isolated. None independently address the convergence of functional body integration, algorithmic adaptability, and economic embeddedness.",
-    },
-    {
-      tone: styles.slideFivePanelAmber,
-      lead: "The Blindspot:",
-      body: "Long-term dependency, continuous optimization, and contractual lock-in.",
-    },
-    {
-      tone: styles.slideFivePanelDark,
-      lead: "The Imperative:",
-      body: "Enhancement must never become a channel for exploitation, particularly where life-sustaining functions or core autonomy are at stake.",
-    },
+    { tone: styles.slideFivePanelNeutral, ...deck.slide5.panels[0] },
+    { tone: styles.slideFivePanelAmber, ...deck.slide5.panels[1] },
+    { tone: styles.slideFivePanelDark, ...deck.slide5.panels[2] },
   ] as const;
-  const slideSixTitle = "Threat analysis must now assume adversarial environments";
+  const slideSixTitle = deck.slide6.title;
   const slideSixPanels = [
-    {
-      tone: styles.slideSixPanelNeutral,
-      lead: "AI-enabled augmentation",
-      body: "shifts risk away from isolated clinical defects toward structural coercion.",
-    },
-    {
-      tone: styles.slideSixPanelAmber,
-      lead: "Acceleration & Opacity:",
-      body: "Algorithms rapidly scale interventions and turn intimate health data into predictive tools.",
-    },
-    {
-      tone: styles.slideSixPanelDark,
-      lead: "Threat modeling",
-      body: "must account for hierarchies, market leverage, and competitive pressures, not just benign therapeutic use.",
-    },
+    { tone: styles.slideSixPanelNeutral, ...deck.slide6.panels[0] },
+    { tone: styles.slideSixPanelAmber, ...deck.slide6.panels[1] },
+    { tone: styles.slideSixPanelDark, ...deck.slide6.panels[2] },
   ] as const;
-  const slideSevenTitle = "Militarization generates structural pressure to upgrade";
+  const slideSixDiagram = deck.slide6.diagram;
+  const slideSevenTitle = deck.slide7.title;
   const slideSevenPanels = [
-    {
-      tone: styles.slideSevenPanelNeutral,
-      lead: "The Mechanism",
-      body: "Upgrading resilience or perception creates “upgrade pressure” within hierarchies, eroding meaningful consent. Therapeutic capabilities easily pivot into strategic defense assets.",
-    },
-    {
-      tone: styles.slideSevenPanelDark,
-      lead: "Codex Normative Constraints",
-      body: "• Strict prohibition of coercive enhancement as a condition of service or employment.\n• Mandatory long-term medical support obligations for irreversible interventions.",
-    },
+    { tone: styles.slideSevenPanelNeutral, ...deck.slide7.panels[0] },
+    { tone: styles.slideSevenPanelDark, ...deck.slide7.panels[1] },
   ] as const;
-  const slideEightTitle = "Connectivity transforms implants into cyber-physical attack surfaces";
+  const slideEightTitle = deck.slide8.title;
   const slideEightPanels = [
-    {
-      tone: styles.slideEightPanelNeutral,
-      lead: "The Mechanism",
-      body: "Remote configuration concentrates practical control in the hands of vendors or malicious actors. A compromised wireless insulin pump directly alters biological states, causing severe hypoglycemia or hyperglycemia.",
-    },
-    {
-      tone: styles.slideEightPanelNeutral,
-      lead: "Codex Normative Constraints",
-      body: "• Life-critical implants must not be remotely controllable by default.\n• Mandatory implementation of a secure, offline degraded mode that preserves life when networks fail.",
-    },
+    { tone: styles.slideEightPanelNeutral, ...deck.slide8.panels[0] },
+    { tone: styles.slideEightPanelNeutral, ...deck.slide8.panels[1] },
   ] as const;
-  const slideNineTitle = "AI optimization lowers the barrier for biologically targeted harm";
+  const slideNineTitle = deck.slide9.title;
   const slideNinePanels = [
-    {
-      tone: styles.slideNinePanelNeutral,
-      lead: "The Mechanism",
-      body: "AI accelerates the design, simulation, and parameter optimization of biological interventions. Misuse now requires only access to data and compute, enabling population-targeted effects.",
-    },
-    {
-      tone: styles.slideNinePanelAmber,
-      lead: "Codex Red Line Constraints",
-      body: "• Absolute ban on enhancement-related biological research intended to harm or persecute.\n• Strict dual-use risk reviews mandatory for AI-accelerated biological scaling.",
-    },
+    { tone: styles.slideNinePanelNeutral, ...deck.slide9.panels[0] },
+    { tone: styles.slideNinePanelAmber, ...deck.slide9.panels[1] },
   ] as const;
-  const slideTenTitle = "Continuous telemetry enables hidden social sorting";
-  const slideTenMechanism =
-    "AI transforms intimate biological markers into scalable risk-scoring systems. Access to basic opportunities becomes probabilistically conditioned on continuous biological metrics.";
-  const slideTenConstraints = [
-    "Absolute ban on enhancement-based discrimination by insurers, employers, or platforms.",
-    'Enforcement of strict purpose limitation to prevent general surveillance "function creep".',
-  ] as const;
-  const slideTenOutcomes = ["Employment Status", "Insurance Risk", "Credit Access"] as const;
-  const slideElevenTitle = 'Proprietary infrastructure creates "pay-to-live" economic coercion';
-  const slideElevenPanels = [
-    {
-      title: "The Mechanism",
-      body: "When essential bodily functions rely on proprietary software or continuous vendor support, market power translates directly into leverage over bodily integrity.",
-    },
-    {
-      title: "Codex Normative Constraints",
-      body: "• Prohibit design patterns that throttle or disable life-sustaining functions for financial leverage.\n• Mandate credible exit and software escrow mechanisms for durable dependency relationships.",
-    },
-  ] as const;
-  const slideTwelveTitle = "Optional optimization normalizes into structural requirements";
-  const slideTwelveMechanism =
-    "In highly competitive environments like sport, enhancement alters physiological baselines. What begins as an optional upgrade quickly becomes a structural prerequisite for basic participation.";
-  const slideTwelveConstraints = [
-    {
-      lead: "Require transparent, standardized eligibility frameworks",
-      body: "for enhanced participation.",
-    },
-    {
-      lead: "Ensure integrity rules do not inadvertently discriminate",
-      body: "against individuals utilizing legitimate therapeutic interventions.",
-    },
-  ] as const;
-  const slideThirteenTitle = "The Codex translates fundamental rights into operational constraints";
+  const slideTenTitle = deck.slide10.title;
+  const slideTenMechanismTitle = deck.slide10.mechanismTitle;
+  const slideTenMechanism = deck.slide10.mechanismText;
+  const slideTenConstraintsTitle = deck.slide10.constraintsTitle;
+  const slideTenConstraints = deck.slide10.constraints;
+  const slideTenOutcomes = deck.slide10.outcomes;
+  const slideElevenTitle = deck.slide11.title;
+  const slideElevenPanels = deck.slide11.panels;
+  const slideTwelveTitle = deck.slide12.title;
+  const slideTwelveMechanismTitle = deck.slide12.mechanismTitle;
+  const slideTwelveMechanism = deck.slide12.mechanismText;
+  const slideTwelveConstraintsTitle = deck.slide12.constraintsTitle;
+  const slideTwelveConstraints = deck.slide12.constraints;
+  const slideThirteenTitle = deck.slide13.title;
+  const slideThirteenHeaders = deck.slide13.headers;
   const slideThirteenRows = [
-    {
-      threat: "Militarization",
-      risk: "Hierarchical pressure & reduced voluntariness",
-      principle: "Prohibit coercive enhancement; ensure meaningful consent",
-      icon: ShieldLock,
-      accent: styles.slideThirteenAccentCyan,
-    },
-    {
-      threat: "Biological Misuse",
-      risk: "AI-accelerated design and targeting",
-      principle: "Ban harmful applications; enforce dual-use review",
-      icon: Activity,
-      accent: styles.slideThirteenAccentCyan,
-    },
-    {
-      threat: "Cyber-Physical",
-      risk: "Remote access to bodily implants",
-      principle: "Restrict remote control; mandate fail-safe offline design",
-      icon: Diagram3,
-      accent: styles.slideThirteenAccentSlate,
-    },
-    {
-      threat: "Data Misuse",
-      risk: "Predictive profiling and social inference",
-      principle: "Enforce purpose limitation; prohibit algorithmic discrimination",
-      icon: Database,
-      accent: styles.slideThirteenAccentAmber,
-    },
-    {
-      threat: "Economic",
-      risk: "Vendor lock-in and life-critical reliance",
-      principle: "Guarantee continuity; prohibit exploitative functional control",
-      icon: BarChartLine,
-      accent: styles.slideThirteenAccentAmber,
-    },
+    { ...deck.slide13.rows[0], icon: ShieldLock, accent: styles.slideThirteenAccentCyan },
+    { ...deck.slide13.rows[1], icon: Activity, accent: styles.slideThirteenAccentCyan },
+    { ...deck.slide13.rows[2], icon: Diagram3, accent: styles.slideThirteenAccentSlate },
+    { ...deck.slide13.rows[3], icon: Database, accent: styles.slideThirteenAccentAmber },
+    { ...deck.slide13.rows[4], icon: BarChartLine, accent: styles.slideThirteenAccentAmber },
   ] as const;
-  const slideFourteenTitle = "Governance must match the continuous structure of the technology";
-  const slideFourteenSections = [
-    {
-      title: "Design-Time Constraints:",
-      body: "Hardcoded physical and software limits (e.g., physically disabling remote overrides of critical biological functions).",
-    },
-    {
-      title: "Lifecycle Obligations:",
-      body: "Guaranteed long-term security updates, continuous auditability, and mandatory offline degraded modes.",
-    },
-    {
-      title: "Institutional Enforcement:",
-      body: "Mandatory certification, compliance audits, and proactive regulatory oversight bridging medical and digital domains.",
-    },
-  ] as const;
-  const slideFifteenTitle = "A structural precondition for human dignity";
-  const slideFifteenStatements = [
-    "AI-assisted augmentation possesses immense potential to restore health, independence, and capacity.",
-    "However, a professional Codex is not an optional ethical supplement it is an operational necessity.",
-    "By embedding EU fundamental rights directly into system architecture, we ensure augmentation serves the human being, rather than instrumentalizing them.",
-  ] as const;
+  const slideFourteenTitle = deck.slide14.title;
+  const slideFourteenDiagram = deck.slide14.diagram;
+  const slideFourteenSections = deck.slide14.sections;
+  const slideFifteenTitle = deck.slide15.title;
+  const slideFifteenStatements = deck.slide15.statements;
 
   return (
     <section className="relative bg-background text-foreground">
@@ -921,7 +786,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
             <div className={styles.openingAuthors}>
               <p className={cx(styles["type-6"], styles.openingTag, styles.tagContrast)}>{openingAuthorsLabel}</p>
-              {deck.hero.authors.map((author) => (
+              {deck.slide1.authors.map((author) => (
                 <p key={author} className={cx(styles["type-4"], styles.openingAuthorText, styles.openingCompactCopy, "text-foreground/90")}>
                   {author}
                 </p>
@@ -974,7 +839,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                 )}
               >
                 <h3 className={cx(styles.slideTwoCardTitle, styles.tagContrast)}>{card.title}</h3>
-                <p className={styles.slideTwoCardBody}>{card.body}</p>
+                <p className={styles.slideTwoCardBody}>{card.text1}</p>
               </div>
             ))}
           </div>
@@ -987,8 +852,8 @@ export default async function PresentationPage({ params }: LocalePageProps) {
             </div>
 
             <div aria-hidden="true" className={styles.slideThreeSpacer} />
-            <div className={cx(styles.slideThreeColumnHead, styles.slideThreeTraditionalHead)}>Traditional Medical Intervention</div>
-            <div className={cx(styles.slideThreeColumnHead, styles.slideThreeEnhancedHead)}>AI-Enabled Enhancement</div>
+            <div className={cx(styles.slideThreeColumnHead, styles.slideThreeTraditionalHead)}>{deck.slide3.traditionalLabel}</div>
+            <div className={cx(styles.slideThreeColumnHead, styles.slideThreeEnhancedHead)}>{deck.slide3.enhancedLabel}</div>
 
             {slideThreeRows.map((row, index) => {
               const rowClass =
@@ -1001,13 +866,11 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                       : styles.slideThreeRowFour;
 
               return (
-                <Fragment key={row.label}>
-                  <div className={cx(styles.slideThreeLabelCell, rowClass)}>
-                    {row.label}
-                  </div>
+                <Fragment key={row.rowLabel}>
+                  <div className={cx(styles.slideThreeLabelCell, rowClass)}>{row.rowLabel}</div>
                   <div className={cx(styles.slideThreeValueCell, styles.slideThreeTraditionalCell, rowClass)}>
                     <div className={styles.slideThreeValueContent}>
-                      <span>{row.traditional}</span>
+                      <span>{row.left}</span>
                       <span className={cx(styles.slideThreeIconWrap, styles.slideThreeTraditionalIconWrap)}>
                         <row.traditionalIcon className={styles.slideThreeIcon} />
                       </span>
@@ -1015,7 +878,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                   </div>
                   <div className={cx(styles.slideThreeValueCell, styles.slideThreeEnhancedCell, rowClass)}>
                     <div className={styles.slideThreeValueContent}>
-                      <span>{row.enhanced}</span>
+                      <span>{row.right}</span>
                       <span className={cx(styles.slideThreeIconWrap, styles.slideThreeEnhancedIconWrap)}>
                         <row.enhancedIcon className={styles.slideThreeIcon} />
                       </span>
@@ -1039,7 +902,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                   <p className={styles.slideFourCardTitle}>
                     <span className={styles.slideFourCardIndex}>{card.index}</span> {card.title}:
                   </p>
-                  <p className={styles.slideFourCardBody}>{card.body}</p>
+                  <p className={styles.slideFourCardBody}>{card.text1}</p>
                 </div>
               ))}
 
@@ -1059,15 +922,27 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                   <path d="M410 638 L380 656 L410 674" className={styles.slideFourChevron} />
                   <path d="M86 410 L104 380 L122 410" className={styles.slideFourChevron} />
 
-                  <text x="148" y="174" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelFour)}>CONTROL</text>
-                  <text x="130" y="208" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelFour)}>SIGNALS</text>
+                  <text x="148" y="174" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelFour)}>
+                    {slideFourDiagram.controlSignals.text1}
+                  </text>
+                  <text x="130" y="208" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelFour)}>
+                    {slideFourDiagram.controlSignals.text2}
+                  </text>
 
-                  <text x="484" y="174" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelOne)}>TELEMETRY</text>
+                  <text x="484" y="174" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelOne)}>
+                    {slideFourDiagram.telemetry.text1}
+                  </text>
 
-                  <text x="486" y="610" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelTwo)}>PREDICTIONS</text>
+                  <text x="486" y="610" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelTwo)}>
+                    {slideFourDiagram.predictions.text1}
+                  </text>
 
-                  <text x="110" y="610" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelThree)}>DYNAMIC</text>
-                  <text x="84" y="644" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelThree)}>MODIFICATION</text>
+                  <text x="110" y="610" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelThree)}>
+                    {slideFourDiagram.dynamicModification.text1}
+                  </text>
+                  <text x="84" y="644" className={cx(styles.slideFourLabelPrimary, styles.slideFourLabelThree)}>
+                    {slideFourDiagram.dynamicModification.text2}
+                  </text>
                 </svg>
               </div>
             </div>
@@ -1100,19 +975,19 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
             {slideFivePanels.map((panel, index) => (
               <div
-                key={panel.body}
+                key={panel.text1}
                 className={cx(
                   styles.slideFivePanel,
                   panel.tone,
                   index === 0 ? styles.slideFivePanelOne : index === 1 ? styles.slideFivePanelTwo : styles.slideFivePanelThree,
                 )}
               >
-                <p className={styles.slideFivePanelText}>
-                  {panel.lead ? <span className={styles.slideFivePanelLead}>{panel.lead} </span> : null}
-                  {panel.body}
-                </p>
-              </div>
-            ))}
+                  <p className={styles.slideFivePanelText}>
+                    {panel.lead ? <span className={styles.slideFivePanelLead}>{panel.lead} </span> : null}
+                    {panel.text1}
+                  </p>
+                </div>
+              ))}
           </div>
         </Slide>
 
@@ -1124,7 +999,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
             {slideSixPanels.map((panel, index) => (
               <div
-                key={panel.body}
+                key={panel.text1}
                 className={cx(
                   styles.slideSixPanel,
                   panel.tone,
@@ -1132,7 +1007,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                 )}
               >
                 <p className={styles.slideSixPanelText}>
-                  <span className={styles.slideSixPanelLead}>{panel.lead}</span> {panel.body}
+                  <span className={styles.slideSixPanelLead}>{panel.lead}</span> {panel.text1}
                 </p>
               </div>
             ))}
@@ -1177,24 +1052,26 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
                 <text className={styles.slideSixRingLabel}>
                   <textPath href="#slideSixOuterArc" startOffset="50%" textAnchor="middle" dy="-0.5em">
-                    State & Institutional Abuse
+                    {slideSixDiagram.outerRing}
                   </textPath>
                 </text>
                 <text className={styles.slideSixRingLabel}>
                   <textPath href="#slideSixMiddleArc" startOffset="50%" textAnchor="middle" dy="-0.5em">
-                    Economic Coercion
+                    {slideSixDiagram.middleRing}
                   </textPath>
                 </text>
                 <text className={styles.slideSixRingLabel}>
                   <textPath href="#slideSixInnerArc" startOffset="50%" textAnchor="middle" dy="-0.5em">
-                    Network Vulnerabilities
+                    {slideSixDiagram.innerRing}
                   </textPath>
                 </text>
 
                 <text x="380" y="340" textAnchor="middle" className={styles.slideSixCoreLabel}>
-                  <tspan x="380" dy="0">Individual</tspan>
-                  <tspan x="380" dy="1.08em">Clinical</tspan>
-                  <tspan x="380" dy="1.08em">Safety</tspan>
+                  {slideSixDiagram.core.map((line, index) => (
+                    <tspan key={line} x="380" dy={index === 0 ? "0" : "1.08em"}>
+                      {line}
+                    </tspan>
+                  ))}
                 </text>
               </svg>
             </div>
@@ -1231,7 +1108,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                 <p className={styles.slideSevenPanelText}>
                   <span className={styles.slideSevenPanelLead}>{panel.lead}</span>
                 </p>
-                <p className={styles.slideSevenPanelBody}>{panel.body}</p>
+                <p className={styles.slideSevenPanelBody}>{panel.text1}</p>
               </div>
             ))}
           </div>
@@ -1267,7 +1144,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                 <p className={styles.slideEightPanelText}>
                   <span className={styles.slideEightPanelLead}>{panel.lead}</span>
                 </p>
-                <p className={styles.slideEightPanelBody}>{panel.body}</p>
+                <p className={styles.slideEightPanelBody}>{panel.text1}</p>
               </div>
             ))}
           </div>
@@ -1291,7 +1168,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                 <p className={styles.slideNinePanelText}>
                   <span className={styles.slideNinePanelLead}>{panel.lead}</span>
                 </p>
-                <p className={styles.slideNinePanelBody}>{panel.body}</p>
+                <p className={styles.slideNinePanelBody}>{panel.text1}</p>
               </div>
             ))}
 
@@ -1315,7 +1192,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
             </div>
 
             <div className={cx(styles.slideTenPanel, styles.slideTenPanelLeft)}>
-              <p className={styles.slideTenPanelTitle}>The Mechanism</p>
+              <p className={styles.slideTenPanelTitle}>{slideTenMechanismTitle}</p>
               <p className={styles.slideTenPanelBody}>{slideTenMechanism}</p>
             </div>
 
@@ -1339,7 +1216,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
             </div>
 
             <div className={cx(styles.slideTenPanel, styles.slideTenPanelRight)}>
-              <p className={styles.slideTenPanelTitle}>Codex Normative Constraints</p>
+              <p className={styles.slideTenPanelTitle}>{slideTenConstraintsTitle}</p>
               {slideTenConstraints.map((item) => (
                 <p key={item} className={styles.slideTenPanelBody}>
                   {item}
@@ -1372,9 +1249,9 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                 className={cx(styles.slideElevenPanel, index === 0 ? styles.slideElevenPanelOne : styles.slideElevenPanelTwo)}
               >
                 <p className={styles.slideElevenPanelTitle}>{panel.title}</p>
-                <p className={styles.slideElevenPanelBody}>{panel.body}</p>
-              </div>
-            ))}
+              <p className={styles.slideElevenPanelBody}>{panel.text1}</p>
+            </div>
+          ))}
           </div>
         </Slide>
 
@@ -1396,16 +1273,16 @@ export default async function PresentationPage({ params }: LocalePageProps) {
             </div>
 
             <div className={cx(styles.slideTwelvePanel, styles.slideTwelvePanelOne)}>
-              <p className={styles.slideTwelvePanelTitle}>The Mechanism</p>
+              <p className={styles.slideTwelvePanelTitle}>{slideTwelveMechanismTitle}</p>
               <p className={styles.slideTwelvePanelBody}>{slideTwelveMechanism}</p>
             </div>
 
             <div className={cx(styles.slideTwelvePanel, styles.slideTwelvePanelTwo)}>
-              <p className={styles.slideTwelvePanelTitle}>Codex Normative Constraints</p>
+              <p className={styles.slideTwelvePanelTitle}>{slideTwelveConstraintsTitle}</p>
               <ul className={styles.slideTwelveConstraintList}>
                 {slideTwelveConstraints.map((item) => (
-                  <li key={item.lead} className={styles.slideTwelveConstraintItem}>
-                    <span className={styles.slideTwelveConstraintLead}>{item.lead}</span> {item.body}
+                  <li key={item.title} className={styles.slideTwelveConstraintItem}>
+                    <span className={styles.slideTwelveConstraintLead}>{item.title}</span> {item.text1}
                   </li>
                 ))}
               </ul>
@@ -1426,9 +1303,9 @@ export default async function PresentationPage({ params }: LocalePageProps) {
               <span aria-hidden="true" className={cx(styles.slideThirteenCorner, styles.slideThirteenCornerBottomRight)} />
 
               <div className={styles.slideThirteenGrid}>
-                <div className={styles.slideThirteenHead}>Threat Domain</div>
-                <div className={styles.slideThirteenHead}>Structural Risk Mechanism</div>
-                <div className={styles.slideThirteenHead}>Core Codex Principle</div>
+                <div className={styles.slideThirteenHead}>{slideThirteenHeaders[0]}</div>
+                <div className={styles.slideThirteenHead}>{slideThirteenHeaders[1]}</div>
+                <div className={styles.slideThirteenHead}>{slideThirteenHeaders[2]}</div>
 
                 {slideThirteenRows.map((row) => (
                   <Fragment key={row.threat}>
@@ -1492,16 +1369,16 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
                 <text className={styles.slideSixRingLabel}>
                   <textPath href="#slideFourteenOuterArc" startOffset="50%" textAnchor="middle">
-                    Institutional Enforcement
+                    {slideFourteenDiagram.outerRing}
                   </textPath>
                 </text>
                 <text className={styles.slideSixRingLabel}>
                   <textPath href="#slideFourteenMiddleArc" startOffset="50%" textAnchor="middle">
-                    Lifecycle
+                    {slideFourteenDiagram.middleRing}
                   </textPath>
                 </text>
                 <text x="380" y="394" textAnchor="middle" className={styles.slideFourteenCenterLabel}>
-                  Design-Time
+                  {slideFourteenDiagram.center}
                 </text>
 
                 <circle cx="380" cy="218" r="14" className={styles.slideFourteenNodeLight} />
@@ -1535,7 +1412,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
               {slideFourteenSections.map((section) => (
                 <div key={section.title} className={styles.slideFourteenSection}>
                   <p className={styles.slideFourteenSectionTitle}>{section.title}</p>
-                  <p className={styles.slideFourteenSectionBody}>{section.body}</p>
+                  <p className={styles.slideFourteenSectionBody}>{section.text1}</p>
                 </div>
               ))}
             </div>

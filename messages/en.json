@@ -55,7 +55,323 @@
     "slideTwoBody": "The outer container keeps a safe offset from the screen edges, while slide width is constrained by both viewport height and width. This keeps the layout stable on 16:10 and narrower screens.",
     "slideThreeEyebrow": "Scroll flow",
     "slideThreeTitle": "Scrolling behaves like a vertical deck",
-    "slideThreeBody": "Each slide occupies a full 100dvh step and uses scroll snap, so page scrolling moves the viewer slide by slide. This gives presentation-like behavior without a separate navigation engine."
+    "slideThreeBody": "Each slide occupies a full 100dvh step and uses scroll snap, so page scrolling moves the viewer slide by slide. This gives presentation-like behavior without a separate navigation engine.",
+    "notes": {
+      "eyebrow": "Presentation notes",
+      "title": "Speaker notes for the BRIEF presentation deck",
+      "text1": "The working notes for this deck are maintained in the project documentation under <path>docs/notes.md</path>."
+    },
+    "slides": {
+      "slide1": {
+        "navTitle": "Governance Framework",
+        "title": "A <focus>Rights-Based Governance Framework</focus> for AI-Enabled Human Enhancement",
+        "subtitle": "Introducing the <codex>Codex of Augmented Humanity</codex> as a governance layer for structural risks in AI-enabled augmentation",
+        "authorsLabel": "AUTHORS",
+        "authors": [
+          "Kacper Boś",
+          "Nikolas Jerzy Feduniewicz",
+          "Anna Bryniarska"
+        ],
+        "affiliation": "Opole University of Technology"
+      },
+      "slide2": {
+        "navTitle": "Regulatory Gap",
+        "title": "Continuous socio-technical augmentation outpaces sectoral regulation",
+        "cards": [
+          {
+            "title": "The Shift",
+            "text1": "Enhancement is evolving from episodic clinical interventions into continuous, AI-driven systems."
+          },
+          {
+            "title": "The Gap",
+            "text1": "EU laws such as GDPR, the AI Act, and medical-device rules operate in isolated silos, failing to address continuous, connected augmentation."
+          },
+          {
+            "title": "The Resolution",
+            "text1": "The Codex of Augmented Humanity translates fundamental EU rights such as dignity and bodily integrity into operational design constraints that prevent systemic exploitation."
+          }
+        ]
+      },
+      "slide3": {
+        "navTitle": "Architectural Shift",
+        "title": "AI alters the fundamental architecture of biological intervention",
+        "traditionalLabel": "Traditional Medical Intervention",
+        "enhancedLabel": "AI-Enabled Enhancement",
+        "rows": [
+          {
+            "rowLabel": "Temporal Dimension",
+            "left": "Episodic and bounded",
+            "right": "Continuous and persistent"
+          },
+          {
+            "rowLabel": "Operational Profile",
+            "left": "Predefined therapeutic parameters",
+            "right": "Adaptive machine learning and ongoing optimization"
+          },
+          {
+            "rowLabel": "Infrastructural Base",
+            "left": "Standalone local device",
+            "right": "Networked cyber-physical system"
+          },
+          {
+            "rowLabel": "Core Risk Profile",
+            "left": "Clinical error and mechanical malfunction",
+            "right": "Structural dependency and power asymmetry"
+          }
+        ]
+      },
+      "slide4": {
+        "navTitle": "Feedback Loop",
+        "title": "The continuous feedback loop of AI-enabled augmentation",
+        "cards": [
+          {
+            "index": "1.",
+            "title": "Sensing Layer",
+            "text1": "Collects continuous telemetry, physiological, and behavioral data directly from the body."
+          },
+          {
+            "index": "2.",
+            "title": "AI Layer",
+            "text1": "Performs predictive classification and adaptive optimization, often with external vendor infrastructure in the loop."
+          },
+          {
+            "index": "3.",
+            "title": "Actuation Layer",
+            "text1": "Dynamically modifies physical or cognitive treatment parameters in real time."
+          },
+          {
+            "index": "4.",
+            "title": "Oversight Layer",
+            "text1": "Manages logging, human validation limits, and regulatory compliance."
+          }
+        ],
+        "diagram": {
+          "controlSignals": {
+            "text1": "CONTROL",
+            "text2": "SIGNALS"
+          },
+          "telemetry": {
+            "text1": "TELEMETRY"
+          },
+          "predictions": {
+            "text1": "PREDICTIONS"
+          },
+          "dynamicModification": {
+            "text1": "DYNAMIC",
+            "text2": "MODIFICATION"
+          }
+        }
+      },
+      "slide5": {
+        "navTitle": "Framework Blindspots",
+        "title": "Sectoral EU frameworks fail to capture systemic infrastructural risks",
+        "pillars": [
+          "GDPR",
+          "AI Act",
+          "Medical Devices",
+          "Cybersecurity"
+        ],
+        "panels": [
+          {
+            "lead": null,
+            "text1": "Existing regulations are robust but isolated. None independently address the convergence of functional body integration, algorithmic adaptability, and economic embeddedness."
+          },
+          {
+            "lead": "The Blindspot:",
+            "text1": "Long-term dependency, continuous optimization, and contractual lock-in."
+          },
+          {
+            "lead": "The Imperative:",
+            "text1": "Enhancement must never become a channel for exploitation, particularly where life-sustaining functions or core autonomy are at stake."
+          }
+        ]
+      },
+      "slide6": {
+        "navTitle": "Threat Analysis",
+        "title": "Threat analysis must now assume adversarial environments",
+        "panels": [
+          {
+            "lead": "AI-enabled augmentation",
+            "text1": "shifts risk away from isolated clinical defects toward structural coercion."
+          },
+          {
+            "lead": "Acceleration and Opacity:",
+            "text1": "Algorithms rapidly scale interventions and turn intimate health data into predictive tools."
+          },
+          {
+            "lead": "Threat modeling",
+            "text1": "must account for hierarchies, market leverage, and competitive pressures, not just benign therapeutic use."
+          }
+        ],
+        "diagram": {
+          "outerRing": "State and Institutional Abuse",
+          "middleRing": "Economic Coercion",
+          "innerRing": "Network Vulnerabilities",
+          "core": [
+            "Individual",
+            "Clinical",
+            "Safety"
+          ]
+        }
+      },
+      "slide7": {
+        "navTitle": "Militarization",
+        "title": "Militarization generates structural pressure to upgrade",
+        "panels": [
+          {
+            "lead": "The Mechanism",
+            "text1": "Upgrading resilience or perception creates upgrade pressure inside hierarchies, eroding meaningful consent. Therapeutic capabilities can quickly pivot into strategic defense assets."
+          },
+          {
+            "lead": "Codex Normative Constraints",
+            "text1": "Strictly prohibit coercive enhancement as a condition of service or employment. Impose mandatory long-term medical support obligations for irreversible interventions."
+          }
+        ]
+      },
+      "slide8": {
+        "navTitle": "Cyber-Physical Risks",
+        "title": "Connectivity transforms implants into cyber-physical attack surfaces",
+        "panels": [
+          {
+            "lead": "The Mechanism",
+            "text1": "Remote configuration concentrates practical control in the hands of vendors or malicious actors. A compromised wireless insulin pump can directly alter biological states and produce severe harm."
+          },
+          {
+            "lead": "Codex Normative Constraints",
+            "text1": "Life-critical implants must not be remotely controllable by default. Secure offline degraded modes must preserve life when networks fail."
+          }
+        ]
+      },
+      "slide9": {
+        "navTitle": "Biological Harm",
+        "title": "AI optimization lowers the barrier for biologically targeted harm",
+        "panels": [
+          {
+            "lead": "The Mechanism",
+            "text1": "AI accelerates the design, simulation, and parameter optimization of biological interventions. Misuse now requires little more than data access and compute."
+          },
+          {
+            "lead": "Codex Red Line Constraints",
+            "text1": "Impose an absolute ban on enhancement-related biological research intended to harm or persecute. Require strict dual-use reviews for AI-accelerated biological scaling."
+          }
+        ]
+      },
+      "slide10": {
+        "navTitle": "Social Sorting",
+        "title": "Continuous telemetry enables hidden social sorting",
+        "mechanismTitle": "The Mechanism",
+        "mechanismText": "AI transforms intimate biological markers into scalable risk-scoring systems. Access to basic opportunities becomes probabilistically conditioned on continuous biological metrics.",
+        "constraintsTitle": "Codex Normative Constraints",
+        "constraints": [
+          "Absolute ban on enhancement-based discrimination by insurers, employers, or platforms.",
+          "Strict purpose limitation to prevent general-surveillance function creep."
+        ],
+        "outcomes": [
+          "Employment Status",
+          "Insurance Risk",
+          "Credit Access"
+        ]
+      },
+      "slide11": {
+        "navTitle": "Economic Coercion",
+        "title": "Proprietary infrastructure creates pay-to-live economic coercion",
+        "panels": [
+          {
+            "title": "The Mechanism",
+            "text1": "When essential bodily functions rely on proprietary software or continuous vendor support, market power translates directly into leverage over bodily integrity."
+          },
+          {
+            "title": "Codex Normative Constraints",
+            "text1": "Prohibit design patterns that throttle or disable life-sustaining functions for financial leverage. Mandate credible exit and software-escrow mechanisms for durable dependency relationships."
+          }
+        ]
+      },
+      "slide12": {
+        "navTitle": "Normalization Pressure",
+        "title": "Optional optimization normalizes into structural requirements",
+        "mechanismTitle": "The Mechanism",
+        "mechanismText": "In highly competitive environments such as sport, enhancement shifts physiological baselines. What begins as an optional upgrade can become a structural prerequisite for participation.",
+        "constraintsTitle": "Codex Normative Constraints",
+        "constraints": [
+          {
+            "title": "Require transparent, standardized eligibility frameworks",
+            "text1": "for enhanced participation."
+          },
+          {
+            "title": "Ensure integrity rules do not inadvertently discriminate",
+            "text1": "against individuals using legitimate therapeutic interventions."
+          }
+        ]
+      },
+      "slide13": {
+        "navTitle": "Operational Constraints",
+        "title": "The Codex translates fundamental rights into operational constraints",
+        "headers": [
+          "Threat Domain",
+          "Structural Risk Mechanism",
+          "Core Codex Principle"
+        ],
+        "rows": [
+          {
+            "threat": "Militarization",
+            "risk": "Hierarchical pressure and reduced voluntariness",
+            "principle": "Prohibit coercive enhancement and ensure meaningful consent"
+          },
+          {
+            "threat": "Biological Misuse",
+            "risk": "AI-accelerated design and targeting",
+            "principle": "Ban harmful applications and enforce dual-use review"
+          },
+          {
+            "threat": "Cyber-Physical",
+            "risk": "Remote access to bodily implants",
+            "principle": "Restrict remote control and mandate fail-safe offline design"
+          },
+          {
+            "threat": "Data Misuse",
+            "risk": "Predictive profiling and social inference",
+            "principle": "Enforce purpose limitation and prohibit algorithmic discrimination"
+          },
+          {
+            "threat": "Economic",
+            "risk": "Vendor lock-in and life-critical reliance",
+            "principle": "Guarantee continuity and prohibit exploitative functional control"
+          }
+        ]
+      },
+      "slide14": {
+        "navTitle": "Continuous Governance",
+        "title": "Governance must match the continuous structure of the technology",
+        "diagram": {
+          "outerRing": "Institutional Enforcement",
+          "middleRing": "Lifecycle",
+          "center": "Design-Time"
+        },
+        "sections": [
+          {
+            "title": "Design-Time Constraints:",
+            "text1": "Hard-coded physical and software limits, such as disabling remote overrides of critical biological functions."
+          },
+          {
+            "title": "Lifecycle Obligations:",
+            "text1": "Guaranteed long-term security updates, continuous auditability, and mandatory offline degraded modes."
+          },
+          {
+            "title": "Institutional Enforcement:",
+            "text1": "Mandatory certification, compliance audits, and proactive oversight spanning both medical and digital domains."
+          }
+        ]
+      },
+      "slide15": {
+        "navTitle": "Human Dignity",
+        "title": "A structural precondition for human dignity",
+        "statements": [
+          "AI-assisted augmentation possesses immense potential to restore health, independence, and capacity.",
+          "A professional Codex is not an optional ethical supplement. It is an operational necessity.",
+          "By embedding EU fundamental rights directly into system architecture, augmentation can serve the human being instead of instrumentalizing them."
+        ]
+      }
+    }
   },
   "poster": {
     "eyebrow": "Poster page",
@@ -64,8 +380,3 @@
     "description": "You can place the research summary, key findings, authors, affiliations, and supporting references here. The layout remains lightweight and compatible with static deployment."
   }
 }
-
-
-
-
-
