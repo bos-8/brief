@@ -15,6 +15,20 @@
       "dark": "Dark",
       "light": "Light"
     },
+    "presentationMode": {
+      "enable": "Force presentation mode",
+      "disable": "Disable forced presentation mode"
+    },
+    "podcast": {
+      "toggle": "Podcast",
+      "close": "Close podcast controls",
+      "hint": "You can turn on the podcast for this page here.",
+      "start": "Start",
+      "stop": "Stop",
+      "timeline": "Podcast timeline",
+      "restart": "Restart",
+      "unavailable": "Audio unavailable"
+    },
     "navbar": {
       "brand": "BRIEF",
       "home": "Home",

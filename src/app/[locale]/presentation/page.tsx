@@ -33,10 +33,12 @@ import {
 import { getPresentationDeck } from "@/content/presentationDeck";
 import { SubpageControls } from "@/components/layout/SubpageControls";
 import { PresentationBackdrop } from "@/components/presentation/PresentationBackdrop";
+import { PresentationModeButton } from "@/components/presentation/PresentationModeButton";
 import { Slide, slideDeckClassName } from "@/components/presentation/Slide";
 import { SlideIndicators } from "@/components/presentation/SlideIndicators";
 import { SlideKeyboardNavigation } from "@/components/presentation/SlideKeyboardNavigation";
 import { PresentationWordmark } from "@/components/presentation/PresentationWordmark";
+import { PodcastControls } from "@/components/ui/PodcastControls";
 import { routing } from "@/i18n/routing";
 import type { LocalePageProps } from "@/schema/app";
 import { isAppLocale } from "@/schema/i18n";
@@ -49,6 +51,10 @@ type SlideItem = {
 };
 
 type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
+
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
+const basePath = repositoryName ? `/${repositoryName}` : "";
+const presentationPodcastSrc = `${basePath}/presentation.mp3`;
 
 const titleClass = `${styles["type-2"]} text-foreground`;
 const cardTitleClass = `${styles["type-3"]} text-foreground`;
@@ -754,7 +760,10 @@ export default async function PresentationPage({ params }: LocalePageProps) {
       <PresentationWordmark />
 
       <div id={deckId} className={cx("relative z-10 h-[100dvh] overflow-y-auto snap-y snap-mandatory", slideDeckClassName)}>
-        <SubpageControls />
+        <SubpageControls>
+          <PodcastControls src={presentationPodcastSrc} />
+          <PresentationModeButton deckId={deckId} />
+        </SubpageControls>
         <SlideIndicators deckId={deckId} items={visibleSlideItems} />
         <SlideKeyboardNavigation slideIds={visibleSlideItems.map((item) => item.id)} />
 

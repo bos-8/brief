@@ -1,6 +1,7 @@
 // @file: src/components/layout/SubpageControls.tsx
 "use client";
 
+import type { ReactNode } from "react";
 import { HouseDoor } from "react-bootstrap-icons";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -10,12 +11,14 @@ import { LocaleSwitcher } from "@/components/ui/LocaleSwitcher";
 import { Button } from "@/components/ui/Button";
 import styles from "./SubpageControls.module.css";
 
-export function SubpageControls() {
+export function SubpageControls({ children }: { children?: ReactNode }) {
   const t = useTranslations("common.navbar");
 
   return (
     <div className={styles.container}>
       <div className={styles.panel}>
+        {children}
+
         <Tooltip content={t("home")} placement="bottom">
           <span className="inline-flex">
             <Link href="/" aria-label={t("home")} className={styles.homeButtonLink}>

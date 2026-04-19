@@ -15,6 +15,20 @@
       "dark": "Ciemny",
       "light": "Jasny"
     },
+    "presentationMode": {
+      "enable": "Wymuś tryb prezentacji",
+      "disable": "Wyłącz wymuszony tryb prezentacji"
+    },
+    "podcast": {
+      "toggle": "Podcast",
+      "close": "Zamknij sterowanie podcastem",
+      "hint": "Możesz tutaj włączyć podcast do tej strony.",
+      "start": "Start",
+      "stop": "Stop",
+      "timeline": "Linia czasu podcastu",
+      "restart": "Od nowa",
+      "unavailable": "Audio niedostępne"
+    },
     "navbar": {
       "brand": "BRIEF",
       "home": "Strona główna",

@@ -12,6 +12,7 @@ type SlideProps = {
 };
 
 export const slideDeckClassName = styles.deck;
+export const forceDesktopDeckClassName = styles.forceDesktop;
 
 export function Slide({ id, index, title, children, fullBleed = false }: SlideProps) {
   return (

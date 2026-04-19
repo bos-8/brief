@@ -7,12 +7,14 @@ import { getPosterContent } from "@/content/posterContent";
 import { routing } from "@/i18n/routing";
 import { isAppLocale } from "@/schema/i18n";
 import { SubpageControls } from "@/components/layout/SubpageControls";
+import { PodcastControls } from "@/components/ui/PodcastControls";
 import styles from "./Poster.module.css";
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
 const basePath = repositoryName ? `/${repositoryName}` : "";
 const posterLogoSrc = `${basePath}/logo_opole_univercity_of_technology_light.png`;
 const posterLogoDarkSrc = `${basePath}/logo_opole_univercity_of_technology_dark.png`;
+const posterPodcastSrc = `${basePath}/poster.mp3`;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -27,7 +29,9 @@ export default async function PosterPage({ params }: LocalePageProps) {
 
   return (
     <section className={styles.page}>
-      <SubpageControls />
+      <SubpageControls>
+        <PodcastControls src={posterPodcastSrc} />
+      </SubpageControls>
 
       <article className={styles.poster}>
         <div className={styles.layout}>
