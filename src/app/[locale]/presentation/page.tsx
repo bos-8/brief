@@ -761,7 +761,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
       <div id={deckId} className={cx("relative z-10 h-[100dvh] overflow-y-auto snap-y snap-mandatory", slideDeckClassName)}>
         <SubpageControls>
-          <PodcastControls src={presentationPodcastSrc} gain={1.8} />
+          <PodcastControls src={presentationPodcastSrc} gain={2} />
           <PresentationModeButton deckId={deckId} />
         </SubpageControls>
         <SlideIndicators deckId={deckId} items={visibleSlideItems} />
@@ -995,12 +995,12 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                   index === 0 ? styles.slideFivePanelOne : index === 1 ? styles.slideFivePanelTwo : styles.slideFivePanelThree,
                 )}
               >
-                  <p className={styles.slideFivePanelText}>
-                    {panel.lead ? <span className={styles.slideFivePanelLead}>{panel.lead} </span> : null}
-                    {panel.text1}
-                  </p>
-                </div>
-              ))}
+                <p className={styles.slideFivePanelText}>
+                  {panel.lead ? <span className={styles.slideFivePanelLead}>{panel.lead} </span> : null}
+                  {panel.text1}
+                </p>
+              </div>
+            ))}
           </div>
         </Slide>
 
@@ -1262,9 +1262,9 @@ export default async function PresentationPage({ params }: LocalePageProps) {
                 className={cx(styles.slideElevenPanel, index === 0 ? styles.slideElevenPanelOne : styles.slideElevenPanelTwo)}
               >
                 <p className={styles.slideElevenPanelTitle}>{panel.title}</p>
-              <p className={styles.slideElevenPanelBody}>{panel.text1}</p>
-            </div>
-          ))}
+                <p className={styles.slideElevenPanelBody}>{panel.text1}</p>
+              </div>
+            ))}
           </div>
         </Slide>
 

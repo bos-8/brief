@@ -20,7 +20,6 @@ export async function Navbar() {
     { label: t("home"), href: "/" },
     { label: t("presentation"), href: "/presentation" },
     { label: t("poster"), href: "/poster" },
-    { label: t("notes"), href: "/presentation/notes" },
   ];
 
   return (

@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ArrowCounterclockwise, PlayCircle, PlayFill, StopFill, X } from "react-bootstrap-icons";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
@@ -32,6 +33,7 @@ export function PodcastControls({ src, gain = 1 }: PodcastControlsProps) {
   const audioSourceRef = useRef<MediaElementAudioSourceNode | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
   const [isHydrated, setIsHydrated] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [showHint, setShowHint] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -41,6 +43,22 @@ export function PodcastControls({ src, gain = 1 }: PodcastControlsProps) {
 
   useEffect(() => {
     setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
+    const sync = () => setIsMobile(mediaQuery.matches);
+
+    sync();
+    mediaQuery.addEventListener("change", sync);
+
+    return () => {
+      mediaQuery.removeEventListener("change", sync);
+    };
   }, []);
 
   useEffect(() => {
@@ -228,58 +246,61 @@ export function PodcastControls({ src, gain = 1 }: PodcastControlsProps) {
   const playbackDisabled = isHydrated ? hasError : false;
   const timelineDisabled = isHydrated ? hasError || duration <= 0 : false;
   const restartDisabled = isHydrated ? hasError || duration <= 0 : false;
+  const panelContent = (
+    <div className={`${styles.panel} ${isOpen ? styles.open : ""}`} aria-hidden={!isOpen}>
+      <Tooltip content={playbackLabel} placement="bottom">
+        <span className={`${styles.item} ${styles.delay1} inline-flex`}>
+          <Button
+            aria-label={playbackLabel}
+            tone="main"
+            className="h-8 min-w-8 px-0"
+            disabled={playbackDisabled}
+            onClick={isPlaying ? handleStop : handleStart}
+          >
+            {isPlaying ? <StopFill size={14} className="shrink-0" /> : <PlayFill size={14} className="shrink-0" />}
+          </Button>
+        </span>
+      </Tooltip>
+
+      <div className={`${styles.item} ${styles.delay2} ${styles.sliderWrap}`}>
+        <input
+          aria-label={t("timeline")}
+          className={styles.slider}
+          type="range"
+          min={0}
+          max={duration || 0}
+          step={0.1}
+          value={Math.min(currentTime, duration || 0)}
+          disabled={timelineDisabled}
+          onChange={(event) => handleSeek(Number(event.currentTarget.value))}
+        />
+      </div>
+
+      <div className={`${styles.item} ${styles.delay3} ${styles.time}`} aria-live="off">
+        {timeLabel}
+      </div>
+
+      <Tooltip content={hasError ? t("unavailable") : t("restart")} placement="bottom">
+        <span className={`${styles.item} ${styles.delay4} inline-flex`}>
+          <Button
+            aria-label={hasError ? t("unavailable") : t("restart")}
+            tone="main"
+            className="h-8 min-w-8 px-0"
+            disabled={restartDisabled}
+            onClick={handleRestart}
+          >
+            <ArrowCounterclockwise size={14} className="shrink-0" />
+          </Button>
+        </span>
+      </Tooltip>
+    </div>
+  );
 
   return (
     <div className={styles.root}>
       <audio id={audioId} ref={audioRef} preload="none" src={src} />
 
-      <div className={`${styles.panel} ${isOpen ? styles.open : ""}`} aria-hidden={!isOpen}>
-        <Tooltip content={playbackLabel} placement="bottom">
-          <span className={`${styles.item} ${styles.delay1} inline-flex`}>
-            <Button
-              aria-label={playbackLabel}
-              tone="main"
-              className="h-8 min-w-8 px-0"
-              disabled={playbackDisabled}
-              onClick={isPlaying ? handleStop : handleStart}
-            >
-              {isPlaying ? <StopFill size={14} className="shrink-0" /> : <PlayFill size={14} className="shrink-0" />}
-            </Button>
-          </span>
-        </Tooltip>
-
-        <div className={`${styles.item} ${styles.delay2} ${styles.sliderWrap}`}>
-          <input
-            aria-label={t("timeline")}
-            className={styles.slider}
-            type="range"
-            min={0}
-            max={duration || 0}
-            step={0.1}
-            value={Math.min(currentTime, duration || 0)}
-            disabled={timelineDisabled}
-            onChange={(event) => handleSeek(Number(event.currentTarget.value))}
-          />
-        </div>
-
-        <div className={`${styles.item} ${styles.delay3} ${styles.time}`} aria-live="off">
-          {timeLabel}
-        </div>
-
-        <Tooltip content={hasError ? t("unavailable") : t("restart")} placement="bottom">
-          <span className={`${styles.item} ${styles.delay4} inline-flex`}>
-            <Button
-              aria-label={hasError ? t("unavailable") : t("restart")}
-              tone="main"
-              className="h-8 min-w-8 px-0"
-              disabled={restartDisabled}
-              onClick={handleRestart}
-            >
-              <ArrowCounterclockwise size={14} className="shrink-0" />
-            </Button>
-          </span>
-        </Tooltip>
-      </div>
+      {isHydrated && isMobile ? createPortal(panelContent, document.body) : panelContent}
 
       <div className={`${styles.hint} ${showHint ? styles.hintVisible : ""}`} aria-hidden={!showHint}>
         {t("hint")}
@@ -295,7 +316,13 @@ export function PodcastControls({ src, gain = 1 }: PodcastControlsProps) {
             className="h-8 min-w-8 px-0"
             onClick={() => {
               setShowHint(false);
-              setIsOpen((value) => !value);
+              if (isOpen) {
+                setIsOpen(false);
+                return;
+              }
+
+              setIsOpen(true);
+              void handleStart();
             }}
           >
             {isOpen ? <X size={14} className="shrink-0" /> : <PlayCircle size={14} className="shrink-0" />}
