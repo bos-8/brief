@@ -13,6 +13,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+export const dynamicParams = false;
+
 type MaterialCardProps = {
   label: string;
   title: string;

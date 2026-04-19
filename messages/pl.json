@@ -377,6 +377,192 @@
     "eyebrow": "Podstrona posteru",
     "title": "Poster naukowy",
     "lead": "Ta sekcja służy do prezentacji posteru konferencyjnego w czytelnej, statycznej formie webowej.",
-    "description": "Możesz umieścić tutaj streszczenie badań, kluczowe wyniki, autorów, afiliacje i materiały pomocnicze. Układ pozostaje lekki i zgodny ze statycznym wdrożeniem."
+    "description": "Możesz umieścić tutaj streszczenie badań, kluczowe wyniki, autorów, afiliacje i materiały pomocnicze. Układ pozostaje lekki i zgodny ze statycznym wdrożeniem.",
+    "page": {
+      "header": {
+        "logoAriaLabel": "Politechnika Opolska",
+        "titleParts": {
+          "ai": "AI",
+          "aiSuffix": "gmented",
+          "human": "HUMAN",
+          "humanSuffix": "ity"
+        },
+        "subtitle": "Etyczne i prawne aspekty",
+        "authors": [
+          "Nikolas Feduniewicz",
+          "Kacper Boś",
+          "Anna Bryniarska"
+        ],
+        "tags": [
+          "Etyka AI",
+          "Human Enhancement",
+          "RODO",
+          "EU AI Act",
+          "EHDS"
+        ]
+      },
+      "backgroundIntro": {
+        "eyebrow": "Tło i koncepcja",
+        "title": "Główne ramy pojęciowe posteru"
+      },
+      "backgroundCards": [
+        {
+          "number": "01.",
+          "title": "Defining AIgmented HUMANity",
+          "text1": "Bliska perspektywa integracji AI z ulepszeniami mechanicznymi i biologicznymi, skoncentrowanej na opiece prewencyjnej, spersonalizowanej interwencji i wspieraniu długowieczności."
+        },
+        {
+          "number": "02.",
+          "title": "The Evolutionary Shift",
+          "text1": "Bliska perspektywa integracji AI z ulepszeniami mechanicznymi i biologicznymi, skoncentrowanej na opiece prewencyjnej, spersonalizowanej interwencji i wspieraniu długowieczności."
+        },
+        {
+          "number": "03.",
+          "title": "Timeline of Human Enhancement",
+          "text1": "Ewolucja od wczesnych okularów i protez do nowoczesnej edycji genów oraz systemów wspomagania decyzji opartych na AI."
+        }
+      ],
+      "practicalExample": {
+        "eyebrow": "Praktyczny przykład",
+        "title": "Przykładowy przepływ operacyjny",
+        "steps": [
+          "dane z wearables",
+          "historia kliniczna",
+          "estymacja ryzyka przez AI",
+          "ocena klinicysty",
+          "spersonalizowana interwencja"
+        ]
+      },
+      "legalFramework": {
+        "eyebrow": "Ramy prawne",
+        "title": "Bazowy kontekst regulacyjny dla argumentu posteru",
+        "cards": [
+          {
+            "title": "RODO i szczególne kategorie danych",
+            "text1": "Dane genetyczne, biometryczne i zdrowotne są klasyfikowane jako „szczególne kategorie” danych, których przetwarzanie co do zasady jest zabronione, chyba że zachodzą wąskie wyjątki."
+          },
+          {
+            "title": "EU AI Act",
+            "text1": "Większość komponentów AI w wyrobach medycznych klasyfikuje jako „high-risk”, nakładając wiążące obowiązki dotyczące dokumentacji i nadzoru."
+          },
+          {
+            "title": "EHDS i prawa człowieka",
+            "text1": "Europejska Przestrzeń Danych dotyczących Zdrowia (EHDS) oraz Konwencja z Oviedo chronią przed dyskryminacją genetyczną i zapewniają bezpieczny obieg danych."
+          }
+        ]
+      },
+      "centralDiagram": {
+        "eyebrow": "Centralny diagram",
+        "title": "Kluczowe etykiety i koncentryczne warstwy governance",
+        "labelsCardTitle": "Etykiety wokół centralnej ilustracji",
+        "labels": [
+          "Dane genomowe",
+          "Wearables i biometria",
+          "Protezy i implanty",
+          "Opieka prewencyjna",
+          "Ocena człowieka",
+          "Audytowalność"
+        ],
+        "ringsCardTitle": "Tekst w centralnych pierścieniach",
+        "rings": [
+          {
+            "ring": "Pierścień wewnętrzny",
+            "title": "Governance danych",
+            "text1": "Obsługuje wrażliwe dane genomowe i zdrowotne. Kontrola dostępu oraz ograniczenie celu przetwarzania."
+          },
+          {
+            "ring": "Pierścień środkowy",
+            "title": "Podejmowanie decyzji przez AI",
+            "text1": "Koncentruje się na modelach predykcji ryzyka i personalizacji. Wykorzystuje walidację podgrup, aby zapobiegać biasowi."
+          },
+          {
+            "ring": "Pierścień zewnętrzny",
+            "title": "Nadzór i zgodność",
+            "text1": "Zapewnia audytowalność, kontrolę human-in-the-loop oraz monitorowanie po wdrożeniu."
+          }
+        ]
+      },
+      "ethicalIssues": {
+        "eyebrow": "Problemy etyczne",
+        "title": "Główne obszary ryzyka omawiane na posterze",
+        "cards": [
+          {
+            "title": "Militaryzacja i dual-use",
+            "text1": "Augmentacja wydajności w konflikcie, interfejsy neuronalne rozmywające sprawczość człowieka oraz ryzyko „dual-use” technologii edycji genów."
+          },
+          {
+            "title": "Nadużycie danych przez ubezpieczycieli i pracodawców",
+            "text1": "Ryzyko: „genetic redlining”, w którym dane biometryczne lub genetyczne są wykorzystywane jako ukryte narzędzie oceny ubezpieczeniowej lub selekcji pracowniczej."
+          },
+          {
+            "title": "Stronniczość algorytmiczna w AI dla zdrowia",
+            "text1": "Systemy mogą wzmacniać strukturalne nierówności, np. gdy pulsoksymetry działają gorzej przy ciemniejszej karnacji albo algorytmy używają wydatków na opiekę zdrowotną jako zastępczego wskaźnika potrzeb medycznych."
+          }
+        ]
+      },
+      "patientRights": {
+        "eyebrow": "Prawa pacjentów i bezpieczeństwo danych",
+        "title": "Bezpieczeństwo, nieodwracalność i zabezpieczenia proceduralne",
+        "cards": [
+          {
+            "title": "Nieodwracalność danych genetycznych",
+            "text1": "W przeciwieństwie do haseł danych genomowych nie da się zmienić; naruszenia bezpieczeństwa niosą trwałe ryzyko dla prywatności i równości."
+          },
+          {
+            "title": "Strukturalne ryzyko reidentyfikacji",
+            "text1": "„Zanonimizowane” zbiory danych genomowych często mogą zostać ponownie zidentyfikowane przy użyciu publicznych baz referencyjnych i wnioskowania na podstawie nazwisk."
+          },
+          {
+            "title": "Pięć podstawowych praw pacjenta",
+            "text1": "Na gruncie RODO pacjenci mają prawo do dostępu, sprostowania, usunięcia, przenoszenia danych oraz znaczącej kontroli człowieka nad decyzjami zautomatyzowanymi."
+          }
+        ],
+        "rights": [
+          "Dostęp",
+          "Sprostowanie",
+          "Usunięcie",
+          "Przenoszenie",
+          "Ocena człowieka"
+        ]
+      },
+      "riskMatrix": {
+        "eyebrow": "Macierz ryzyka i kontroli",
+        "title": "Czytelna mobilna wersja macierzy",
+        "layerLabel": "Warstwa",
+        "riskLabel": "Ryzyko",
+        "controlLabel": "Mechanizm kontroli",
+        "rows": [
+          {
+            "layer": "Dane",
+            "risk": "Nadużycie danych genetycznych i zdrowotnych",
+            "control": "Minimalizacja danych, kontrola dostępu, ograniczenie celu przetwarzania (RODO)"
+          },
+          {
+            "layer": "Model AI",
+            "risk": "Stronniczość algorytmiczna i dyskryminacja",
+            "control": "Walidacja podgrup, monitoring biasu, reprezentatywne dane treningowe"
+          },
+          {
+            "layer": "Decyzja",
+            "risk": "W pełni zautomatyzowane decyzje o wysokim wpływie",
+            "control": "Nadzór human-in-the-loop, mechanizmy wyjaśnialności"
+          },
+          {
+            "layer": "Governance systemu",
+            "risk": "Brak rozliczalności i śledzalności",
+            "control": "Logi audytowe, dokumentacja, monitoring po wdrożeniu"
+          }
+        ]
+      },
+      "conclusion": {
+        "eyebrow": "Wnioski",
+        "title": "Najważniejszy przekaz posteru",
+        "paragraphs": [
+          "Konwergencja sztucznej inteligencji z biologicznymi i mechanicznymi formami ulepszania człowieka stanowi bliską czasowo i technicznie wykonalną zmianę paradygmatu w ochronie zdrowia oraz wspieraniu ludzkiej sprawności.",
+          "Ustrukturyzowane ramy compliance-by-design przekładają wymagania etyczne i prawne na ograniczenia na poziomie systemu, obejmujące governance danych, walidację modeli uwzględniającą bias, procesy decyzyjne human-in-the-loop oraz audytowalność zachowania systemu.",
+          "Takie podejście ujmuje ulepszanie człowieka napędzane przez AI jako problem projektowania systemów, w którym wymagania governance muszą być osadzone bezpośrednio w architekturach AI, aby umożliwić wdrożenie bez otwierania drogi do dyskryminacji, eksploatacji lub nadużyć na poziomie państwa."
+        ]
+      }
+    }
   }
 }

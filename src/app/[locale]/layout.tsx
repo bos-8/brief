@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   authors: [{ name: "bos-8", url: "https://github.com/bos-8" }],
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }

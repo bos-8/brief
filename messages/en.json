@@ -377,6 +377,192 @@
     "eyebrow": "Poster page",
     "title": "Scientific poster",
     "lead": "This section is intended to present a conference poster in a clear static web format.",
-    "description": "You can place the research summary, key findings, authors, affiliations, and supporting references here. The layout remains lightweight and compatible with static deployment."
+    "description": "You can place the research summary, key findings, authors, affiliations, and supporting references here. The layout remains lightweight and compatible with static deployment.",
+    "page": {
+      "header": {
+        "logoAriaLabel": "Opole University of Technology",
+        "titleParts": {
+          "ai": "AI",
+          "aiSuffix": "gmented",
+          "human": "HUMAN",
+          "humanSuffix": "ity"
+        },
+        "subtitle": "Ethical and Legal Aspects",
+        "authors": [
+          "Nikolas Feduniewicz",
+          "Kacper Boś",
+          "Anna Bryniarska"
+        ],
+        "tags": [
+          "AI Ethics",
+          "Human Enhancement",
+          "GDPR",
+          "EU AI Act",
+          "EHDS"
+        ]
+      },
+      "backgroundIntro": {
+        "eyebrow": "Background and Concept",
+        "title": "Core framing of the poster"
+      },
+      "backgroundCards": [
+        {
+          "number": "01.",
+          "title": "Defining AIgmented HUMANity",
+          "text1": "A near-term integration of AI with mechanical and biological enhancement focused on preventive care, personalized intervention, and longevity support."
+        },
+        {
+          "number": "02.",
+          "title": "The Evolutionary Shift",
+          "text1": "A near-term integration of AI with mechanical and biological enhancement focused on preventive care, personalized intervention, and longevity support."
+        },
+        {
+          "number": "03.",
+          "title": "Timeline of Human Enhancement",
+          "text1": "Evolution from early spectacles and prosthetics to modern gene editing and AI-enabled decision support."
+        }
+      ],
+      "practicalExample": {
+        "eyebrow": "Practical Example",
+        "title": "Illustrative operational flow",
+        "steps": [
+          "wearable data",
+          "clinical history",
+          "AI risk estimation",
+          "clinician review",
+          "personalized intervention"
+        ]
+      },
+      "legalFramework": {
+        "eyebrow": "Legal Framework",
+        "title": "Regulatory baseline for the poster argument",
+        "cards": [
+          {
+            "title": "GDPR and Special Data Categories",
+            "text1": "Genetic, biometric, and health data are classified as ‘special categories’ with a general prohibition on processing unless narrow exceptions apply."
+          },
+          {
+            "title": "The EU AI Act",
+            "text1": "Classifies most AI components in medical devices as ‘high-risk’, requiring binding obligations for documentation and oversight."
+          },
+          {
+            "title": "EHDS and Human Rights",
+            "text1": "The European Health Data Space (EHDS) and the Oviedo Convention protect against genetic discrimination and ensure secure data circulation."
+          }
+        ]
+      },
+      "centralDiagram": {
+        "eyebrow": "Central Diagram",
+        "title": "Key labels and concentric governance layers",
+        "labelsCardTitle": "Side labels around the central illustration",
+        "labels": [
+          "Genomic Data",
+          "Wearables & Biometrics",
+          "Prosthetics & Implants",
+          "Preventive Care",
+          "Human Review",
+          "Auditability"
+        ],
+        "ringsCardTitle": "Text in the central rings",
+        "rings": [
+          {
+            "ring": "Inner Ring",
+            "title": "Data Governance",
+            "text1": "Handles sensitive genomic and health data. Access control and purpose limitation."
+          },
+          {
+            "ring": "Middle Ring",
+            "title": "AI Decision-Making",
+            "text1": "Focuses on risk prediction and personalization models. Uses subgroup validation to prevent bias."
+          },
+          {
+            "ring": "Outer Ring",
+            "title": "Oversight & Compliance",
+            "text1": "Ensures auditability, human-in-the-loop control, and post-market monitoring."
+          }
+        ]
+      },
+      "ethicalIssues": {
+        "eyebrow": "Ethical Issues",
+        "title": "Main risk domains discussed on the poster",
+        "cards": [
+          {
+            "title": "Militarization and Dual-Use",
+            "text1": "Performance augmentation in conflict, neural interfaces blurring human agency, and the “dual-use” risk of gene-editing technologies."
+          },
+          {
+            "title": "Data Misuse by Insurers and Employers",
+            "text1": "Risk: “genetic redlining” where biometric or genetic data is used as a covert tool for underwriting or employment screening."
+          },
+          {
+            "title": "Algorithmic Bias in Health AI",
+            "text1": "Systems may amplify structural inequities, such as pulse oximeters performing poorly on darker skin or algorithms using healthcare spending as a proxy for medical need."
+          }
+        ]
+      },
+      "patientRights": {
+        "eyebrow": "Patients’ Rights & Data Security",
+        "title": "Security, reversibility, and procedural safeguards",
+        "cards": [
+          {
+            "title": "Irreversibility of Genetic Data",
+            "text1": "Unlike passwords, genomic data cannot be changed; breaches pose permanent privacy and equity risks."
+          },
+          {
+            "title": "Structural Re-Identification Risk",
+            "text1": "‘Anonymized’ genomic datasets can often be re-identified using public reference databases and surname inference."
+          },
+          {
+            "title": "Five Core Patient Rights",
+            "text1": "Under GDPR, patients hold the rights to Access, Rectification, Erasure, Data Portability, and meaningful Human Review of automated decisions."
+          }
+        ],
+        "rights": [
+          "Access",
+          "Rectification",
+          "Erasure",
+          "Portability",
+          "Human Review"
+        ]
+      },
+      "riskMatrix": {
+        "eyebrow": "Risk-to-Control Matrix",
+        "title": "Readable mobile version of the matrix",
+        "layerLabel": "Layer",
+        "riskLabel": "Risk",
+        "controlLabel": "Control Mechanism",
+        "rows": [
+          {
+            "layer": "Data",
+            "risk": "Misuse of genetic and health data",
+            "control": "Data minimization, access control, purpose limitation (GDPR)"
+          },
+          {
+            "layer": "AI Model",
+            "risk": "Algorithmic bias and discrimination",
+            "control": "Subgroup validation, bias monitoring, representative training data"
+          },
+          {
+            "layer": "Decision",
+            "risk": "Fully automated high-impact decisions",
+            "control": "Human-in-the-loop oversight, explainability mechanisms"
+          },
+          {
+            "layer": "System Governance",
+            "risk": "Lack of accountability and traceability",
+            "control": "Audit logs, documentation, post-deployment monitoring"
+          }
+        ]
+      },
+      "conclusion": {
+        "eyebrow": "Conclusion",
+        "title": "Poster takeaway",
+        "paragraphs": [
+          "The convergence of artificial intelligence with biological and mechanical forms of human enhancement represents a near-term and technically feasible paradigm shift in healthcare and human performance support.",
+          "A structured compliance-by-design framework translates ethical and legal requirements into system-level constraints, including data governance constraints, bias-aware model validation, human-in-the-loop decision processes, and auditability of system behavior.",
+          "This approach reframes AI-driven human enhancement as a system design problem, where governance requirements must be embedded directly into AI architectures to ensure deployment without enabling discrimination, exploitation, or state-level misuse."
+        ]
+      }
+    }
   }
 }
