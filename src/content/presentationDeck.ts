@@ -127,6 +127,11 @@ export type PresentationDeckContent = {
     title: string;
     statements: string[];
   };
+  slide16: {
+    navTitle: string;
+    title: string;
+    caption: string;
+  };
 };
 
 function isRecord(value: unknown): value is MessageRecord {
@@ -216,6 +221,7 @@ export async function getPresentationDeck(locale: AppLocale): Promise<Presentati
   const slide13 = readRecord(slides.slide13, "presentation.slides.slide13");
   const slide14 = readRecord(slides.slide14, "presentation.slides.slide14");
   const slide15 = readRecord(slides.slide15, "presentation.slides.slide15");
+  const slide16 = readRecord(slides.slide16, "presentation.slides.slide16");
 
   return {
     slide1: {
@@ -390,6 +396,11 @@ export async function getPresentationDeck(locale: AppLocale): Promise<Presentati
       navTitle: readString(slide15, "navTitle", "presentation.slides.slide15"),
       title: readString(slide15, "title", "presentation.slides.slide15"),
       statements: readStringArray(slide15, "statements", "presentation.slides.slide15"),
+    },
+    slide16: {
+      navTitle: readString(slide16, "navTitle", "presentation.slides.slide16"),
+      title: readString(slide16, "title", "presentation.slides.slide16"),
+      caption: readString(slide16, "caption", "presentation.slides.slide16"),
     },
   };
 }

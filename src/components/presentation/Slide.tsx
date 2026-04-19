@@ -8,11 +8,12 @@ type SlideProps = {
   index: number;
   title: string;
   children: ReactNode;
+  fullBleed?: boolean;
 };
 
 export const slideDeckClassName = styles.deck;
 
-export function Slide({ id, index, title, children }: SlideProps) {
+export function Slide({ id, index, title, children, fullBleed = false }: SlideProps) {
   return (
     <section
       id={id}
@@ -22,10 +23,10 @@ export function Slide({ id, index, title, children }: SlideProps) {
     >
       <SlideNumber index={index} />
       <div
-        className={styles.frame}
+        className={fullBleed ? `${styles.frame} ${styles.fullBleedFrame}` : styles.frame}
         data-slide-index={String(index).padStart(2, "0")}
       >
-        <div className={styles.content}>{children}</div>
+        <div className={fullBleed ? `${styles.content} ${styles.fullBleedContent}` : styles.content}>{children}</div>
       </div>
     </section>
   );

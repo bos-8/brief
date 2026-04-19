@@ -76,6 +76,14 @@
   padding: clamp(0.75rem, 1.5vw, 1.5rem);
 }
 
+.fullBleedFrame {
+  background: transparent;
+}
+
+.fullBleedContent {
+  padding: 0;
+}
+
 @media (max-width: 1279px) {
   .deck {
     scroll-snap-type: none;
@@ -112,6 +120,10 @@
     min-height: 0;
     padding: 0.625rem;
   }
+
+  .fullBleedContent {
+    padding: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -130,5 +142,9 @@
 
   .content {
     padding: 0.35rem;
+  }
+
+  .fullBleedContent {
+    padding: 0;
   }
 }

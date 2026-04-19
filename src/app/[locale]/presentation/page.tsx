@@ -613,8 +613,9 @@ export default async function PresentationPage({ params }: LocalePageProps) {
     { id: "slide-13", index: 13, title: deck.slide13.navTitle },
     { id: "slide-14", index: 14, title: deck.slide14.navTitle },
     { id: "slide-15", index: 15, title: deck.slide15.navTitle },
+    { id: "slide-16", index: 16, title: deck.slide16.navTitle },
   ];
-  const visibleSlideItems = slideItems.slice(0, 15);
+  const visibleSlideItems = slideItems.slice(0, 16);
   const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
   const basePath = repositoryName ? `/${repositoryName}` : "";
   const openingFigureSrc = `${basePath}/prezentation_s1.png`;
@@ -629,6 +630,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
   const slideElevenImageSrc = `${basePath}/presentation_heart.png`;
   const slideTwelveImageSrc = `${basePath}/prezentation_stack.png`;
   const slideFifteenImageSrc = `${basePath}/presentation_end.png`;
+  const slideSixteenImageSrc = `${basePath}/utopia.png`;
   const openingTitle = t.rich("slides.slide1.title", {
     focus: (chunks) => <>{chunks}</>,
   });
@@ -743,6 +745,8 @@ export default async function PresentationPage({ params }: LocalePageProps) {
   const slideFourteenSections = deck.slide14.sections;
   const slideFifteenTitle = deck.slide15.title;
   const slideFifteenStatements = deck.slide15.statements;
+  const slideSixteenTitle = deck.slide16.title;
+  const slideSixteenCaption = deck.slide16.caption;
 
   return (
     <section className="relative bg-background text-foreground">
@@ -1451,6 +1455,29 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
             <div className={cx(styles.slideFifteenStatement, styles.slideFifteenStatementRight)}>
               <p className={styles.slideFifteenStatementText}>{slideFifteenStatements[1]}</p>
+            </div>
+          </div>
+        </Slide>
+
+        <Slide
+          id={visibleSlideItems[15].id}
+          index={visibleSlideItems[15].index}
+          title={visibleSlideItems[15].title}
+          fullBleed
+        >
+          <div className={styles.slideSixteen}>
+            <Image
+              src={slideSixteenImageSrc}
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="100vw"
+              className={styles.slideSixteenImage}
+            />
+            <div aria-hidden="true" className={styles.slideSixteenOverlay} />
+            <div className={styles.slideSixteenContent}>
+              <h1 className={cx(styles.slideSixteenTitle, "text-white")}>{slideSixteenTitle}</h1>
+              <p className={styles.slideSixteenCaption}>{slideSixteenCaption}</p>
             </div>
           </div>
         </Slide>

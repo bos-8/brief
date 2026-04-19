@@ -58,8 +58,285 @@
     "slideThreeBody": "Każdy slajd zajmuje pełne 100dvh i korzysta ze scroll snap, więc przewijanie strony prowadzi odbiorcę slajd po slajdzie. Daje to zachowanie zbliżone do prezentacji bez osobnego silnika nawigacji.",
     "notes": {
       "eyebrow": "Notatki do prezentacji",
-      "title": "Notatki prelegenta do decka BRIEF",
-      "text1": "Robocze notatki do tego decka są utrzymywane w dokumentacji projektu pod ścieżką <path>docs/notes.md</path>."
+      "title": "Materiał do omówienia slajd po slajdzie",
+      "lead": "Poniżej masz gotowy materiał do omówienia slajd po slajdzie. Każdy fragment jest napisany jako tekst do powiedzenia, z krótkim rozszerzeniem opartym na artykule.",
+      "slidesHeading": "Tekst do slajdów z małym rozszerzeniem",
+      "speechLabel": "Tekst do omówienia",
+      "extensionLabel": "Małe rozszerzenie z artykułu",
+      "slides": {
+        "items": [
+          {
+            "id": "slide1",
+            "label": "Slajd 1",
+            "title": "A Rights-Based Governance Framework for AI-Enabled Human Enhancement",
+            "speech": "Na początku warto ustawić główną tezę prezentacji: sztuczna inteligencja zmienia augmentację człowieka z pojedynczych interwencji medycznych w systemy ciągłe, połączone i ekonomicznie osadzone. W takiej sytuacji sama zgodność z pojedynczymi regulacjami nie wystarcza. Dlatego autorzy proponują Kodeks Ulepszonego Człowieczeństwa jako dodatkową warstwę governance, która ma chronić człowieka przed przymusem, eksploatacją i utratą kontroli nad własnym ciałem. Nie chodzi więc o promowanie transhumanizmu, ale o stworzenie zasad, dzięki którym AI wspierająca ciało i umysł będzie służyć człowiekowi, a nie go uprzedmiotawiać.",
+            "extension": "Punktem wyjścia nie jest pytanie wyłącznie o bezpieczeństwo urządzenia, ale o coś ważniejszego: kto zachowuje kontrolę nad funkcją ciała, gdy technologia staje się adaptacyjna, sieciowa i stale aktualizowana."
+          },
+          {
+            "id": "slide2",
+            "label": "Slajd 2",
+            "title": "Ciągła augmentacja społeczno-techniczna wyprzedza sektorowe regulacje",
+            "speech": "Ten slajd pokazuje podstawowy problem. Augmentacja przestaje być epizodyczną interwencją kliniczną i zaczyna działać jako ciągły system społeczno-techniczny. Oznacza to, że poza lekarzem i pacjentem pojawiają się także producenci oprogramowania, operatorzy platform, dostawcy aktualizacji, ubezpieczyciele, pracodawcy i inni aktorzy instytucjonalni. Prawo UE, takie jak RODO, AI Act czy przepisy dotyczące wyrobów medycznych, jest silne, ale działa w silosach. Kodeks ma połączyć te obszary i przełożyć podstawowe prawa UE — godność, integralność cielesną, autonomię i niedyskryminację — na konkretne ograniczenia projektowe i organizacyjne.",
+            "extension": "W tym miejscu dobrze wybrzmiewają dwa główne wkłady artykułu: po pierwsze, autorzy definiują AI-enabled enhancement jako osobną kategorię governance, a po drugie, proponują Codex jako pomost między prawami podstawowymi a praktyką projektowania systemów."
+          },
+          {
+            "id": "slide3",
+            "label": "Slajd 3",
+            "title": "AI zmienia fundamentalną architekturę interwencji biologicznej",
+            "speech": "Tutaj porównujemy klasyczną interwencję medyczną z augmentacją wspomaganą przez AI. W modelu tradycyjnym działanie ma zwykle charakter epizodyczny, parametry terapeutyczne są ustalone z góry, a urządzenie funkcjonuje lokalnie i względnie przewidywalnie. W modelu AI-enabled mamy natomiast ciągłość działania, uczenie adaptacyjne, łączność z infrastrukturą zewnętrzną i zupełnie inny profil ryzyka. Ryzyko nie dotyczy już wyłącznie błędu klinicznego lub awarii mechanicznej, lecz także strukturalnej zależności i asymetrii władzy.",
+            "extension": "Autorzy proponują trzy kryteria rozpoznania takiej augmentacji:",
+            "bullets": [
+              "bezpośredni wpływ na funkcję cielesną lub poznawczą,",
+              "adaptacyjna optymalizacja oparta na danych,",
+              "tworzenie trwałej zależności technicznej lub ekonomicznej."
+            ]
+          },
+          {
+            "id": "slide4",
+            "label": "Slajd 4",
+            "title": "Ciągła pętla sprzężenia zwrotnego w augmentacji wspomaganej przez AI",
+            "speech": "Ten slajd pokazuje, że AI-enabled augmentation nie jest pojedynczym urządzeniem, lecz ciągłą pętlą sprzężenia zwrotnego. Najpierw warstwa sensingu zbiera telemetrię oraz dane fizjologiczne i behawioralne. Następnie warstwa AI interpretuje te dane, tworzy predykcje i optymalizuje działanie systemu. Potem warstwa wykonawcza zmienia parametry leczenia albo działania urządzenia, a warstwa nadzoru odpowiada za walidację, logowanie, limity bezpieczeństwa i zgodność regulacyjną. Kluczowe jest to, że ryzyko nie powstaje w jednym miejscu, ale w całej relacji między danymi, algorytmem i wpływem na ciało.",
+            "extension": "Autorzy podkreślają, że te warstwy mogą być rozproszone pomiędzy implantem, aplikacją sterującą i infrastrukturą dostawcy. Dlatego governance musi obejmować cały układ, a nie tylko sam implant lub sam model AI."
+          },
+          {
+            "id": "slide5",
+            "label": "Slajd 5",
+            "title": "Sektorowe ramy UE nie obejmują systemowych ryzyk infrastrukturalnych",
+            "speech": "Tutaj pojawia się centralny problem regulacyjny. UE posiada już rozwinięte przepisy dotyczące ochrony danych, systemów AI, wyrobów medycznych i cyberbezpieczeństwa, ale każdy z tych reżimów obejmuje tylko fragment rzeczywistości. Żaden z nich samodzielnie nie obejmuje jednocześnie funkcjonalnej integracji z ciałem, adaptacyjności algorytmicznej i osadzenia technologii w modelu biznesowym dostawcy. W efekcie powstaje ślepy punkt: długoterminowa zależność, ciągła optymalizacja i kontraktowe zamknięcie użytkownika. Dlatego autorzy podkreślają, że augmentacja nie może stać się kanałem eksploatacji.",
+            "extension": "W tle artykułu pojawiają się też regulacje badań klinicznych i terapii zaawansowanych, ale nawet ten szerszy ekosystem pozostaje sektorowy. Problem powstaje na styku tych domen."
+          },
+          {
+            "id": "slide6",
+            "label": "Slajd 6",
+            "title": "Analiza zagrożeń musi dziś zakładać środowiska antagonistyczne",
+            "speech": "Ten slajd rozszerza klasyczne myślenie o ryzyku. W medycynie i inżynierii często analizujemy awarie, usterki i prawdopodobieństwo błędu. Autorzy pokazują jednak, że przy augmentacji wspomaganej przez AI trzeba myśleć szerzej: o presji instytucjonalnej, przewadze rynkowej, hierarchiach i presji konkurencyjnej. AI przyspiesza skalowanie interwencji, a jednocześnie zwiększa nieprzejrzystość procesów decyzyjnych. Dlatego modelowanie zagrożeń musi zakładać nie tylko życzliwy scenariusz terapeutyczny, ale także możliwość nadużycia.",
+            "extension": "To bardzo ważne przesunięcie: problemem nie jest już wyłącznie wada techniczna, lecz przymus, zależność albo dyskryminacja wbudowane w architekturę systemu."
+          },
+          {
+            "id": "slide7",
+            "label": "Slajd 7",
+            "title": "Militaryzacja wytwarza strukturalną presję na ulepszanie",
+            "speech": "Pierwszym istotnym wektorem ryzyka jest militaryzacja i szerzej — użycie augmentacji w strukturach hierarchicznych. Jeśli technologia zaczyna być postrzegana jako sposób zwiększania odporności, percepcji czy wydolności, bardzo szybko pojawia się presja na upgrade. Nawet bez formalnego obowiązku realna dobrowolność może zanikać, ponieważ odmowa wpływa na karierę, status albo możliwość pełnienia służby. Dlatego Kodeks powinien zakazywać przymusowej augmentacji jako warunku służby lub zatrudnienia oraz zapewniać długoterminowe wsparcie medyczne dla interwencji nieodwracalnych.",
+            "extension": "Autorzy pokazują tu logikę dual-use: rozwiązania rozwijane jako terapeutyczne mogą zostać szybko przestawione na cele strategiczne i konkurencyjne."
+          },
+          {
+            "id": "slide8",
+            "label": "Slajd 8",
+            "title": "Łączność zamienia implanty w cyber-fizyczne powierzchnie ataku",
+            "speech": "Drugi ważny obszar dotyczy cyberbezpieczeństwa implantów i urządzeń połączonych. Kiedy implant komunikuje się zewnętrznie, przestaje być wyłącznie urządzeniem medycznym i staje się elementem systemu cyber-fizycznego. To oznacza nowe powierzchnie ataku: przejęcie komunikacji, nieautoryzowaną zmianę ustawień albo koncentrację praktycznej kontroli po stronie dostawcy. Artykuł pokazuje to na przykładzie urządzeń takich jak bezprzewodowe pompy insulinowe, gdzie luka cyberbezpieczeństwa może przełożyć się bezpośrednio na stan biologiczny użytkownika.",
+            "extension": "Z tego wynika bardzo konkretna zasada: systemy krytyczne dla życia nie powinny być zdalnie sterowalne domyślnie, a jeśli łączność jest medycznie konieczna, musi być minimalna, audytowalna, silnie uwierzytelniana i wsparta bezpiecznym trybem degradacji offline."
+          },
+          {
+            "id": "slide9",
+            "label": "Slajd 9",
+            "title": "Optymalizacja przez AI obniża próg dla biologicznie ukierunkowanej szkody",
+            "speech": "Ten slajd dotyczy najbardziej skrajnego, ale ważnego scenariusza ryzyka. Autorzy nie opisują go jako fantazji science fiction, ale jako problem dual-use: te same narzędzia AI, które przyspieszają projektowanie i optymalizację korzystnych interwencji biologicznych, mogą obniżać próg dla zastosowań szkodliwych. AI skraca czas modelowania, symulacji i doboru parametrów, a w połączeniu z wrażliwymi danymi biologicznymi zwiększa potencjał selektywnego targetowania. Dlatego Kodeks powinien wyznaczać jasne czerwone linie.",
+            "extension": "Najważniejsza z tych czerwonych linii brzmi: należy bezwzględnie zakazać prac biologicznych związanych z augmentacją, jeśli ich celem jest szkodzenie, prześladowanie albo selektywne oddziaływanie na populacje."
+          },
+          {
+            "id": "slide10",
+            "label": "Slajd 10",
+            "title": "Ciągła telemetria umożliwia ukryte sortowanie społeczne",
+            "speech": "Tutaj wchodzimy w obszar danych genetycznych, zdrowotnych i behawioralnych. W środowisku AI takie dane nie są tylko informacją kliniczną — stają się paliwem dla systemów predykcyjnych, scoringowych i selekcyjnych. Ryzyko nie kończy się więc na naruszeniu prywatności. Chodzi także o ukryte sortowanie społeczne, w którym pracodawca, ubezpieczyciel, kredytodawca albo platforma zaczynają wyciągać wnioski o odporności, produktywności, ryzyku zdrowotnym czy przewidywanej długości życia. W ten sposób dostęp do podstawowych szans życiowych może zostać uzależniony od ciągłych metryk biologicznych.",
+            "extension": "Autorzy proponują dwa filary ochrony: absolutny zakaz dyskryminacji opartej na ulepszaniu oraz ścisłe ograniczenie celu przetwarzania, tak by dane augmentacyjne nie stały się infrastrukturą ogólnego nadzoru."
+          },
+          {
+            "id": "slide11",
+            "label": "Slajd 11",
+            "title": "Własnościowa infrastruktura tworzy ekonomiczny przymus typu pay-to-live",
+            "speech": "To jeden z najmocniejszych slajdów całej prezentacji. Jeżeli człowiek zależy od implantu, terapii albo oprogramowania, które podtrzymuje podstawowe funkcje organizmu, relacja rynkowa przestaje być zwykłą relacją kontraktową. Subskrypcyjny model wsparcia, brak kompatybilności, wstrzymanie aktualizacji albo vendor lock-in mogą przełożyć się bezpośrednio na nacisk wobec integralności cielesnej. Autorzy pokazują, że w takim modelu siła rynkowa może stać się formą przymusu biologicznego.",
+            "extension": "Dlatego Kodeks powinien zakazywać wzorców projektowych, które spowalniają lub wyłączają funkcje podtrzymujące życie dla osiągnięcia przewagi finansowej, oraz wymagać mechanizmów wyjścia i escrow oprogramowania przy trwałej zależności."
+          },
+          {
+            "id": "slide12",
+            "label": "Slajd 12",
+            "title": "Opcjonalna optymalizacja normalizuje się w strukturalny wymóg",
+            "speech": "Sport jest bardzo dobrym przykładem tego, jak opcjonalna technologia może szybko stać się wymogiem strukturalnym. Jeśli augmentacja przesuwa fizjologiczne punkty odniesienia, osoby nieulepszone albo korzystające wyłącznie z terapii mogą zostać poddane presji, by również wejść w ten model. Stawką jest więc nie tylko wynik sportowy, ale także integralność rywalizacji i zdrowie uczestników. Kodeks powinien wymagać przejrzystych zasad kwalifikacji i jednocześnie chronić osoby korzystające z uzasadnionych interwencji terapeutycznych przed dyskryminacją.",
+            "extension": "Ten przykład pokazuje, że problem augmentacji nie dotyczy tylko szpitala czy wojska. Pojawia się wszędzie tam, gdzie działają silne bodźce konkurencyjne."
+          },
+          {
+            "id": "slide13",
+            "label": "Slajd 13",
+            "title": "Kodeks przekłada prawa podstawowe na operacyjne ograniczenia",
+            "speech": "Ten slajd syntetyzuje logikę całego artykułu. Każdemu obszarowi zagrożenia odpowiada konkretny mechanizm ryzyka strukturalnego i odpowiadająca mu zasada Kodeksu. To ważne, ponieważ autorzy nie proponują ogólnego, abstrakcyjnego apelu etycznego, lecz próbują przełożyć prawa podstawowe na bardzo konkretne obowiązki: zakaz przymusu, ograniczenie zdalnej kontroli, ochrona celu przetwarzania, zakaz dyskryminacji oraz gwarancja ciągłości działania.",
+            "extension": "Właśnie tutaj najlepiej widać wartość naukową pracy: prawa podstawowe przestają być wyłącznie deklaracją, a stają się operacyjnym zestawem ograniczeń dla projektowania i wdrażania systemów augmentacyjnych."
+          },
+          {
+            "id": "slide14",
+            "label": "Slajd 14",
+            "title": "Governance musi odpowiadać ciągłej strukturze technologii",
+            "speech": "Na tym slajdzie widzimy, jak Kodeks można wdrożyć praktycznie. Governance musi odpowiadać ciągłej strukturze technologii, dlatego potrzebne są działania na trzech poziomach. Po pierwsze, ograniczenia na etapie projektowania, czyli twardo zakodowane limity techniczne i brak pewnych funkcji już w architekturze systemu. Po drugie, obowiązki w cyklu życia, czyli aktualizacje bezpieczeństwa, audytowalność, logowanie i tryby bezpiecznej degradacji. Po trzecie, egzekwowanie instytucjonalne w postaci certyfikacji, audytów i nadzoru obejmującego jednocześnie wymiar medyczny oraz cyfrowy.",
+            "extension": "To podejście wynika z faktu, że kontrola w AI-enabled augmentation jest rozproszona między urządzenie, aplikację, dostawcę infrastruktury i regulatora. Nie da się więc skutecznie regulować wyłącznie jednego elementu."
+          },
+          {
+            "id": "slide15",
+            "label": "Slajd 15",
+            "title": "Strukturalny warunek wstępny ludzkiej godności",
+            "speech": "Ostatni slajd zamyka całą argumentację. Autorzy nie odrzucają augmentacji jako takiej — przeciwnie, podkreślają jej potencjał terapeutyczny: przywracanie zdrowia, niezależności i sprawczości. Problem zaczyna się wtedy, gdy systemy te stają się kanałem uprzedmiotowienia człowieka, podporządkowania go logice militarnej, rynkowej lub predykcyjnej. Dlatego profesjonalny Kodeks nie jest dodatkiem etycznym na końcu procesu, ale warunkiem operacyjnym, dzięki któremu augmentacja rzeczywiście służy człowiekowi.",
+            "extension": "Najkrótsza puenta tej prezentacji brzmi: nie chodzi o to, czy augmentacja jest możliwa, ale o to, na jakich zasadach pozostaje podporządkowana godności, autonomii i równości."
+          },
+          {
+            "id": "slide16",
+            "label": "Slajd 16",
+            "title": "Pytanie końcowe",
+            "speech": "Ten ostatni slajd warto potraktować jako spokojne domknięcie całej argumentacji. Nie chodzi już o dodawanie nowego przykładu, ale o wybrzmienie głównej myśli artykułu: w AI-enabled human enhancement najważniejsze pytanie nie brzmi, czy taka augmentacja będzie możliwa albo skuteczna. Najważniejsze jest to, czy pozostanie podporządkowana człowiekowi jako podmiotowi praw.",
+            "extension": "Najlepsza puenta na tym etapie brzmi: problemem nie jest sama moc technologii, lecz to, czy nawet w najbardziej obiecującej formie pozostanie ona zgodna z godnością, autonomią, równością i integralnością cielesną."
+          }
+        ]
+      },
+      "summary": {
+        "title": "Podsumowanie końcowe",
+        "paragraphs": [
+          "Artykuł pokazuje, że augmentacja wspomagana przez AI tworzy nową kategorię governance, ponieważ łączy trzy elementy naraz: bezpośredni wpływ na funkcje ciała lub umysłu, adaptacyjną optymalizację algorytmiczną oraz trwałą zależność od infrastruktury technicznej i ekonomicznej. W takim układzie klasyczny model regulacji sektorowych przestaje wystarczać. Nie wystarczy zapytać, czy wyrób medyczny jest bezpieczny, czy system AI spełnia wymogi, albo czy dane są formalnie chronione. Trzeba jeszcze zapytać, czy architektura całego systemu nie produkuje przymusu, zależności, dyskryminacji i utraty realnej kontroli nad własnym ciałem.",
+          "Dlatego autorzy proponują Kodeks Ulepszonego Człowieczeństwa jako rights-based governance framework. Ma on przekładać prawa podstawowe UE — zwłaszcza godność, integralność cielesną, autonomię, ochronę danych i niedyskryminację — na konkretne wymagania projektowe, obowiązki w cyklu życia systemu i mechanizmy instytucjonalnego egzekwowania. Najważniejsza myśl artykułu jest taka, że w świecie AI-enabled augmentation stawką nie jest już wyłącznie bezpieczeństwo technologii, ale zachowanie człowieka jako podmiotu, a nie obiektu zarządzania."
+        ]
+      },
+      "takeaways": {
+        "title": "Najważniejsze elementy podsumowania",
+        "items": [
+          {
+            "title": "AI-enabled augmentation to nie zwykły wyrób medyczny.",
+            "text1": "To system ciągły, adaptacyjny i osadzony w infrastrukturze cyfrowej."
+          },
+          {
+            "title": "Ryzyko przesuwa się z poziomu awarii na poziom struktury.",
+            "text1": "Problemem staje się przymus, zależność, dyskryminacja i asymetria władzy."
+          },
+          {
+            "title": "Prawo UE jest silne, ale sektorowe.",
+            "text1": "RODO, AI Act, MDR i cyberbezpieczeństwo nie obejmują w pełni ich zbiegu."
+          },
+          {
+            "title": "Podstawą governance są prawa podstawowe UE.",
+            "text1": "Szczególnie: godność, integralność cielesna, zgoda, ochrona danych i równość."
+          },
+          {
+            "title": "Główne wektory ryzyka to:",
+            "text1": "militaryzacja, biologiczne nadużycia dual-use, cyber-fizyczna kontrola implantów, profilowanie danych, ekonomiczny lock-in oraz presja konkurencyjna w sporcie."
+          },
+          {
+            "title": "Kodeks ma charakter operacyjny, nie wyłącznie etyczny.",
+            "text1": "Oznacza to konkretne ograniczenia projektowe, obowiązki lifecycle i audyty."
+          },
+          {
+            "title": "Celem nie jest blokowanie innowacji.",
+            "text1": "Artykuł broni augmentacji typu therapy-first, ale odrzuca eksploatację i uprzedmiotowienie."
+          },
+          {
+            "title": "Najważniejsze pytanie brzmi:",
+            "text1": "kto zachowuje kontrolę nad funkcją ciała, gdy AI staje się częścią systemu biologicznego?"
+          }
+        ]
+      },
+      "overviewSummary": {
+        "title": "SUMMARY",
+        "paragraphs": [
+          "Jeśli chcesz zamknąć całą prezentację jednym prostym komunikatem, warto powiedzieć tak: AI-enabled human enhancement to nie pojedyncze urządzenie, lecz ciągły układ zależności między ciałem, algorytmem, danymi i infrastrukturą dostawcy. Właśnie dlatego ryzyko nie sprowadza się już do awarii technicznej, ale obejmuje także przymus, dyskryminację, lock-in i utratę realnej kontroli nad funkcją ciała.",
+          "Z perspektywy artykułu najlepszą odpowiedzią nie jest zatrzymanie innowacji, tylko wbudowanie praw podstawowych bezpośrednio w projekt systemu. Kodeks ma więc pełnić rolę praktycznej warstwy governance, która utrzymuje augmentację po stronie terapii, autonomii i godności człowieka, zamiast przesuwać ją w stronę eksploatacji lub zarządzania człowiekiem jak zasobem."
+        ]
+      },
+      "qa": {
+        "title": "Q&A — pytania, które mogą paść",
+        "items": [
+          {
+            "question": "Czym dokładnie jest AI-enabled human enhancement według autorów?",
+            "answer": "To takie systemy augmentacyjne, które bezpośrednio wpływają na funkcję cielesną lub poznawczą, korzystają z adaptacyjnej optymalizacji opartej na danych i jednocześnie tworzą trwałą zależność techniczną albo ekonomiczną."
+          },
+          {
+            "question": "Czy to nie jest po prostu nowa nazwa dla nowoczesnego wyrobu medycznego?",
+            "answer": "Nie. Klasyczny wyrób medyczny oceniamy głównie przez pryzmat bezpieczeństwa i skuteczności. W AI-enabled augmentation dochodzą jeszcze ciągłość działania, zdalne aktualizacje, analiza danych, rozproszona kontrola i silne powiązanie z modelem biznesowym dostawcy."
+          },
+          {
+            "question": "Dlaczego obecne prawo UE nie wystarcza?",
+            "answer": "Bo działa sektorowo. RODO chroni dane, AI Act zarządza ryzykiem systemów AI, MDR reguluje wyroby medyczne, a przepisy cyberbezpieczeństwa chronią infrastrukturę. Problem polega na tym, że augmentacja wspomagana przez AI powstaje właśnie na styku tych wszystkich obszarów."
+          },
+          {
+            "question": "Czy Kodeks ma zastąpić istniejące regulacje?",
+            "answer": "Nie. Kodeks ma być warstwą governance, która spina istniejące regulacje i przekłada je na praktyczne zasady dla systemów augmentacyjnych."
+          },
+          {
+            "question": "Gdzie przebiega granica między terapią a ulepszaniem?",
+            "answer": "Artykuł nie buduje sztywnej granicy ontologicznej. Ważniejsze jest to, czy system tworzy ciągłą, adaptacyjną i infrastrukturalną relację wpływu na ciało oraz czy wytwarza nowe asymetrie władzy i zależności."
+          },
+          {
+            "question": "Czy ten framework nie hamuje innowacji?",
+            "answer": "Nie. Autorzy wyraźnie pokazują, że augmentacja może przynosić ogromne korzyści terapeutyczne. Celem nie jest blokowanie technologii, lecz zapobieganie temu, by innowacja stawała się narzędziem przymusu lub eksploatacji."
+          },
+          {
+            "question": "Dlaczego militaryzacja jest tak ważnym wątkiem?",
+            "answer": "Bo w strukturach hierarchicznych formalna zgoda może nie być realnie dobrowolna. Presja organizacyjna, karierowa lub statusowa może bardzo łatwo zamienić opcję w praktyczny obowiązek."
+          },
+          {
+            "question": "Dlaczego cyberbezpieczeństwo implantów to problem praw podstawowych, a nie tylko techniczny?",
+            "answer": "Bo w przypadku implantów skutkiem nie jest wyłącznie awaria usługi cyfrowej. Może dojść do bezpośredniego wpływu na stan biologiczny człowieka, a więc na integralność cielesną, bezpieczeństwo i autonomię."
+          },
+          {
+            "question": "Co dokładnie oznacza pay-to-live?",
+            "answer": "To sytuacja, w której podtrzymanie podstawowej funkcji życiowej zależy od płatności, subskrypcji, licencji, aktualizacji lub woli jednego dostawcy. W takim modelu relacja rynkowa zaczyna dotyczyć bezpośrednio integralności ciała."
+          },
+          {
+            "question": "Jak praktycznie wdrożyć taki Kodeks?",
+            "answer": "Przez trzy poziomy działań: ograniczenia na etapie projektowania, obowiązki w cyklu życia systemu oraz instytucjonalne mechanizmy certyfikacji, kontroli i audytu."
+          },
+          {
+            "question": "Czy scenariusz biologicznie ukierunkowanej szkody nie jest zbyt spekulacyjny?",
+            "answer": "Artykuł nie twierdzi, że to scenariusz codzienny. Pokazuje natomiast, że AI obniża próg wejścia, przyspiesza optymalizację i zwiększa skalowalność. Governance ma działać wyprzedzająco, zanim takie mechanizmy zostaną znormalizowane."
+          },
+          {
+            "question": "Dlaczego sport pojawia się w tej debacie?",
+            "answer": "Bo sport dobrze pokazuje, jak opcjonalna technologia może przejść w wymóg strukturalny. To także obszar, w którym bardzo wyraźnie widać napięcie między uczciwością rywalizacji a niedyskryminowaniem uzasadnionych interwencji terapeutycznych."
+          },
+          {
+            "question": "Jaki jest najważniejszy wkład naukowy artykułu?",
+            "answer": "Po pierwsze, zdefiniowanie AI-enabled human enhancement jako odrębnej kategorii governance. Po drugie, powiązanie konkretnych mechanizmów ryzyka z konkretnymi zasadami Kodeksu."
+          },
+          {
+            "question": "Czy Kodeks miałby mieć charakter prawny czy raczej etyczny?",
+            "answer": "W artykule jest przedstawiony jako profesjonalna warstwa governance, która może być wdrażana przez narzędzia techniczne, organizacyjne i regulacyjne. Sama etyka deklaratywna nie wystarczy, jeśli nie towarzyszą jej audyty, obowiązki lifecycle i realny nadzór."
+          },
+          {
+            "question": "Kto powinien być adresatem takiego Kodeksu?",
+            "answer": "Nie tylko producenci implantów. Również projektanci AI, dostawcy chmury, operatorzy platform, placówki medyczne, ubezpieczyciele, regulatorzy i wszyscy uczestnicy ekosystemu, którzy mają wpływ na dane, aktualizacje i ciągłość działania systemu."
+          },
+          {
+            "question": "Jaka jest jedna myśl, którą odbiorca powinien zapamiętać po prezentacji?",
+            "answer": "W systemach augmentacji wspomaganych przez AI pytanie nie brzmi już tylko: czy to działa?, ale także: czy człowiek nadal zachowuje kontrolę, godność i realną autonomię?"
+          }
+        ]
+      },
+      "abbreviations": {
+        "title": "Rozwinięcia skrótów",
+        "items": [
+          {
+            "short": "AI",
+            "long": "Artificial Intelligence / sztuczna inteligencja"
+          },
+          {
+            "short": "GDPR",
+            "long": "General Data Protection Regulation"
+          },
+          {
+            "short": "RODO",
+            "long": "Rozporządzenie o Ochronie Danych Osobowych"
+          },
+          {
+            "short": "EU AI Act",
+            "long": "Akt Unii Europejskiej regulujący systemy sztucznej inteligencji"
+          },
+          {
+            "short": "MDR",
+            "long": "Medical Device Regulation"
+          },
+          {
+            "short": "EHDS",
+            "long": "European Health Data Space"
+          },
+          {
+            "short": "Q&A",
+            "long": "Questions and Answers / pytania i odpowiedzi"
+          }
+        ]
+      }
     },
     "slides": {
       "slide1": {
@@ -370,6 +647,11 @@
           "Profesjonalny Kodeks nie jest opcjonalnym dodatkiem etycznym. Jest operacyjną koniecznością.",
           "Osadzając podstawowe prawa UE bezpośrednio w architekturze systemu, można sprawić, że augmentacja będzie służyć człowiekowi, zamiast go uprzedmiotawiać."
         ]
+      },
+      "slide16": {
+        "navTitle": "Pytanie końcowe",
+        "title": "Kto zachowuje kontrolę, gdy AI wchodzi do ciała?",
+        "caption": "Przyszłość augmentacji nie jest wyłącznie pytaniem o możliwości, lecz także o władzę. Jeśli autonomia, godność i integralność cielesna nie będą chronione na poziomie projektu, ulepszanie może najpierw służyć instytucjom, rynkom lub systemom, a dopiero później człowiekowi."
       }
     }
   },
@@ -378,6 +660,248 @@
     "title": "Poster naukowy",
     "lead": "Ta sekcja służy do prezentacji posteru konferencyjnego w czytelnej, statycznej formie webowej.",
     "description": "Możesz umieścić tutaj streszczenie badań, kluczowe wyniki, autorów, afiliacje i materiały pomocnicze. Układ pozostaje lekki i zgodny ze statycznym wdrożeniem.",
+    "notes": {
+      "eyebrow": "Notatki do posteru",
+      "title": "Ethical and Legal Aspects of AIgmented HUMANity",
+      "lead": "Poniżej masz gotowe notatki do opowiadania przy plakacie, ułożone w logiczne sekcje.",
+      "sectionsHeading": "Notatki do opowiadania do plakatu",
+      "sections": {
+        "items": [
+          {
+            "id": "introduction",
+            "label": "1. Wprowadzenie",
+            "title": "Wprowadzenie",
+            "paragraphs": [
+              "Na tym plakacie pokazujemy etyczne i prawne aspekty zjawiska, które nazywamy AIgmented HUMANity. Tym pojęciem opisujemy bliską, praktyczną integrację sztucznej inteligencji z mechanicznymi i biologicznymi formami wspomagania człowieka. Nie chodzi więc o futurystyczną wizję science fiction, ale o realne technologie, takie jak protezy, implanty, analiza danych zdrowotnych, urządzenia wearable czy wsparcie decyzji medycznych przez AI."
+            ]
+          },
+          {
+            "id": "background-and-concept",
+            "label": "2. Background and Concept",
+            "title": "Background and Concept",
+            "paragraphs": [
+              "Punktem wyjścia jest to, że człowiek od dawna rozwija różne formy enhancementu, czyli wspomagania swoich możliwości. Historycznie widzimy drogę od okularów i protez, przez szczepienia, antybiotyki i implanty, aż po medycynę regeneracyjną i edycję genów. Nowością jest to, że AI staje się warstwą integrującą te rozwiązania. Dzięki analizie danych długoterminowych, wiedzy klinicznej i sygnałów kontekstowych AI może wspierać profilaktykę, personalizację interwencji oraz wydłużanie życia w zdrowiu."
+            ]
+          },
+          {
+            "id": "defining-aigmented-humanity",
+            "label": "3. Defining AIgmented HUMANity",
+            "title": "Defining AIgmented HUMANity",
+            "paragraphs": [
+              "Najważniejsze w tej pracy jest to, że AIgmented HUMANity oznacza near-term integration, czyli integrację możliwą w najbliższej przyszłości. Nie mówimy o radykalnym przekształcaniu człowieka, tylko o lepszym wykorzystywaniu już istniejących technologii. Główna obietnica tego podejścia to poprawa jakości życia, funkcjonalności i zdrowia, ale warunkiem jego akceptacji społecznej jest silne osadzenie w etyce i prawie."
+            ]
+          },
+          {
+            "id": "ethical-issues",
+            "label": "4. Ethical Issues",
+            "title": "Ethical Issues",
+            "paragraphs": [
+              "W pracy wyróżniono trzy główne grupy problemów etycznych.",
+              "Po pierwsze, militarization and dual-use, czyli ryzyko podwójnego zastosowania. Technologie wzmacniania człowieka, szczególnie neurotechnologie i AI wspierające decyzje, mogą być używane nie tylko w medycynie, ale także w kontekście militarnym. To rodzi pytania o godność człowieka, zgodę, odpowiedzialność i granicę między człowiekiem a systemem uzbrojenia.",
+              "Po drugie, misuse of genetic and biometric data. Dane genetyczne, biometryczne i zdrowotne mogą stać się narzędziem dyskryminacji, na przykład w ubezpieczeniach albo na rynku pracy. W takim scenariuszu system wspierający zdrowie mógłby zostać przekształcony w ukryte narzędzie selekcji lub nadzoru.",
+              "Po trzecie, algorithmic bias. Systemy AI w ochronie zdrowia mogą utrwalać istniejące nierówności, jeśli uczą się na stronniczych danych albo korzystają z błędnych proxy. Dobrym przykładem jest wykorzystywanie wydatków na leczenie jako zastępnika realnych potrzeb zdrowotnych albo problemy pulse oximeterów u osób z ciemniejszą pigmentacją skóry. To pokazuje, że bias nie jest abstrakcyjny, ale ma realne skutki kliniczne."
+            ]
+          },
+          {
+            "id": "legal-framework",
+            "label": "5. Legal Framework",
+            "title": "Legal Framework",
+            "paragraphs": [
+              "Od strony prawnej najważniejsze są cztery filary.",
+              "Pierwszym jest GDPR, który traktuje dane genetyczne, biometryczne i zdrowotne jako szczególnie wrażliwe kategorie danych. Ich przetwarzanie jest co do zasady zakazane, chyba że istnieje wyraźna podstawa prawna i odpowiednie zabezpieczenia.",
+              "Drugim filarem jest EU AI Act, który uznaje większość systemów AI stosowanych w ochronie zdrowia za systemy wysokiego ryzyka. To oznacza obowiązki dotyczące dokumentacji, jakości danych, nadzoru człowieka, odporności systemu i monitorowania po wdrożeniu.",
+              "Trzecim elementem jest EHDS, czyli European Health Data Space, który tworzy ramy bezpiecznego obiegu danych zdrowotnych w Europie, w tym danych genomicznych, ale tylko pod ścisłą kontrolą i w określonych celach.",
+              "Czwartym filarem jest perspektywa praw człowieka, wzmacniana przez Oviedo Convention, która podkreśla ochronę człowieka przed dyskryminacją genetyczną i traktuje genom nie jako zwykłe dane cyfrowe, ale jako szczególnie wrażliwy element tożsamości."
+            ]
+          },
+          {
+            "id": "patients-rights-and-data-security",
+            "label": "6. Patients’ Rights & Data Security",
+            "title": "Patients’ Rights & Data Security",
+            "paragraphs": [
+              "W tym obszarze najważniejsze jest to, że pacjent nie powinien być biernym źródłem danych, ale podmiotem posiadającym konkretne prawa. W ramach GDPR są to przede wszystkim Access, Rectification, Erasure, Data Portability oraz prawo do meaningful Human Review w przypadku decyzji o istotnym wpływie.",
+              "Druga ważna kwestia to bezpieczeństwo danych. Dane genetyczne są wyjątkowe, bo w przeciwieństwie do hasła nie da się ich zmienić po wycieku. Dlatego naruszenie bezpieczeństwa genomu ma charakter praktycznie trwały.",
+              "Trzecia sprawa to ryzyko ponownej identyfikacji. Nawet jeśli zbiory danych są opisane jako zanonimizowane, w praktyce mogą zostać ponownie powiązane z konkretnymi osobami lub rodzinami. Dlatego w przypadku danych genomicznych sama anonimizacja nie jest wystarczającą gwarancją bezpieczeństwa."
+            ]
+          },
+          {
+            "id": "compliance-by-design-framework",
+            "label": "7. Compliance-by-Design Framework",
+            "title": "Compliance-by-Design Framework",
+            "paragraphs": [
+              "Najważniejszym wkładem tej pracy jest compliance-by-design framework, czyli podejście, w którym wymagania etyczne i prawne są wbudowane bezpośrednio w architekturę systemu AI.",
+              "Na plakacie jest to pokazane jako model trzech warstw albo trzech pierścieni.",
+              "Inner Ring: Data Governance. Ta warstwa odpowiada za dane wejściowe. Obejmuje kontrolę dostępu, minimalizację danych, purpose limitation oraz bezpieczne zarządzanie danymi zdrowotnymi i genomicznymi.",
+              "Middle Ring: AI Decision-Making. Tutaj działają modele przewidywania ryzyka i personalizacji. Kluczowe jest to, że system nie może być oceniany tylko ogólną skutecznością, ale także jakością działania w różnych podgrupach. Dlatego potrzebne są subgroup validation, bias monitoring i reprezentatywne dane treningowe.",
+              "Outer Ring: Oversight & Compliance. Ta warstwa zapewnia auditability, human-in-the-loop oversight oraz post-market monitoring. Innymi słowy, system musi być nadzorowany, wyjaśnialny i kontrolowalny także po wdrożeniu."
+            ]
+          },
+          {
+            "id": "practical-example",
+            "label": "8. Practical Example",
+            "title": "Practical Example",
+            "paragraphs": [
+              "Praktyczny przykład to system profilaktyczny, który łączy dane z urządzeń wearable, dane biometryczne i dane genomiczne, aby szacować długoterminowe profile ryzyka. Taki system może być bardzo użyteczny, ale bez zabezpieczeń może prowadzić do dyskryminacji, błędnych decyzji albo nieuprawnionego dostępu do danych.",
+              "Dlatego każdy poziom systemu musi mieć własne zabezpieczenia. Na wejściu potrzebujemy ograniczenia dostępu i minimalizacji danych. Na poziomie modelu potrzebujemy walidacji między grupami i kontroli biasu. Na poziomie decyzji potrzebujemy udziału człowieka, ścieżki audytowej i odpowiedzialności za wynik."
+            ]
+          },
+          {
+            "id": "risk-to-control-matrix",
+            "label": "9. Risk-to-Control Matrix",
+            "title": "Risk-to-Control Matrix",
+            "paragraphs": [
+              "Ważna część plakatu pokazuje przejście od ryzyka do konkretnego mechanizmu kontroli.",
+              "Misuse of genetic and health data odpowiada na poziomie systemowym data minimization, access control i purpose limitation.",
+              "Algorithmic bias and discrimination wymagają subgroup validation, bias monitoring i representative training data.",
+              "Fully automated high-impact decisions powinny być ograniczane przez human-in-the-loop oversight i explainability mechanisms.",
+              "Lack of accountability and traceability wymaga audit logs, documentation i post-deployment monitoring. To właśnie pokazuje, że etyka i prawo nie są dodatkiem do systemu, ale przekładają się na konkretne wymagania projektowe."
+            ]
+          },
+          {
+            "id": "conclusion",
+            "label": "10. Conclusion",
+            "title": "Conclusion",
+            "paragraphs": [
+              "Główny wniosek jest taki, że AI-driven human enhancement jest technicznie możliwe i może przynieść realne korzyści w ochronie zdrowia oraz wsparciu funkcjonowania człowieka. Jednak jego wdrożenie jest akceptowalne tylko wtedy, gdy wymagania etyczne i regulacyjne są wbudowane bezpośrednio w architekturę systemu.",
+              "Ta praca przesuwa więc dyskusję z poziomu ogólnych deklaracji etycznych na poziom system design problem. Innymi słowy: nie wystarczy mówić, że AI ma być fair i safe — trzeba zaprojektować system tak, aby to było mierzalne, audytowalne i egzekwowalne."
+            ]
+          }
+        ]
+      },
+      "summary": {
+        "title": "SUMMARY",
+        "paragraphs": [
+          "AIgmented HUMANity opisuje bliską czasowo integrację sztucznej inteligencji z mechanicznymi i biologicznymi formami ulepszania człowieka. Główna obietnica tego podejścia to lepsza profilaktyka, personalizacja oraz wspieranie zdrowej długowieczności.",
+          "Jednocześnie systemy te rodzą poważne problemy etyczne i prawne, zwłaszcza w związku z dual-use, nadużyciem danych genetycznych i biometrycznych oraz algorithmic bias. Najważniejszym wkładem pracy jest compliance-by-design framework, który przekłada te ryzyka na architekturę systemu poprzez trzy warstwy: data governance, AI decision-making oraz oversight z kontrolą człowieka i audytowalnością. Główny wniosek jest taki, że AI-driven human enhancement może być zgodne z obecnymi ramami prawnymi tylko wtedy, gdy zabezpieczenia etyczne i regulacyjne są osadzone bezpośrednio w projekcie systemu."
+        ]
+      },
+      "qa": {
+        "title": "Q&A",
+        "items": [
+          {
+            "question": "Co oznacza AIgmented HUMANity?",
+            "answer": "AIgmented HUMANity oznacza bliskie czasowo wykorzystanie AI do koordynowania i ulepszania technologii mechanicznego oraz biologicznego wspomagania człowieka, szczególnie w ochronie zdrowia i profilaktyce."
+          },
+          {
+            "question": "Dlaczego ten temat jest dziś ważny?",
+            "answer": "Ponieważ AI jest coraz częściej łączona z wearables, implantami, danymi genomicznymi i klinicznym wsparciem decyzji, więc konsekwencje etyczne i prawne przestają być czysto teoretyczne."
+          },
+          {
+            "question": "Jakie są trzy główne ryzyka etyczne omawiane na posterze?",
+            "answer": "Poster koncentruje się na militaryzacji i dual-use, nadużyciu danych genetycznych i biometrycznych przez ubezpieczycieli lub pracodawców oraz algorithmic bias w systemach AI dla zdrowia."
+          },
+          {
+            "question": "Dlaczego dane genetyczne są uznawane za szczególnie wrażliwe?",
+            "answer": "Ponieważ ujawniają bardzo osobiste i rodzinne informacje, trudno je rzeczywiście zanonimizować, a po wycieku nie da się ich zmienić."
+          },
+          {
+            "question": "Czym jest compliance-by-design?",
+            "answer": "Compliance-by-design oznacza wbudowanie wymagań prawnych i etycznych bezpośrednio w architekturę techniczną systemu AI, zamiast traktowania ich jako zewnętrznych rekomendacji."
+          },
+          {
+            "question": "Dlaczego human-in-the-loop oversight jest konieczny?",
+            "answer": "Ponieważ decyzje medyczne o wysokim wpływie nie powinny być pozostawione wyłącznie systemom zautomatyzowanym. Udział człowieka jest potrzebny dla rzetelności, odpowiedzialności i bezpieczeństwa pacjenta."
+          },
+          {
+            "question": "Czy anonimizacja wystarcza do ochrony danych genomicznych?",
+            "answer": "Nie zawsze. Zbiory danych genomicznych mogą często zostać ponownie zidentyfikowane przy użyciu zewnętrznych danych referencyjnych, dlatego kontrolowany dostęp i silny governance są niezbędne."
+          },
+          {
+            "question": "Jaka jest rola GDPR w tym kontekście?",
+            "answer": "GDPR definiuje dane genetyczne, biometryczne i zdrowotne jako szczególne kategorie danych osobowych i nakłada surowe warunki ich przetwarzania."
+          },
+          {
+            "question": "Co do tej dyskusji wnosi EU AI Act?",
+            "answer": "Klasyfikuje większość medycznych systemów AI jako high-risk i wymaga dokumentacji, nadzoru, odporności oraz monitorowania po wdrożeniu."
+          },
+          {
+            "question": "Jaki jest główny przekaz posteru?",
+            "answer": "Kluczowa myśl jest taka, że AI-driven human enhancement powinno być traktowane nie tylko jako debata etyczna, ale jako wyzwanie projektowania systemów wymagające wbudowanego governance."
+          }
+        ]
+      },
+      "abbreviations": {
+        "title": "Rozwinięcia skrótów",
+        "items": [
+          {
+            "short": "AI",
+            "long": "Artificial Intelligence / sztuczna inteligencja"
+          },
+          {
+            "short": "AI Act",
+            "long": "Artificial Intelligence Act"
+          },
+          {
+            "short": "AI/ML",
+            "long": "Artificial Intelligence / Machine Learning"
+          },
+          {
+            "short": "BCI",
+            "long": "Brain–Computer Interface"
+          },
+          {
+            "short": "DARPA",
+            "long": "Defense Advanced Research Projects Agency"
+          },
+          {
+            "short": "EHDS",
+            "long": "European Health Data Space"
+          },
+          {
+            "short": "EU",
+            "long": "European Union"
+          },
+          {
+            "short": "FDA",
+            "long": "Food and Drug Administration"
+          },
+          {
+            "short": "FTC",
+            "long": "Federal Trade Commission"
+          },
+          {
+            "short": "GDPR",
+            "long": "General Data Protection Regulation"
+          },
+          {
+            "short": "GINA",
+            "long": "Genetic Information Nondiscrimination Act"
+          },
+          {
+            "short": "HIPAA",
+            "long": "Health Insurance Portability and Accountability Act"
+          },
+          {
+            "short": "ICRC",
+            "long": "International Committee of the Red Cross"
+          },
+          {
+            "short": "IHL",
+            "long": "International Humanitarian Law"
+          },
+          {
+            "short": "NIST",
+            "long": "National Institute of Standards and Technology"
+          },
+          {
+            "short": "SaMD",
+            "long": "Software as a Medical Device"
+          },
+          {
+            "short": "WHO",
+            "long": "World Health Organization"
+          },
+          {
+            "short": "DNA",
+            "long": "Deoxyribonucleic Acid"
+          },
+          {
+            "short": "COVID-19",
+            "long": "Coronavirus Disease 2019"
+          }
+        ]
+      }
+    },
     "page": {
       "header": {
         "logoAriaLabel": "Politechnika Opolska",
