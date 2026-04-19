@@ -34,7 +34,7 @@
     "cardsEyebrow": "Dostępne materiały",
     "presentationCardLabel": "Prezentacja",
     "presentationCardTitle": "A Rights-Based Governance Framework for AI-Enabled Human Enhancement",
-    "presentationCardBody": "Pełny 15-slajdowy deck poświęcony governance, prawom, ryzyku i ograniczeniom operacyjnym związanym z ulepszaniem człowieka wspieranym przez AI.",
+    "presentationCardBody": "Pełny 15-slajdowy deck poświęcony ładowi regulacyjnemu, prawom, ryzyku i ograniczeniom operacyjnym związanym z ulepszaniem człowieka wspieranym przez AI.",
     "posterCardLabel": "Poster",
     "posterCardTitle": "Etyczne i prawne aspekty AIgmented HUMANity",
     "posterCardBody": "Widok posterowy dla tego samego tematu badawczego, przygotowany do zwięzłej i wizualnej prezentacji akademickiej.",
@@ -340,9 +340,9 @@
     },
     "slides": {
       "slide1": {
-        "navTitle": "Ramy governance",
+        "navTitle": "Ramy ładu regulacyjnego",
         "title": "A <focus>Rights-Based Governance Framework</focus> for AI-Enabled Human Enhancement",
-        "subtitle": "Wprowadzenie <codex>Kodeksu Ulepszonego Człowieczeństwa</codex> jako warstwy governance dla strukturalnych ryzyk związanych z augmentacją wspieraną przez AI",
+        "subtitle": "Wprowadzenie <codex>Kodeksu Ulepszonego Człowieczeństwa</codex> jako warstwy ładu regulacyjnego dla strukturalnych ryzyk związanych z augmentacją wspieraną przez AI",
         "authorsLabel": "AUTORZY",
         "authors": [
           "Kacper Boś",
@@ -486,8 +486,8 @@
           "innerRing": "Podatności sieciowe",
           "core": [
             "Bezpieczeństwo",
-            "jednostki",
-            "i kliniczne"
+            "kliniczne i",
+            "indywidualne"
           ]
         }
       },
@@ -507,7 +507,7 @@
       },
       "slide8": {
         "navTitle": "Ryzyka cyber-fizyczne",
-        "title": "Łączność zamienia implanty w cyber-fizyczne powierzchnie ataku",
+        "title": "Łączność zamienia implanty w cyber-fizyczną powierzchnię ataku",
         "panels": [
           {
             "lead": "Mechanizm",
@@ -567,7 +567,7 @@
         "navTitle": "Presja normalizacji",
         "title": "Opcjonalna optymalizacja normalizuje się w strukturalny wymóg",
         "mechanismTitle": "Mechanizm",
-        "mechanismText": "W silnie konkurencyjnych środowiskach, takich jak sport, ulepszanie przesuwa fizjologiczne punkty odniesienia. To, co zaczyna się jako opcjonalny upgrade, może szybko stać się strukturalnym warunkiem uczestnictwa.",
+        "mechanismText": "W silnie konkurencyjnych środowiskach, takich jak sport, ulepszanie przesuwa fizjologiczne punkty odniesienia. To, co zaczyna się jako opcjonalne ulepszenie, może szybko stać się strukturalnym warunkiem uczestnictwa.",
         "constraintsTitle": "Normatywne ograniczenia Kodeksu",
         "constraints": [
           {
@@ -611,14 +611,14 @@
           },
           {
             "threat": "Ekonomiczne",
-            "risk": "Vendor lock-in i zależność krytyczna dla życia",
+            "risk": "Uzależnienie od dostawcy i zależność krytyczna dla życia",
             "principle": "Gwarantować ciągłość i zakazać eksploatacyjnej kontroli funkcjonalnej"
           }
         ]
       },
       "slide14": {
-        "navTitle": "Ciągłe governance",
-        "title": "Governance musi odpowiadać ciągłej strukturze technologii",
+        "navTitle": "Ciągły ład regulacyjny",
+        "title": "Ład regulacyjny musi odpowiadać ciągłej strukturze technologii",
         "diagram": {
           "outerRing": "Egzekwowanie instytucjonalne",
           "middleRing": "Cykl życia",
@@ -919,7 +919,7 @@
         ],
         "tags": [
           "Etyka AI",
-          "Human Enhancement",
+          "Ulepszanie człowieka",
           "RODO",
           "EU AI Act",
           "EHDS"
@@ -932,17 +932,17 @@
       "backgroundCards": [
         {
           "number": "01.",
-          "title": "Defining AIgmented HUMANity",
+          "title": "Definicja AIgmented HUMANity",
           "text1": "Bliska perspektywa integracji AI z ulepszeniami mechanicznymi i biologicznymi, skoncentrowanej na opiece prewencyjnej, spersonalizowanej interwencji i wspieraniu długowieczności."
         },
         {
           "number": "02.",
-          "title": "The Evolutionary Shift",
+          "title": "Zmiana ewolucyjna",
           "text1": "Bliska perspektywa integracji AI z ulepszeniami mechanicznymi i biologicznymi, skoncentrowanej na opiece prewencyjnej, spersonalizowanej interwencji i wspieraniu długowieczności."
         },
         {
           "number": "03.",
-          "title": "Timeline of Human Enhancement",
+          "title": "Oś czasu ulepszania człowieka",
           "text1": "Ewolucja od wczesnych okularów i protez do nowoczesnej edycji genów oraz systemów wspomagania decyzji opartych na AI."
         }
       ],
@@ -967,7 +967,7 @@
           },
           {
             "title": "EU AI Act",
-            "text1": "Większość komponentów AI w wyrobach medycznych klasyfikuje jako „high-risk”, nakładając wiążące obowiązki dotyczące dokumentacji i nadzoru."
+            "text1": "Większość komponentów AI w wyrobach medycznych klasyfikuje jako „wysokiego ryzyka”, nakładając wiążące obowiązki dotyczące dokumentacji i nadzoru."
           },
           {
             "title": "EHDS i prawa człowieka",
@@ -977,7 +977,7 @@
       },
       "centralDiagram": {
         "eyebrow": "Centralny diagram",
-        "title": "Kluczowe etykiety i koncentryczne warstwy governance",
+        "title": "Kluczowe etykiety i koncentryczne warstwy ładu regulacyjnego",
         "labelsCardTitle": "Etykiety wokół centralnej ilustracji",
         "labels": [
           "Dane genomowe",
@@ -991,18 +991,18 @@
         "rings": [
           {
             "ring": "Pierścień wewnętrzny",
-            "title": "Governance danych",
+            "title": "Ład regulacyjny danych",
             "text1": "Obsługuje wrażliwe dane genomowe i zdrowotne. Kontrola dostępu oraz ograniczenie celu przetwarzania."
           },
           {
             "ring": "Pierścień środkowy",
             "title": "Podejmowanie decyzji przez AI",
-            "text1": "Koncentruje się na modelach predykcji ryzyka i personalizacji. Wykorzystuje walidację podgrup, aby zapobiegać biasowi."
+            "text1": "Koncentruje się na modelach predykcji ryzyka i personalizacji. Wykorzystuje walidację podgrup, aby zapobiegać stronniczości."
           },
           {
             "ring": "Pierścień zewnętrzny",
             "title": "Nadzór i zgodność",
-            "text1": "Zapewnia audytowalność, kontrolę human-in-the-loop oraz monitorowanie po wdrożeniu."
+            "text1": "Zapewnia audytowalność, kontrolę człowieka w pętli decyzyjnej oraz monitorowanie po wdrożeniu."
           }
         ]
       },
@@ -1064,15 +1064,15 @@
           {
             "layer": "Model AI",
             "risk": "Stronniczość algorytmiczna i dyskryminacja",
-            "control": "Walidacja podgrup, monitoring biasu, reprezentatywne dane treningowe"
+            "control": "Walidacja podgrup, monitoring stronniczości, reprezentatywne dane treningowe"
           },
           {
             "layer": "Decyzja",
             "risk": "W pełni zautomatyzowane decyzje o wysokim wpływie",
-            "control": "Nadzór human-in-the-loop, mechanizmy wyjaśnialności"
+            "control": "Nadzór człowieka w pętli decyzyjnej, mechanizmy wyjaśnialności"
           },
           {
-            "layer": "Governance systemu",
+            "layer": "Ład regulacyjny systemu",
             "risk": "Brak rozliczalności i śledzalności",
             "control": "Logi audytowe, dokumentacja, monitoring po wdrożeniu"
           }
@@ -1083,8 +1083,8 @@
         "title": "Najważniejszy przekaz posteru",
         "paragraphs": [
           "Konwergencja sztucznej inteligencji z biologicznymi i mechanicznymi formami ulepszania człowieka stanowi bliską czasowo i technicznie wykonalną zmianę paradygmatu w ochronie zdrowia oraz wspieraniu ludzkiej sprawności.",
-          "Ustrukturyzowane ramy compliance-by-design przekładają wymagania etyczne i prawne na ograniczenia na poziomie systemu, obejmujące governance danych, walidację modeli uwzględniającą bias, procesy decyzyjne human-in-the-loop oraz audytowalność zachowania systemu.",
-          "Takie podejście ujmuje ulepszanie człowieka napędzane przez AI jako problem projektowania systemów, w którym wymagania governance muszą być osadzone bezpośrednio w architekturach AI, aby umożliwić wdrożenie bez otwierania drogi do dyskryminacji, eksploatacji lub nadużyć na poziomie państwa."
+          "Ustrukturyzowane ramy zgodności projektowanej od początku (compliance-by-design) przekładają wymagania etyczne i prawne na ograniczenia na poziomie systemu, obejmujące ład regulacyjny danych, walidację modeli uwzględniającą stronniczość, procesy decyzyjne z udziałem człowieka w pętli oraz audytowalność zachowania systemu.",
+          "Takie podejście ujmuje ulepszanie człowieka napędzane przez AI jako problem projektowania systemów, w którym wymagania ładu regulacyjnego muszą być osadzone bezpośrednio w architekturach AI, aby umożliwić wdrożenie bez otwierania drogi do dyskryminacji, eksploatacji lub nadużyć na poziomie państwa."
         ]
       }
     }
