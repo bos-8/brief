@@ -10,6 +10,7 @@ import styles from "./PodcastControls.module.css";
 
 type PodcastControlsProps = {
   src: string;
+  gain?: number;
 };
 
 function formatTime(value: number) {
@@ -23,10 +24,13 @@ function formatTime(value: number) {
   return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
-export function PodcastControls({ src }: PodcastControlsProps) {
+export function PodcastControls({ src, gain = 1 }: PodcastControlsProps) {
   const t = useTranslations("common.podcast");
   const audioId = useId();
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const audioSourceRef = useRef<MediaElementAudioSourceNode | null>(null);
+  const gainNodeRef = useRef<GainNode | null>(null);
   const [isHydrated, setIsHydrated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [showHint, setShowHint] = useState(true);
@@ -37,6 +41,15 @@ export function PodcastControls({ src }: PodcastControlsProps) {
 
   useEffect(() => {
     setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      void audioContextRef.current?.close();
+      audioContextRef.current = null;
+      audioSourceRef.current = null;
+      gainNodeRef.current = null;
+    };
   }, []);
 
   useEffect(() => {
@@ -110,6 +123,45 @@ export function PodcastControls({ src }: PodcastControlsProps) {
 
   const timeLabel = useMemo(() => `${formatTime(currentTime)} / ${formatTime(duration)}`, [currentTime, duration]);
 
+  const ensureAudioGain = async () => {
+    const audio = audioRef.current;
+
+    if (!audio || gain <= 1 || typeof window === "undefined") {
+      return;
+    }
+
+    const Context = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+
+    if (!Context) {
+      return;
+    }
+
+    let context = audioContextRef.current;
+
+    if (!context) {
+      context = new Context();
+      audioContextRef.current = context;
+    }
+
+    if (!audioSourceRef.current) {
+      const source = context.createMediaElementSource(audio);
+      const gainNode = context.createGain();
+
+      gainNode.gain.value = gain;
+      source.connect(gainNode);
+      gainNode.connect(context.destination);
+
+      audioSourceRef.current = source;
+      gainNodeRef.current = gainNode;
+    } else if (gainNodeRef.current) {
+      gainNodeRef.current.gain.value = gain;
+    }
+
+    if (context.state === "suspended") {
+      await context.resume();
+    }
+  };
+
   const handleStart = async () => {
     const audio = audioRef.current;
 
@@ -122,6 +174,7 @@ export function PodcastControls({ src }: PodcastControlsProps) {
       if (audio.readyState === 0) {
         audio.load();
       }
+      await ensureAudioGain();
       await audio.play();
     } catch {
       setIsPlaying(false);
@@ -151,6 +204,7 @@ export function PodcastControls({ src }: PodcastControlsProps) {
 
     try {
       setHasError(false);
+      await ensureAudioGain();
       await audio.play();
     } catch {
       setIsPlaying(false);

@@ -761,7 +761,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
 
       <div id={deckId} className={cx("relative z-10 h-[100dvh] overflow-y-auto snap-y snap-mandatory", slideDeckClassName)}>
         <SubpageControls>
-          <PodcastControls src={presentationPodcastSrc} />
+          <PodcastControls src={presentationPodcastSrc} gain={1.8} />
           <PresentationModeButton deckId={deckId} />
         </SubpageControls>
         <SlideIndicators deckId={deckId} items={visibleSlideItems} />
