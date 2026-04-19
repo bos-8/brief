@@ -3486,12 +3486,12 @@
   }
 
   .slideThree {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto auto repeat(8, auto);
   }
 
   .slideThreeHeader {
-    grid-column: 1;
+    grid-column: 1 / -1;
     grid-row: 1;
   }
 
@@ -3505,14 +3505,56 @@
   }
 
   .slideThreeEnhancedHead {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .slideThreeLabelCell {
+    grid-column: 1 / -1;
+  }
+
+  .slideThreeTraditionalCell {
     grid-column: 1;
+  }
+
+  .slideThreeEnhancedCell {
+    grid-column: 2;
+  }
+
+  .slideThreeLabelCell.slideThreeRowOne {
     grid-row: 3;
   }
 
-  .slideThreeLabelCell,
-  .slideThreeTraditionalCell,
-  .slideThreeEnhancedCell {
-    grid-column: 1;
+  .slideThreeTraditionalCell.slideThreeRowOne,
+  .slideThreeEnhancedCell.slideThreeRowOne {
+    grid-row: 4;
+  }
+
+  .slideThreeLabelCell.slideThreeRowTwo {
+    grid-row: 5;
+  }
+
+  .slideThreeTraditionalCell.slideThreeRowTwo,
+  .slideThreeEnhancedCell.slideThreeRowTwo {
+    grid-row: 6;
+  }
+
+  .slideThreeLabelCell.slideThreeRowThree {
+    grid-row: 7;
+  }
+
+  .slideThreeTraditionalCell.slideThreeRowThree,
+  .slideThreeEnhancedCell.slideThreeRowThree {
+    grid-row: 8;
+  }
+
+  .slideThreeLabelCell.slideThreeRowFour {
+    grid-row: 9;
+  }
+
+  .slideThreeTraditionalCell.slideThreeRowFour,
+  .slideThreeEnhancedCell.slideThreeRowFour {
+    grid-row: 10;
   }
 
   .slideFour {
@@ -3851,6 +3893,269 @@
 
   .slideFifteenStatementText {
     max-width: 26ch;
+  }
+}
+
+@media (max-width: 767px) {
+  .openingSlide {
+    --opening-title-size: clamp(2.2rem, 8.2vw, 3.2rem);
+    --opening-copy-size: clamp(1.08rem, 4.25vw, 1.5rem);
+    --opening-logo-width: min(62vw, 14rem);
+    --opening-logo-height: clamp(2rem, 8.5vw, 3.1rem);
+    --opening-figure-width: min(122vw, 27rem);
+    min-height: calc(100dvh - 4.5rem);
+    grid-template-rows: auto auto auto auto;
+    gap: 1rem;
+  }
+
+  .openingHeader {
+    gap: 0.7rem;
+  }
+
+  .openingTitle {
+    text-wrap: pretty;
+  }
+
+  .openingSubtitle {
+    width: min(100%, 32ch);
+    line-height: 1.15;
+  }
+
+  .openingSpace {
+    display: none;
+  }
+
+  .openingFigureAnchor {
+    position: relative;
+    inset: auto;
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 0.25rem;
+  }
+
+  .openingLogoWrap {
+    grid-row: 3;
+    align-items: center;
+    align-self: start;
+    justify-content: center;
+  }
+
+  .openingAuthors {
+    grid-row: 4;
+    align-items: center;
+    align-self: start;
+    justify-content: start;
+    gap: 0.35rem;
+    text-align: center;
+  }
+
+  .openingAffiliationLine {
+    max-width: 24ch;
+    margin-top: 0.35rem;
+  }
+
+  .slideTwo,
+  .slideThree,
+  .slideFour,
+  .slideFive,
+  .slideSix,
+  .slideSeven,
+  .slideEight,
+  .slideNine,
+  .slideTen,
+  .slideEleven,
+  .slideTwelve,
+  .slideThirteen,
+  .slideFourteen,
+  .slideFifteen {
+    gap: 0.85rem;
+  }
+
+  .slideTwo {
+    --slide-two-title-size: clamp(1.95rem, 7.6vw, 2.8rem);
+    --slide-two-card-title-size: clamp(1.28rem, 5.3vw, 1.78rem);
+    --slide-two-card-body-size: clamp(1.03rem, 3.95vw, 1.2rem);
+    --slide-two-gap: 0.85rem;
+  }
+
+  .slideTwoImageSpace,
+  .slideFiveVisual,
+  .slideSixDiagramWrap,
+  .slideSevenVisual,
+  .slideEightVisual,
+  .slideNineVisual,
+  .slideTenVisual,
+  .slideElevenVisual,
+  .slideTwelveVisual,
+  .slideFourteenVisual,
+  .slideFifteenVisual {
+    min-height: 14.5rem;
+  }
+
+  .slideTwoCard,
+  .slideFivePanel,
+  .slideSixPanel,
+  .slideSevenPanel,
+  .slideEightPanel,
+  .slideNinePanel,
+  .slideTenPanel,
+  .slideTenOutcomeCard,
+  .slideElevenPanel,
+  .slideTwelvePanel,
+  .slideFourteenSection,
+  .slideFifteenStatement {
+    padding: 1rem 1.05rem;
+    border-radius: 1rem;
+  }
+
+  .slideThree {
+    --slide-three-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-three-head-size: clamp(1.1rem, 4.3vw, 1.35rem);
+    --slide-three-label-size: clamp(1rem, 4vw, 1.22rem);
+    --slide-three-value-size: clamp(0.98rem, 3.8vw, 1.14rem);
+    border: 0;
+    background: transparent;
+  }
+
+  .slideThreeTraditionalHead,
+  .slideThreeEnhancedHead,
+  .slideThreeLabelCell,
+  .slideThreeTraditionalCell,
+  .slideThreeEnhancedCell {
+    border: 1px solid var(--slide-three-border);
+    border-radius: 0.95rem;
+  }
+
+  .slideThreeColumnHead,
+  .slideThreeLabelCell,
+  .slideThreeValueCell {
+    padding: 0.9rem 1rem;
+    border-left: 0;
+    border-bottom: 0;
+  }
+
+  .slideThreeTraditionalHead {
+    margin-top: 0.3rem;
+  }
+
+  .slideThreeValueContent {
+    align-items: flex-start;
+  }
+
+  .slideFour {
+    --slide-four-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-four-card-title-size: clamp(1.14rem, 4.65vw, 1.42rem);
+    --slide-four-card-body-size: clamp(0.96rem, 3.7vw, 1.08rem);
+    --slide-four-diagram-size: min(100%, 19rem);
+  }
+
+  .slideFourCard {
+    padding: 0.95rem 1rem;
+  }
+
+  .slideFourCenter {
+    width: min(100%, 19rem);
+  }
+
+  .slideFourLabelPrimary {
+    font-size: 22px;
+  }
+
+  .slideFive {
+    --slide-five-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-five-panel-size: clamp(1rem, 3.8vw, 1.16rem);
+    --slide-five-pillar-label-size: clamp(1rem, 4.2vw, 1.35rem);
+  }
+
+  .slideFiveVisual {
+    gap: 0.45rem;
+    padding: 0.5rem 0.1rem 0.1rem;
+  }
+
+  .slideSix {
+    --slide-six-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-six-panel-size: clamp(1rem, 3.8vw, 1.16rem);
+    --slide-six-ring-label-size: clamp(0.92rem, 3.4vw, 1.08rem);
+    --slide-six-core-label-size: clamp(0.98rem, 3.6vw, 1.15rem);
+  }
+
+  .slideSixDiagram {
+    width: min(100%, 20rem);
+  }
+
+  .slideSeven {
+    --slide-seven-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-seven-panel-lead-size: clamp(1.08rem, 4.1vw, 1.28rem);
+    --slide-seven-panel-body-size: clamp(1rem, 3.8vw, 1.16rem);
+  }
+
+  .slideEight {
+    --slide-eight-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-eight-panel-lead-size: clamp(1.08rem, 4.1vw, 1.28rem);
+    --slide-eight-panel-body-size: clamp(1rem, 3.8vw, 1.16rem);
+  }
+
+  .slideNine {
+    --slide-nine-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-nine-panel-lead-size: clamp(1.08rem, 4.1vw, 1.28rem);
+    --slide-nine-panel-body-size: clamp(1rem, 3.8vw, 1.16rem);
+  }
+
+  .slideTen {
+    --slide-ten-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-ten-panel-title-size: clamp(1.08rem, 4.1vw, 1.28rem);
+    --slide-ten-panel-body-size: clamp(1rem, 3.8vw, 1.16rem);
+    --slide-ten-outcome-size: clamp(0.98rem, 3.55vw, 1.08rem);
+  }
+
+  .slideTenOutcomeRow {
+    gap: 0.55rem;
+  }
+
+  .slideEleven {
+    --slide-eleven-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-eleven-panel-title-size: clamp(1.08rem, 4.1vw, 1.28rem);
+    --slide-eleven-panel-body-size: clamp(1rem, 3.8vw, 1.16rem);
+  }
+
+  .slideTwelve {
+    --slide-twelve-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-twelve-panel-title-size: clamp(1.08rem, 4.1vw, 1.28rem);
+    --slide-twelve-panel-body-size: clamp(1rem, 3.8vw, 1.16rem);
+  }
+
+  .slideThirteen {
+    --slide-thirteen-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-thirteen-head-size: clamp(0.95rem, 3.5vw, 1.08rem);
+    --slide-thirteen-threat-size: clamp(1rem, 3.8vw, 1.14rem);
+    --slide-thirteen-body-size: clamp(0.98rem, 3.55vw, 1.08rem);
+  }
+
+  .slideThirteenTableWrap {
+    padding-bottom: 0.2rem;
+  }
+
+  .slideThirteenGrid {
+    min-width: 42rem;
+  }
+
+  .slideFourteen {
+    --slide-fourteen-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-fourteen-section-title-size: clamp(1.08rem, 4.1vw, 1.28rem);
+    --slide-fourteen-section-body-size: clamp(1rem, 3.8vw, 1.16rem);
+  }
+
+  .slideFourteenContent {
+    gap: 0.75rem;
+  }
+
+  .slideFifteen {
+    --slide-fifteen-title-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    --slide-fifteen-body-size: clamp(1rem, 3.8vw, 1.16rem);
+  }
+
+  .slideFifteenStatementText {
+    max-width: none;
   }
 }
 
