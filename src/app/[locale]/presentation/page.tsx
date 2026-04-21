@@ -625,6 +625,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
   const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
   const basePath = repositoryName ? `/${repositoryName}` : "";
   const openingFigureSrc = `${basePath}/prezentation_s1.png`;
+  const openingQrSrc = `${basePath}/qr_presentation.jpg`;
   const openingLightLogoSrc = `${basePath}/logo_opole_univercity_of_technology_light.png`;
   const openingDarkLogoSrc = `${basePath}/logo_opole_univercity_of_technology_dark.png`;
   const slideFourHumanSrc = `${basePath}/human.png`;
@@ -643,6 +644,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
   const openingSubtitle = t.rich("slides.slide1.subtitle", {
     codex: (chunks) => <span className="font-semibold">{chunks}</span>,
   });
+  const openingQrLabel = t("slides.slide1.qrLabel");
   const openingAuthorsLabel = deck.slide1.authorsLabel;
   const openingAffiliation = deck.slide1.affiliation;
   const slideTwoTitle = deck.slide2.title;
@@ -777,6 +779,19 @@ export default async function PresentationPage({ params }: LocalePageProps) {
             </div>
 
             <div aria-hidden="true" className={styles.openingSpace} />
+
+            <div className={styles.openingQrWrap}>
+              <Image
+                src={openingQrSrc}
+                alt=""
+                aria-hidden="true"
+                width={320}
+                height={320}
+                priority
+                className={styles.openingQr}
+              />
+              <p className={styles.openingQrLabel}>{openingQrLabel}</p>
+            </div>
 
             <div className={styles.openingLogoWrap}>
               <Image

@@ -284,6 +284,40 @@
   grid-row: 2;
 }
 
+.openingQrWrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  grid-column: 2;
+  grid-row: 2;
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: center;
+  justify-content: center;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.openingQr {
+  width: min(100%, 15rem);
+  height: auto;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px rgb(2 6 23 / 0.22);
+}
+
+.openingQrLabel {
+  margin: 0;
+  max-width: 15rem;
+  font-size: calc(var(--opening-copy-size) * 0.48);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-align: right;
+  text-transform: uppercase;
+  color: hsl(var(--accent));
+  text-shadow: 0 0 18px hsl(var(--accent) / 0.22);
+}
+
 .openingLogoWrap {
   position: relative;
   z-index: 2;
@@ -3999,6 +4033,10 @@
   }
 
   .openingSpace {
+    display: none;
+  }
+
+  .openingQrWrap {
     display: none;
   }
 
