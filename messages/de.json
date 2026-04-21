@@ -1,0 +1,618 @@
+{
+  "common": {
+    "footer": {
+      "license": "Copyright © {year} BRIEF",
+      "licenseLink": "LIZENZ",
+      "licenseType": "AGPL v3"
+    },
+    "localeSwitcher": {
+      "label": "Sprache",
+      "pl": "Polnisch",
+      "en": "Englisch",
+      "de": "Deutsch"
+    },
+    "theme": {
+      "toggle": "Design umschalten",
+      "dark": "Dunkel",
+      "light": "Hell"
+    },
+    "presentationMode": {
+      "enable": "Präsentationsmodus erzwingen",
+      "disable": "Erzwungenen Präsentationsmodus deaktivieren"
+    },
+    "podcast": {
+      "toggle": "Podcast",
+      "close": "Podcast-Steuerung schließen",
+      "hint": "Hier kannst du den Podcast für diese Seite einschalten.",
+      "start": "Start",
+      "stop": "Stopp",
+      "speed": "Geschwindigkeit",
+      "timeline": "Podcast-Zeitleiste",
+      "restart": "Neu starten",
+      "unavailable": "Audio nicht verfügbar"
+    },
+    "navbar": {
+      "brand": "BRIEF",
+      "home": "Startseite",
+      "presentation": "Präsentation",
+      "poster": "Poster",
+      "notes": "Notizen"
+    }
+  },
+  "home": {
+    "title": "BRIEF",
+    "tagline": "Wissenschaftliche Präsentationen · Zweisprachige Inhalte · Konferenzreife Ausgabe",
+    "descriptionLead": "BRIEF ist ein zweisprachiges Präsentationssystem für wissenschaftliche Vorträge, Konferenzmaterialien und klar strukturierte, publikationsreife Inhalte.",
+    "descriptionBody": "Es unterstützt das Erstellen, Präsentieren und Teilen professioneller Foliensätze mit klaren Bedienelementen und konsistenter Lokalisierung.",
+    "overviewEyebrow": "Präsentationsbereich",
+    "overviewTitle": "BRIEF ist ein Zentrum für Präsentationen und Poster in der akademischen Kommunikation.",
+    "overviewBody": "Es vereint einen bildschirmfüllenden Konferenzmodus, Sprechernotizen und posterorientierte Materialien in einer statischen, portablen Oberfläche für GitHub Pages.",
+    "cardsEyebrow": "Verfügbare Materialien",
+    "presentationCardLabel": "Präsentation",
+    "presentationCardTitle": "Ein rechtebasierter Governance-Rahmen für KI-gestützte menschliche Verbesserung",
+    "presentationCardBody": "Ein vollständiger 15-Folien-Satz zu Governance, Rechten, Risiken und operativen Grenzen KI-gestützter menschlicher Verbesserung.",
+    "posterCardLabel": "Poster",
+    "posterCardTitle": "Ethische und rechtliche Aspekte der AIgmented HUMANity",
+    "posterCardBody": "Eine posterorientierte Ansicht zum selben Forschungsthema, vorbereitet für eine knappe und visuelle akademische Präsentation.",
+    "openPresentation": "Präsentation",
+    "openPoster": "Poster",
+    "openNotes": "Notizen"
+  },
+  "presentation": {
+    "eyebrow": "Präsentationsseite",
+    "title": "BRIEF-Präsentationssystem",
+    "lead": "Dieser Bereich dient dazu, ein einzelnes Deck, seinen Kontext und die wichtigsten Informationen für das Publikum zu präsentieren.",
+    "description": "Hier können eine Konferenzpräsentation, eine Zusammenfassung des Vortrags, ein Abstract und unterstützende Referenzen platziert werden. Das Layout bleibt einfach, statisch und für GitHub Pages geeignet.",
+    "slideOneEyebrow": "BRIEF-Deck",
+    "slideOneTitle": "Die Slide-Komponente hält einen strikten 16:9-Rahmen ein",
+    "slideOneBody": "Jede Folie füllt einen Browserschritt aus, während die eigentliche Leinwand auf einen 16:9-Bereich begrenzt bleibt. Bei anderen Viewport-Verhältnissen bleibt der zusätzliche Raum außerhalb des Folienrahmens.",
+    "slideTwoEyebrow": "Layout",
+    "slideTwoTitle": "Der Rand wird vom Viewport bestimmt, nicht vom Inhalt",
+    "slideTwoBody": "Der äußere Container hält einen sicheren Abstand zu den Bildschirmrändern, während die Folienbreite sowohl durch die Höhe als auch durch die Breite des Viewports begrenzt wird. Dadurch bleibt das Layout auf 16:10- und schmaleren Bildschirmen stabil.",
+    "slideThreeEyebrow": "Scroll-Fluss",
+    "slideThreeTitle": "Das Scrollen verhält sich wie ein vertikales Deck",
+    "slideThreeBody": "Jede Folie belegt einen vollständigen 100dvh-Schritt und nutzt Scroll-Snap, sodass das Seiten-Scrollen das Publikum Folie für Folie weiterführt. Dadurch entsteht Präsentationsverhalten ohne eine separate Navigations-Engine.",
+    "notes": {
+      "eyebrow": "Präsentationsnotizen",
+      "title": "Sprechnotizen Folie für Folie",
+      "lead": "Unten findest du die deutsche Fassung der Sprechnotizen Folie für Folie, ergänzt um eine kurze Erweiterung auf Basis des Artikels.",
+      "slidesHeading": "Sprechnotizen Folie für Folie mit kurzer Erweiterung",
+      "speechLabel": "Zu sagen",
+      "extensionLabel": "Kurze Erweiterung aus dem Artikel",
+      "summary": {
+        "title": "Zusammenfassung"
+      },
+      "qa": {
+        "title": "Mögliche Fragen und Antworten"
+      },
+      "abbreviations": {
+        "title": "Abkürzungen"
+      }
+    },
+    "slides": {
+      "slide1": {
+        "navTitle": "Governance-Rahmen",
+        "title": "A Rights-Based Governance Framework for AI-Enabled Human Enhancement",
+        "subtitle": "Einführung des <codex>Codex of Augmented Humanity</codex> als Governance-Ebene für strukturelle Risiken KI-gestützter Augmentation",
+        "authorsLabel": "AUTOREN",
+        "authors": [
+          "Kacper Boś",
+          "Nikolas Jerzy Feduniewicz",
+          "Anna Bryniarska"
+        ],
+        "affiliation": "Technische Universität Oppeln"
+      },
+      "slide2": {
+        "navTitle": "Regulatorische Lücke",
+        "title": "Kontinuierliche sozio-technische Augmentation überholt sektorale Regulierung",
+        "cards": [
+          {
+            "title": "Der Wandel",
+            "text1": "Verbesserung entwickelt sich von episodischen klinischen Eingriffen zu kontinuierlichen, KI-gesteuerten Systemen."
+          },
+          {
+            "title": "Die Lücke",
+            "text1": "EU-Regelwerke wie DSGVO, AI Act und Medizinprodukterecht arbeiten in isolierten Silos und erfassen kontinuierliche, vernetzte Augmentation nicht angemessen."
+          },
+          {
+            "title": "Die Antwort",
+            "text1": "Der Codex of Augmented Humanity übersetzt grundlegende EU-Rechte wie Würde und körperliche Unversehrtheit in operative Designgrenzen, die systemische Ausbeutung verhindern."
+          }
+        ]
+      },
+      "slide3": {
+        "navTitle": "Architektonischer Wandel",
+        "title": "KI verändert die grundlegende Architektur biologischer Intervention",
+        "traditionalLabel": "Traditionelle medizinische Intervention",
+        "enhancedLabel": "KI-gestützte Verbesserung",
+        "rows": [
+          {
+            "rowLabel": "Zeitliche Dimension",
+            "left": "Episodisch und begrenzt",
+            "right": "Kontinuierlich und dauerhaft"
+          },
+          {
+            "rowLabel": "Betriebsprofil",
+            "left": "Vordefinierte therapeutische Parameter",
+            "right": "Adaptives maschinelles Lernen und laufende Optimierung"
+          },
+          {
+            "rowLabel": "Infrastrukturelle Basis",
+            "left": "Eigenständiges lokales Gerät",
+            "right": "Vernetztes cyber-physisches System"
+          },
+          {
+            "rowLabel": "Zentrales Risikoprofil",
+            "left": "Klinischer Fehler und mechanische Fehlfunktion",
+            "right": "Strukturelle Abhängigkeit und Machtasymmetrie"
+          }
+        ]
+      },
+      "slide4": {
+        "navTitle": "Rückkopplungsschleife",
+        "title": "Die kontinuierliche Rückkopplungsschleife KI-gestützter Augmentation",
+        "cards": [
+          {
+            "index": "1.",
+            "title": "Erfassungsebene",
+            "text1": "Sammelt kontinuierliche Telemetrie sowie physiologische und Verhaltensdaten direkt aus dem Körper."
+          },
+          {
+            "index": "2.",
+            "title": "KI-Ebene",
+            "text1": "Führt prädiktive Klassifikation und adaptive Optimierung durch, oft mit externer Anbieterinfrastruktur im Ablauf."
+          },
+          {
+            "index": "3.",
+            "title": "Aktuationsebene",
+            "text1": "Verändert physische oder kognitive Behandlungsparameter dynamisch in Echtzeit."
+          },
+          {
+            "index": "4.",
+            "title": "Kontrollebene",
+            "text1": "Verwaltet Protokollierung, Grenzen menschlicher Validierung und regulatorische Compliance."
+          }
+        ],
+        "diagram": {
+          "controlSignals": {
+            "text1": "STEUER",
+            "text2": "SIGNALE"
+          },
+          "telemetry": {
+            "text1": "TELEMETRIE"
+          },
+          "predictions": {
+            "text1": "PROGNOSEN"
+          },
+          "dynamicModification": {
+            "text1": "DYNAMISCHE",
+            "text2": "MODIFIKATION"
+          }
+        }
+      },
+      "slide5": {
+        "navTitle": "Blinde Flecken",
+        "title": "Sektorale EU-Rahmen erfassen systemische infrastrukturelle Risiken nicht",
+        "pillars": [
+          "DSGVO",
+          "AI Act",
+          "Medizinprodukte",
+          "Cybersicherheit"
+        ],
+        "panels": [
+          {
+            "lead": null,
+            "text1": "Bestehende Regelwerke sind robust, aber isoliert. Keines adressiert eigenständig die Konvergenz von funktionaler Körperintegration, algorithmischer Anpassungsfähigkeit und ökonomischer Einbettung."
+          },
+          {
+            "lead": "Der blinde Fleck:",
+            "text1": "Langfristige Abhängigkeit, kontinuierliche Optimierung und vertraglicher Lock-in."
+          },
+          {
+            "lead": "Die Notwendigkeit:",
+            "text1": "Verbesserung darf niemals zu einem Kanal für Ausbeutung werden, besonders dort, wo lebenserhaltende Funktionen oder zentrale Autonomie auf dem Spiel stehen."
+          }
+        ]
+      },
+      "slide6": {
+        "navTitle": "Bedrohungsanalyse",
+        "title": "Bedrohungsanalysen müssen heute von gegnerischen Umgebungen ausgehen",
+        "panels": [
+          {
+            "lead": "KI-gestützte Augmentation",
+            "text1": "verlagert Risiken von isolierten klinischen Defekten hin zu strukturellem Zwang."
+          },
+          {
+            "lead": "Beschleunigung und Intransparenz:",
+            "text1": "Algorithmen skalieren Interventionen rasch und verwandeln intime Gesundheitsdaten in prädiktive Werkzeuge."
+          },
+          {
+            "lead": "Threat Modeling",
+            "text1": "muss Hierarchien, Marktmacht und Wettbewerbsdruck berücksichtigen, nicht nur wohlwollende therapeutische Nutzung."
+          }
+        ],
+        "diagram": {
+          "outerRing": "Staatlicher und institutioneller Missbrauch",
+          "middleRing": "Ökonomischer Zwang",
+          "innerRing": "Netzwerkverwundbarkeiten",
+          "core": [
+            "Individuelle",
+            "klinische",
+            "Sicherheit"
+          ]
+        }
+      },
+      "slide7": {
+        "navTitle": "Militarisierung",
+        "title": "Militarisierung erzeugt strukturellen Aufrüstungsdruck",
+        "panels": [
+          {
+            "lead": "Der Mechanismus",
+            "text1": "Die Steigerung von Resilienz oder Wahrnehmung erzeugt innerhalb von Hierarchien Aufrüstungsdruck und untergräbt echte Einwilligung. Therapeutische Fähigkeiten können schnell zu strategischen Verteidigungsressourcen werden."
+          },
+          {
+            "lead": "Normative Codex-Grenzen",
+            "text1": "Zwangsweise Verbesserung als Dienst- oder Beschäftigungsvoraussetzung strikt verbieten. Für irreversible Eingriffe verpflichtende langfristige medizinische Unterstützung vorschreiben."
+          }
+        ]
+      },
+      "slide8": {
+        "navTitle": "Cyber-physische Risiken",
+        "title": "Konnektivität verwandelt Implantate in cyber-physische Angriffsflächen",
+        "panels": [
+          {
+            "lead": "Der Mechanismus",
+            "text1": "Fernkonfiguration konzentriert praktische Kontrolle in den Händen von Anbietern oder böswilligen Akteuren. Eine kompromittierte drahtlose Insulinpumpe kann biologische Zustände direkt verändern und schweren Schaden verursachen."
+          },
+          {
+            "lead": "Normative Codex-Grenzen",
+            "text1": "Lebenskritische Implantate dürfen standardmäßig nicht fernsteuerbar sein. Sichere degradierte Offline-Modi müssen das Leben erhalten, wenn Netzwerke ausfallen."
+          }
+        ]
+      },
+      "slide9": {
+        "navTitle": "Biologischer Schaden",
+        "title": "KI-Optimierung senkt die Schwelle für biologisch gezielten Schaden",
+        "panels": [
+          {
+            "lead": "Der Mechanismus",
+            "text1": "KI beschleunigt Design, Simulation und Parameteroptimierung biologischer Interventionen. Missbrauch erfordert heute oft kaum mehr als Datenzugang und Rechenleistung."
+          },
+          {
+            "lead": "Rote Linien des Codex",
+            "text1": "Ein absolutes Verbot enhancementsbezogener biologischer Forschung mit Schädigungs- oder Verfolgungsabsicht festlegen. Strenge Dual-Use-Prüfungen für KI-beschleunigte biologische Skalierung verlangen."
+          }
+        ]
+      },
+      "slide10": {
+        "navTitle": "Soziale Sortierung",
+        "title": "Kontinuierliche Telemetrie ermöglicht verborgene soziale Sortierung",
+        "mechanismTitle": "Der Mechanismus",
+        "mechanismText": "KI verwandelt intime biologische Marker in skalierbare Risikobewertungssysteme. Der Zugang zu grundlegenden Chancen wird probabilistisch von kontinuierlichen biologischen Metriken abhängig gemacht.",
+        "constraintsTitle": "Normative Codex-Grenzen",
+        "constraints": [
+          "Absolutes Verbot enhancementbasierter Diskriminierung durch Versicherer, Arbeitgeber oder Plattformen.",
+          "Strikte Zweckbindung, um Funktionsausweitung in Richtung allgemeiner Überwachung zu verhindern."
+        ],
+        "outcomes": [
+          "Beschäftigungsstatus",
+          "Versicherungsrisiko",
+          "Kreditzugang"
+        ]
+      },
+      "slide11": {
+        "navTitle": "Ökonomischer Zwang",
+        "title": "Proprietäre Infrastruktur erzeugt ökonomischen Pay-to-live-Zwang",
+        "panels": [
+          {
+            "title": "Der Mechanismus",
+            "text1": "Wenn essenzielle Körperfunktionen von proprietärer Software oder fortlaufender Anbieterunterstützung abhängen, wird Marktmacht direkt zu Einfluss auf körperliche Unversehrtheit."
+          },
+          {
+            "title": "Normative Codex-Grenzen",
+            "text1": "Designmuster verbieten, die lebenserhaltende Funktionen aus finanziellem Kalkül drosseln oder deaktivieren. Glaubwürdige Exit- und Software-Escrow-Mechanismen für dauerhafte Abhängigkeitsverhältnisse vorschreiben."
+          }
+        ]
+      },
+      "slide12": {
+        "navTitle": "Normalisierungsdruck",
+        "title": "Optionale Optimierung normalisiert sich zu strukturellen Anforderungen",
+        "mechanismTitle": "Der Mechanismus",
+        "mechanismText": "In stark kompetitiven Umgebungen wie dem Sport verschiebt Verbesserung physiologische Ausgangsniveaus. Was als optionales Upgrade beginnt, kann zur strukturellen Voraussetzung für Teilhabe werden.",
+        "constraintsTitle": "Normative Codex-Grenzen",
+        "constraints": [
+          {
+            "title": "Transparente, standardisierte Zulassungsrahmen verlangen",
+            "text1": "für verbesserte Teilnahme."
+          },
+          {
+            "title": "Sicherstellen, dass Integritätsregeln nicht unbeabsichtigt diskriminieren",
+            "text1": "gegenüber Personen, die legitime therapeutische Interventionen nutzen."
+          }
+        ]
+      },
+      "slide13": {
+        "navTitle": "Operative Grenzen",
+        "title": "Der Codex übersetzt Grundrechte in operative Grenzen",
+        "headers": [
+          "Bedrohungsbereich",
+          "Mechanismus strukturellen Risikos",
+          "Zentrales Codex-Prinzip"
+        ],
+        "rows": [
+          {
+            "threat": "Militarisierung",
+            "risk": "Hierarchischer Druck und verringerte Freiwilligkeit",
+            "principle": "Zwangsweise Verbesserung verbieten und echte Einwilligung sichern"
+          },
+          {
+            "threat": "Biologischer Missbrauch",
+            "risk": "KI-beschleunigtes Design und Targeting",
+            "principle": "Schädliche Anwendungen verbieten und Dual-Use-Prüfung durchsetzen"
+          },
+          {
+            "threat": "Cyber-physisch",
+            "risk": "Fernzugriff auf körperliche Implantate",
+            "principle": "Fernsteuerung begrenzen und ausfallsicheres Offline-Design vorschreiben"
+          },
+          {
+            "threat": "Datenmissbrauch",
+            "risk": "Prädiktives Profiling und soziale Inferenz",
+            "principle": "Zweckbindung durchsetzen und algorithmische Diskriminierung verbieten"
+          },
+          {
+            "threat": "Ökonomisch",
+            "risk": "Vendor Lock-in und lebenswichtige Abhängigkeit",
+            "principle": "Kontinuität garantieren und ausbeuterische Funktionskontrolle verbieten"
+          }
+        ]
+      },
+      "slide14": {
+        "navTitle": "Kontinuierliche Governance",
+        "title": "Governance muss zur kontinuierlichen Struktur der Technologie passen",
+        "diagram": {
+          "outerRing": "Institutionelle Durchsetzung",
+          "middleRing": "Lebenszyklus",
+          "center": "Designzeit"
+        },
+        "sections": [
+          {
+            "title": "Designzeit-Grenzen:",
+            "text1": "Hart codierte physische und softwareseitige Grenzen, etwa das Deaktivieren entfernter Overrides kritischer biologischer Funktionen."
+          },
+          {
+            "title": "Pflichten über den Lebenszyklus:",
+            "text1": "Garantierte langfristige Sicherheitsupdates, kontinuierliche Auditierbarkeit und verpflichtende degradierte Offline-Modi."
+          },
+          {
+            "title": "Institutionelle Durchsetzung:",
+            "text1": "Verpflichtende Zertifizierung, Compliance-Audits und proaktive Aufsicht über medizinische und digitale Bereiche hinweg."
+          }
+        ]
+      },
+      "slide15": {
+        "navTitle": "Menschenwürde",
+        "title": "Eine strukturelle Voraussetzung für Menschenwürde",
+        "statements": [
+          "KI-gestützte Augmentation besitzt enormes Potenzial, Gesundheit, Unabhängigkeit und Fähigkeiten wiederherzustellen.",
+          "Ein professioneller Codex ist kein optionaler ethischer Zusatz. Er ist eine operative Notwendigkeit.",
+          "Wenn grundlegende EU-Rechte direkt in die Systemarchitektur eingebettet werden, kann Augmentation dem Menschen dienen, statt ihn zu instrumentalisieren."
+        ]
+      },
+      "slide16": {
+        "navTitle": "Schlussfrage",
+        "title": "Wer behält die Kontrolle, wenn KI in den Körper eintritt?",
+        "caption": "Die Zukunft der Augmentation ist nicht nur eine Frage der Fähigkeit, sondern der Macht. Wenn Autonomie, Würde und körperliche Unversehrtheit nicht schon im Design geschützt werden, kann Verbesserung zuerst Institutionen, Märkten oder Systemen dienen und erst danach der Person."
+      }
+    }
+  },
+  "poster": {
+    "eyebrow": "Posterseite",
+    "title": "Wissenschaftliches Poster",
+    "lead": "Dieser Bereich ist dafür gedacht, ein Konferenzposter in einem klaren statischen Webformat zu präsentieren.",
+    "description": "Hier können Forschungszusammenfassung, Kernergebnisse, Autorinnen und Autoren, Zugehörigkeiten und unterstützende Referenzen platziert werden. Das Layout bleibt leichtgewichtig und mit statischer Bereitstellung kompatibel.",
+    "notes": {
+      "eyebrow": "Posternotizen",
+      "title": "Ethische und rechtliche Aspekte der AIgmented HUMANity",
+      "lead": "Unten findest du gebrauchsfertige Sprechnotizen zum Poster, geordnet nach logischen Abschnitten.",
+      "sectionsHeading": "Abschnittsweise Sprechnotizen",
+      "speechLabel": "Zu sagen",
+      "extensionLabel": "Kurze Erweiterung",
+      "summary": {
+        "title": "Zusammenfassung"
+      },
+      "qa": {
+        "title": "Fragen und Antworten"
+      },
+      "abbreviations": {
+        "title": "Abkürzungen auf Englisch"
+      }
+    },
+    "page": {
+      "header": {
+        "logoAriaLabel": "Technische Universität Oppeln",
+        "titleParts": {
+          "ai": "AI",
+          "aiSuffix": "gmented",
+          "human": "HUMAN",
+          "humanSuffix": "ity"
+        },
+        "subtitle": "Ethische und rechtliche Aspekte",
+        "authors": [
+          "Nikolas Feduniewicz",
+          "Kacper Boś",
+          "Anna Bryniarska"
+        ],
+        "tags": [
+          "KI-Ethik",
+          "Menschliche Verbesserung",
+          "DSGVO",
+          "EU AI Act",
+          "EHDS"
+        ]
+      },
+      "backgroundIntro": {
+        "eyebrow": "Hintergrund und Konzept",
+        "title": "Zentrale Rahmung des Posters"
+      },
+      "backgroundCards": [
+        {
+          "number": "01.",
+          "title": "Definition von AIgmented HUMANity",
+          "text1": "Eine kurzfristig realisierbare Integration von KI mit mechanischer und biologischer Verbesserung, ausgerichtet auf Prävention, personalisierte Intervention und Unterstützung von Langlebigkeit."
+        },
+        {
+          "number": "02.",
+          "title": "Der evolutionäre Wandel",
+          "text1": "Eine kurzfristig realisierbare Integration von KI mit mechanischer und biologischer Verbesserung, ausgerichtet auf Prävention, personalisierte Intervention und Unterstützung von Langlebigkeit."
+        },
+        {
+          "number": "03.",
+          "title": "Zeitleiste menschlicher Verbesserung",
+          "text1": "Entwicklung von frühen Sehhilfen und Prothesen hin zu moderner Geneditierung und KI-gestützter Entscheidungsunterstützung."
+        }
+      ],
+      "practicalExample": {
+        "eyebrow": "Praktisches Beispiel",
+        "title": "Veranschaulichter operativer Ablauf",
+        "steps": [
+          "Wearable-Daten",
+          "klinische Vorgeschichte",
+          "KI-Risikoeinschätzung",
+          "ärztliche Prüfung",
+          "personalisierte Intervention"
+        ]
+      },
+      "legalFramework": {
+        "eyebrow": "Rechtlicher Rahmen",
+        "title": "Regulatorische Grundlage des Posterarguments",
+        "cards": [
+          {
+            "title": "DSGVO und besondere Datenkategorien",
+            "text1": "Genetische, biometrische und Gesundheitsdaten gelten als „besondere Kategorien“ mit grundsätzlichem Verarbeitungsverbot, sofern keine engen Ausnahmen greifen."
+          },
+          {
+            "title": "Der EU AI Act",
+            "text1": "Ordnet die meisten KI-Komponenten in Medizinprodukten als „hochriskant“ ein und verlangt verbindliche Pflichten zu Dokumentation und Aufsicht."
+          },
+          {
+            "title": "EHDS und Menschenrechte",
+            "text1": "Der Europäische Gesundheitsdatenraum (EHDS) und die Oviedo-Konvention schützen vor genetischer Diskriminierung und sichern einen geschützten Datenfluss."
+          }
+        ]
+      },
+      "centralDiagram": {
+        "eyebrow": "Zentrales Diagramm",
+        "title": "Zentrale Begriffe und konzentrische Governance-Ebenen",
+        "labelsCardTitle": "Seitliche Begriffe rund um die zentrale Illustration",
+        "labels": [
+          "Genomische Daten",
+          "Wearables und Biometrie",
+          "Prothesen und Implantate",
+          "Präventive Versorgung",
+          "Menschliche Prüfung",
+          "Auditierbarkeit"
+        ],
+        "ringsCardTitle": "Text in den zentralen Ringen",
+        "rings": [
+          {
+            "ring": "Innerer Ring",
+            "title": "Data Governance",
+            "text1": "Verwaltet sensible genomische und Gesundheitsdaten. Zugriffskontrolle und Zweckbindung."
+          },
+          {
+            "ring": "Mittlerer Ring",
+            "title": "KI-Entscheidungsfindung",
+            "text1": "Konzentriert sich auf Risikoprognosen und Personalisierungsmodelle. Nutzt Subgruppenvalidierung, um Bias zu verhindern."
+          },
+          {
+            "ring": "Äußerer Ring",
+            "title": "Aufsicht und Compliance",
+            "text1": "Sichert Auditierbarkeit, menschliche Kontrolle im Prozess und Überwachung nach dem Inverkehrbringen."
+          }
+        ]
+      },
+      "ethicalIssues": {
+        "eyebrow": "Ethische Fragen",
+        "title": "Zentrale Risikobereiche des Posters",
+        "cards": [
+          {
+            "title": "Militarisierung und Dual Use",
+            "text1": "Leistungssteigerung in Konflikten, neuronale Schnittstellen mit verschwimmender menschlicher Handlungsmacht und das „Dual-Use“-Risiko gentechnischer Technologien."
+          },
+          {
+            "title": "Datenmissbrauch durch Versicherer und Arbeitgeber",
+            "text1": "Risiko: „genetic redlining“, bei dem biometrische oder genetische Daten verdeckt für Underwriting oder Bewerbungsselektion genutzt werden."
+          },
+          {
+            "title": "Algorithmischer Bias in Health AI",
+            "text1": "Systeme können strukturelle Ungleichheiten verstärken, etwa wenn Pulsoximeter bei dunkler Haut schlechter funktionieren oder Algorithmen Gesundheitsausgaben als Proxy für medizinischen Bedarf nutzen."
+          }
+        ]
+      },
+      "patientRights": {
+        "eyebrow": "Patientenrechte und Datensicherheit",
+        "title": "Sicherheit, Reversibilität und prozedurale Schutzmechanismen",
+        "cards": [
+          {
+            "title": "Irreversibilität genetischer Daten",
+            "text1": "Anders als Passwörter können Genomdaten nicht geändert werden; Datenpannen erzeugen dauerhafte Risiken für Privatsphäre und Fairness."
+          },
+          {
+            "title": "Strukturelles Re-Identifikationsrisiko",
+            "text1": "„Anonymisierte“ Genomdatensätze können häufig über öffentliche Referenzdatenbanken und Nachnameninferenz erneut Personen zugeordnet werden."
+          },
+          {
+            "title": "Fünf zentrale Patientenrechte",
+            "text1": "Nach der DSGVO haben Patientinnen und Patienten Rechte auf Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und eine bedeutsame menschliche Überprüfung automatisierter Entscheidungen."
+          }
+        ],
+        "rights": [
+          "Auskunft",
+          "Berichtigung",
+          "Löschung",
+          "Übertragbarkeit",
+          "Menschliche Überprüfung"
+        ]
+      },
+      "riskMatrix": {
+        "eyebrow": "Risiko-Kontroll-Matrix",
+        "title": "Lesbare mobile Version der Matrix",
+        "layerLabel": "Ebene",
+        "riskLabel": "Risiko",
+        "controlLabel": "Kontrollmechanismus",
+        "rows": [
+          {
+            "layer": "Daten",
+            "risk": "Missbrauch genetischer und gesundheitsbezogener Daten",
+            "control": "Datenminimierung, Zugriffskontrolle, Zweckbindung (DSGVO)"
+          },
+          {
+            "layer": "KI-Modell",
+            "risk": "Algorithmischer Bias und Diskriminierung",
+            "control": "Subgruppenvalidierung, Bias-Monitoring, repräsentative Trainingsdaten"
+          },
+          {
+            "layer": "Entscheidung",
+            "risk": "Vollautomatisierte Entscheidungen mit hoher Wirkung",
+            "control": "Human-in-the-loop-Aufsicht, Erklärbarkeitsmechanismen"
+          },
+          {
+            "layer": "System-Governance",
+            "risk": "Mangel an Rechenschaft und Nachvollziehbarkeit",
+            "control": "Audit-Logs, Dokumentation, Monitoring nach dem Deployment"
+          }
+        ]
+      },
+      "conclusion": {
+        "eyebrow": "Fazit",
+        "title": "Kernaussage des Posters",
+        "paragraphs": [
+          "Die Konvergenz von künstlicher Intelligenz mit biologischen und mechanischen Formen menschlicher Verbesserung stellt einen kurzfristig realisierbaren und technisch machbaren Paradigmenwechsel in Gesundheitsversorgung und Leistungsunterstützung dar.",
+          "Ein strukturiertes Compliance-by-Design-Framework übersetzt ethische und rechtliche Anforderungen in Systemgrenzen, darunter Vorgaben zur Data Governance, biasbewusste Modellvalidierung, Human-in-the-loop-Entscheidungsprozesse und Auditierbarkeit des Systemverhaltens.",
+          "Dieser Ansatz versteht KI-getriebene menschliche Verbesserung als Systemdesignproblem, bei dem Governance-Anforderungen direkt in KI-Architekturen eingebettet werden müssen, damit Bereitstellung ohne Diskriminierung, Ausbeutung oder staatlichen Missbrauch möglich wird."
+        ]
+      }
+    }
+  }
+}

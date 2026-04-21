@@ -8,7 +8,8 @@
     "localeSwitcher": {
       "label": "Język",
       "pl": "Polski",
-      "en": "Angielski"
+      "en": "Angielski",
+      "de": "Niemiecki"
     },
     "theme": {
       "toggle": "Przełącz motyw",

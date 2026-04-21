@@ -1,6 +1,6 @@
 // @file: apps/web/src/schemas/i18n.ts
 
-export const APP_LOCALES = ["pl", "en"] as const;
+export const APP_LOCALES = ["pl", "en", "de"] as const;
 export type AppLocale = (typeof APP_LOCALES)[number];
 
 export const DEFAULT_LOCALE: AppLocale = "pl";
@@ -19,6 +19,7 @@ export type LocaleMeta = {
 export const LOCALE_META: readonly LocaleMeta[] = [
   { code: "pl", label: "Polish", flag: "🇵🇱" },
   { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "de", label: "German", flag: "🇩🇪" },
 ];
 
 const APP_LOCALE_SET = new Set<string>(APP_LOCALES);
