@@ -1,7 +1,7 @@
 // @file: src/components/layout/SubpageControls.tsx
 "use client";
 
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { HouseDoor } from "react-bootstrap-icons";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -11,11 +11,20 @@ import { LocaleSwitcher } from "@/components/ui/LocaleSwitcher";
 import { Button } from "@/components/ui/Button";
 import styles from "./SubpageControls.module.css";
 
-export function SubpageControls({ children }: { children?: ReactNode }) {
+type SubpageControlsProps = {
+  children?: ReactNode;
+  mobileOpacity?: number;
+};
+
+export function SubpageControls({ children, mobileOpacity }: SubpageControlsProps) {
   const t = useTranslations("common.navbar");
+  const style =
+    mobileOpacity === undefined
+      ? undefined
+      : ({ "--subpage-controls-mobile-opacity": mobileOpacity } as CSSProperties);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={style}>
       <div className={styles.panel}>
         {children}
 

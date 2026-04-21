@@ -29,7 +29,7 @@ export default async function PosterPage({ params }: LocalePageProps) {
 
   return (
     <section className={styles.page}>
-      <SubpageControls>
+      <SubpageControls mobileOpacity={1}>
         <PodcastControls src={posterPodcastSrc} />
       </SubpageControls>
 

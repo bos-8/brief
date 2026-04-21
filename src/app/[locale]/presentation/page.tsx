@@ -760,7 +760,7 @@ export default async function PresentationPage({ params }: LocalePageProps) {
       <PresentationWordmark />
 
       <div id={deckId} className={cx("relative z-10 h-[100dvh] overflow-y-auto snap-y snap-mandatory", slideDeckClassName)}>
-        <SubpageControls>
+        <SubpageControls mobileOpacity={1}>
           <PodcastControls src={presentationPodcastSrc} gain={2} />
           <PresentationModeButton deckId={deckId} />
         </SubpageControls>

@@ -30,6 +30,12 @@
   text-decoration: none;
 }
 
+@media (max-width: 767px) {
+  .container {
+    opacity: var(--subpage-controls-mobile-opacity, 0.28);
+  }
+}
+
 @media print {
   .container {
     display: none;
