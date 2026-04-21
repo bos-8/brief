@@ -25,6 +25,7 @@
       "hint": "You can turn on the podcast for this page here.",
       "start": "Start",
       "stop": "Stop",
+      "speed": "Speed",
       "timeline": "Podcast timeline",
       "restart": "Restart",
       "unavailable": "Audio unavailable"

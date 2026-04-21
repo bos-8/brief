@@ -14,6 +14,8 @@ type PodcastControlsProps = {
   gain?: number;
 };
 
+const PLAYBACK_RATES = [1, 1.5, 2] as const;
+
 function formatTime(value: number) {
   if (!Number.isFinite(value) || value < 0) {
     return "00:00";
@@ -40,6 +42,7 @@ export function PodcastControls({ src, gain = 1 }: PodcastControlsProps) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [hasError, setHasError] = useState(false);
+  const [playbackRate, setPlaybackRate] = useState<(typeof PLAYBACK_RATES)[number]>(1);
 
   useEffect(() => {
     setIsHydrated(true);
@@ -128,6 +131,17 @@ export function PodcastControls({ src, gain = 1 }: PodcastControlsProps) {
       setIsPlaying(false);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (!audio) {
+      return;
+    }
+
+    audio.defaultPlaybackRate = playbackRate;
+    audio.playbackRate = playbackRate;
+  }, [playbackRate]);
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
@@ -241,8 +255,18 @@ export function PodcastControls({ src, gain = 1 }: PodcastControlsProps) {
     setCurrentTime(value);
   };
 
+  const handlePlaybackRateToggle = () => {
+    setPlaybackRate((currentRate) => {
+      const currentIndex = PLAYBACK_RATES.indexOf(currentRate);
+      const nextIndex = (currentIndex + 1) % PLAYBACK_RATES.length;
+
+      return PLAYBACK_RATES[nextIndex];
+    });
+  };
+
   const expandedLabel = isOpen ? t("close") : t("toggle");
   const playbackLabel = hasError ? t("unavailable") : isPlaying ? t("stop") : t("start");
+  const playbackRateLabel = `${t("speed")}: x${playbackRate}`;
   const playbackDisabled = isHydrated ? hasError : false;
   const timelineDisabled = isHydrated ? hasError || duration <= 0 : false;
   const restartDisabled = isHydrated ? hasError || duration <= 0 : false;
@@ -280,8 +304,21 @@ export function PodcastControls({ src, gain = 1 }: PodcastControlsProps) {
         {timeLabel}
       </div>
 
-      <Tooltip content={hasError ? t("unavailable") : t("restart")} placement="bottom">
+      <Tooltip content={playbackRateLabel} placement="bottom">
         <span className={`${styles.item} ${styles.delay4} inline-flex`}>
+          <Button
+            aria-label={playbackRateLabel}
+            tone={playbackRate === 1 ? "main" : "accent"}
+            className="h-8 min-w-8 px-2 text-xs"
+            onClick={handlePlaybackRateToggle}
+          >
+            {`x${playbackRate}`}
+          </Button>
+        </span>
+      </Tooltip>
+
+      <Tooltip content={hasError ? t("unavailable") : t("restart")} placement="bottom">
+        <span className={`${styles.item} ${styles.delay5} inline-flex`}>
           <Button
             aria-label={hasError ? t("unavailable") : t("restart")}
             tone="main"

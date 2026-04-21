@@ -25,6 +25,7 @@
       "hint": "Możesz tutaj włączyć podcast do tej strony.",
       "start": "Start",
       "stop": "Stop",
+      "speed": "Prędkość",
       "timeline": "Linia czasu podcastu",
       "restart": "Od nowa",
       "unavailable": "Audio niedostępne"
